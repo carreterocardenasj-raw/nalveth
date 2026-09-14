@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { Image } from 'astro:assets';
 import { getCategory } from '../data/categories';
 import { render, type CollectionEntry } from 'astro:content';
 import RelatedContent from '../components/RelatedContent.astro';
@@ -47,6 +48,10 @@ const schema = {
       </div>
       {data.sourceNote && <p class="source-note">{data.sourceNote}</p>}
     </header>
+
+    {data.heroImage && (
+      <Image class="hero" src={data.heroImage} alt={data.heroImageAlt ?? ''} width={1200} height={630} />
+    )}
 
     <div class="layout-grid">
       <div class="prose">
@@ -123,6 +128,7 @@ const schema = {
 
 <style>
   .review-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); }
   .lede { color: var(--ink-soft); font-size: var(--step-1); }
   .badges { display: flex; flex-wrap: wrap; gap: .5em; margin-top: var(--sp-2); }
   .source-note { font-size: .82rem; color: var(--ink-faint); font-style: italic; }

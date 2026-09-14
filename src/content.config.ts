@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, type SchemaContext } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const categorySlug = z.enum([
@@ -12,7 +12,11 @@ const categorySlug = z.enum([
   'guias',
 ]);
 
-const base = {
+// heroImage usa el helper image() de Astro: valida que el archivo exista localmente
+// (en src/content/<coleccion>/) y devuelve metadata optimizable con <Image> — WebP/AVIF
+// y lazy loading automáticos. Ninguna pieza tiene todavía heroImage porque no hay capturas
+// reales que usar (nada de imágenes de relleno) — el campo queda listo para cuando las haya.
+const baseFields = (image: SchemaContext['image']) => ({
   title: z.string(),
   description: z.string().max(160),
   category: categorySlug,
@@ -21,14 +25,15 @@ const base = {
   updatedDate: z.coerce.date().optional(),
   author: z.string().default('Equipo NALVETH'),
   draft: z.boolean().default(true),
-  heroImage: z.string().optional(),
-};
+  heroImage: image().optional(),
+  heroImageAlt: z.string().optional(),
+});
 
 // Guías: informacionales, tutoriales y casos de uso.
 const guides = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
-  schema: z.object({
-    ...base,
+  schema: ({ image }) => z.object({
+    ...baseFields(image),
     intent: z.enum(['informacional', 'tutorial', 'caso-de-uso']),
     steps: z.number().optional(), // nº de pasos, solo para tutoriales
   }),
@@ -37,8 +42,8 @@ const guides = defineCollection({
 // Reviews: una herramienta, probada, con precios fechados.
 const reviews = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/reviews' }),
-  schema: z.object({
-    ...base,
+  schema: ({ image }) => z.object({
+    ...baseFields(image),
     toolName: z.string(),
     toolUrl: z.string().url(),
     verifiedDate: z.coerce.date(), // fecha de comprobación de precios/funciones
@@ -65,8 +70,8 @@ const reviews = defineCollection({
 // Comparativas: dos o más herramientas, mismos criterios.
 const comparisons = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/comparisons' }),
-  schema: z.object({
-    ...base,
+  schema: ({ image }) => z.object({
+    ...baseFields(image),
     toolsCompared: z.array(z.string()).min(2),
     verifiedDate: z.coerce.date(),
     winnerByContext: z
