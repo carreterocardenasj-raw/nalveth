@@ -135,9 +135,10 @@ Orden de producción recomendado, mezclando continuidad del pilar activo con arr
 6. Review ManyChat
 
 **Clúster 2 — Firma electrónica y gestión documental:**
-7. ✅ Hub: mejor firma electrónica para pymes España 2026 — publicado 2026-09-14, `src/content/comparisons/mejor-firma-electronica-pymes-espana.md`
+7. ✅ Hub: "Firma electrónica y gestión documental: mejores herramientas para empresas y autónomos" — publicado 2026-09-14, `src/content/guides/firma-electronica-gestion-documental.md` (intención informacional/decisión — no repite tabla de precios, enlaza a la pieza de abajo para eso).
+   - **Pieza complementaria ya publicada el 2026-09-14, no numerada originalmente en esta lista de 30:** "Mejor firma electrónica para pymes en España (2026)" (comparativa de precios de 4 herramientas), `src/content/comparisons/mejor-firma-electronica-pymes-espana.md`. Se escribió primero por error de secuencia (se interpretó como la pieza #7); el usuario la aceptó como contenido válido del clúster y pidió corregir el orden creando el hub informacional como pieza #7 real, enlazando hacia esta comparativa. Ambas quedan publicadas y enlazadas entre sí.
 8. Cómo extraer datos de facturas con IA a Excel (herramienta gratuita)
-9. DocuSign vs. Signaturit
+9. DocuSign vs. Signaturit — comparativa cabeza a cabeza de solo estas dos herramientas; no se cannibaliza con la comparativa de 4 herramientas ya publicada porque esa cubre precios de las 4 a la vez y esta pieza futura profundizaría específicamente en DocuSign vs. Signaturit (features, no solo precio).
 
 **Clúster 3 — Fotos de producto con IA:**
 10. Hub: mejores herramientas de IA para fotos de producto 2026
