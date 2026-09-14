@@ -135,7 +135,7 @@ Orden de producción recomendado, mezclando continuidad del pilar activo con arr
 6. Review ManyChat
 
 **Clúster 2 — Firma electrónica y gestión documental:**
-7. Hub: mejor firma electrónica para pymes España 2026
+7. ✅ Hub: mejor firma electrónica para pymes España 2026 — publicado 2026-09-14, `src/content/comparisons/mejor-firma-electronica-pymes-espana.md`
 8. Cómo extraer datos de facturas con IA a Excel (herramienta gratuita)
 9. DocuSign vs. Signaturit
 
