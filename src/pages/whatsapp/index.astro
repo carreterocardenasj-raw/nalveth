@@ -1,0 +1,35 @@
+---
+import { getEntry } from 'astro:content';
+import WhatsappLayout from '../../layouts/WhatsappLayout.astro';
+
+const entry = await getEntry('whatsapp', 'pilar');
+if (!entry) throw new Error('Falta src/content/whatsapp/pilar.md');
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Me basta con la app WhatsApp Business o necesito la API?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Depende de si necesitas que más de una persona atienda desde el mismo número, automatizar respuestas más allá de los mensajes de ausencia/bienvenida, o conectar WhatsApp con un CRM u otras herramientas. Si te basta con una persona respondiendo manualmente, la app gratuita suele ser suficiente. Lo explicamos con una tabla de decisión completa en /whatsapp-business-vs-api/.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué es un BSP de WhatsApp?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Un BSP (Business Solution Provider) es un proveedor autorizado por Meta que da acceso técnico a la API de WhatsApp Business y factura el uso de mensajes en tu nombre. La mayoría de herramientas de automatización de WhatsApp (Wati, Respond.io, Manychat, etc.) actúan como BSP o se apoyan en uno.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿"Agente IA" y "chatbot de WhatsApp" son lo mismo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Un chatbot sigue reglas y árboles de decisión predefinidos. Un agente de IA interpreta lenguaje libre y puede decidir qué acción tomar. Muchas herramientas usan la palabra "agente" de forma comercial para automatizaciones que en realidad son workflows o chatbots con una capa de IA. Lo explicamos con criterio propio en /automatizar-whatsapp/.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta automatizar WhatsApp en una pyme española?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No hay una cifra única: depende de los mensajes que envíes (Meta cobra por plantilla según categoría y país), la herramienta que uses, y si necesitas IA. Desglosamos cada componente de coste, con lo que está verificado y lo que no, en /precio-whatsapp-business-api/.' },
+    },
+  ],
+};
+---
+<WhatsappLayout entry={entry} href="/whatsapp/" schema={faqSchema} />

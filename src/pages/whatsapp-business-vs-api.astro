@@ -1,0 +1,8 @@
+---
+import { getEntry } from 'astro:content';
+import WhatsappLayout from '../layouts/WhatsappLayout.astro';
+
+const entry = await getEntry('whatsapp', 'business-vs-api');
+if (!entry) throw new Error('Falta src/content/whatsapp/business-vs-api.md');
+---
+<WhatsappLayout entry={entry} href="/whatsapp-business-vs-api/" />

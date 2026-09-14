@@ -1,0 +1,63 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsappClusterNav from '../components/WhatsappClusterNav.astro';
+import { render, type CollectionEntry } from 'astro:content';
+
+export interface Props {
+  entry: CollectionEntry<'whatsapp'>;
+  href: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { entry, href, schema } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const typeLabel: Record<string, string> = {
+  pilar: 'Pilar del clúster',
+  decision: 'Guía de decisión',
+  guia: 'Guía práctica',
+  coste: 'Guía de costes',
+  comercial: 'Comparativa de herramientas',
+};
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  author: { '@type': 'Organization', name: 'NALVETH' },
+  datePublished: data.publishDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+};
+const schemaList = [baseSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
+---
+<BaseLayout title={data.title} description={data.description} type="article" schema={schemaList}>
+  <div class="container">
+    <Breadcrumbs items={[
+      { name: 'WhatsApp', href: '/whatsapp/' },
+      { name: data.title },
+    ]} />
+  </div>
+
+  <article class="container whatsapp-page">
+    <header class="page-head">
+      <span class="eyebrow">{typeLabel[data.pageType]}</span>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <p class="dates">{data.updatedLabel} · {data.author}</p>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <div class="container"><WhatsappClusterNav current={href} /></div>
+</BaseLayout>
+
+<style>
+  .page-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .lede { color: var(--ink-soft); font-size: var(--step-1); }
+  .dates { font-size: .8rem; color: var(--ink-faint); font-family: var(--font-mono); }
+  .whatsapp-page { padding-bottom: var(--sp-8); }
+</style>

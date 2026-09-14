@@ -1,0 +1,43 @@
+---
+// Enlazado bidireccional fijo entre las 5 páginas del mini-cluster de WhatsApp.
+// Hardcodeado a propósito, mismo patrón que VerifactuClusterNav — ver docs/WHATSAPP-CLUSTER.md.
+export interface Props { current: string }
+const { current } = Astro.props;
+
+const PAGES = [
+  { href: '/whatsapp/', label: 'WhatsApp para empresas: cómo automatizar atención, ventas y clientes', short: 'El pilar' },
+  { href: '/whatsapp-business-vs-api/', label: 'WhatsApp Business vs API: qué necesita tu empresa', short: 'App o API' },
+  { href: '/automatizar-whatsapp/', label: 'Cómo automatizar WhatsApp para una empresa', short: 'Qué automatizar' },
+  { href: '/precio-whatsapp-business-api/', label: 'Cuánto cuesta automatizar WhatsApp en España', short: 'Coste real' },
+  { href: '/mejor-herramienta-whatsapp-automatizacion/', label: 'Mejores herramientas para automatizar WhatsApp', short: 'Herramientas' },
+] as const;
+
+const others = PAGES.filter((p) => p.href !== current);
+---
+<nav class="cluster-nav" aria-label="Resto del clúster de WhatsApp">
+  <h2>Sigue explorando este clúster</h2>
+  <ul>
+    {others.map((p) => (
+      <li><a href={p.href}><span class="short">{p.short}</span><span class="full">{p.label}</span></a></li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .cluster-nav {
+    max-width: var(--page-width); margin: 0 auto; padding: var(--sp-6) 0 var(--sp-8);
+    border-top: 1px solid var(--line);
+  }
+  .cluster-nav h2 { font-size: var(--step-1); margin-bottom: var(--sp-3); color: var(--ink-soft); }
+  .cluster-nav ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--sp-3);
+  }
+  .cluster-nav a {
+    display: block; padding: var(--sp-3); border: 1px solid var(--line); border-radius: var(--radius);
+    text-decoration: none; color: var(--ink);
+  }
+  .cluster-nav a:hover { border-color: var(--accent); }
+  .cluster-nav .short { display: block; font-weight: 700; color: var(--accent-strong); font-size: var(--step--1); text-transform: uppercase; letter-spacing: .02em; margin-bottom: .3em; }
+  .cluster-nav .full { display: block; font-size: var(--step--1); color: var(--ink-soft); }
+</style>

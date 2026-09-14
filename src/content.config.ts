@@ -104,4 +104,21 @@ const verifactu = defineCollection({
   }),
 });
 
-export const collections = { guides, reviews, comparisons, verifactu };
+// Clúster de automatización práctica de WhatsApp: mismo patrón que `verifactu` (mini-cluster
+// de 5 páginas con URLs planas, fuera del esquema de categorías). Ver docs/WHATSAPP-CLUSTER.md.
+const whatsapp = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/whatsapp' }),
+  schema: () => z.object({
+    title: z.string(),
+    description: z.string().max(160),
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    updatedLabel: z.string(),
+    author: z.string().default('Equipo NALVETH'),
+    draft: z.boolean().default(true),
+    pageType: z.enum(['pilar', 'decision', 'guia', 'coste', 'comercial']),
+    keyword: z.string(),
+  }),
+});
+
+export const collections = { guides, reviews, comparisons, verifactu, whatsapp };
