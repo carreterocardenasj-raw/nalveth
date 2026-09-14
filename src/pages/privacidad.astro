@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Política de privacidad" description="Cómo trata NALVETH los datos personales de sus visitantes.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Privacidad' }]} /></div>
+  <article class="container prose page">
+    <h1>Política de privacidad</h1>
+    <p class="notice">[PLACEHOLDER — este texto es un esqueleto de referencia, no un documento legal válido. Debe revisarlo y completarlo un profesional antes de publicar el sitio, con los datos reales del responsable del tratamiento.]</p>
+
+    <h2>Responsable del tratamiento</h2>
+    <p>[PLACEHOLDER — nombre/razón social, NIF, dirección y correo de contacto del responsable.]</p>
+
+    <h2>Qué datos recogemos</h2>
+    <p>[PLACEHOLDER — detallar: datos de navegación (analítica), datos de formularios de contacto, datos de suscripción a newsletter si aplica.]</p>
+
+    <h2>Con qué finalidad</h2>
+    <p>[PLACEHOLDER — analítica de tráfico, respuesta a consultas de contacto, envío de comunicaciones si el usuario se suscribe.]</p>
+
+    <h2>Publicidad y afiliación</h2>
+    <p>Este sitio muestra anuncios a través de Google AdSense y participa en programas de afiliación de terceros. Estos servicios pueden usar cookies o identificadores para personalizar anuncios — ver <a href="/cookies/">política de cookies</a>.</p>
+
+    <h2>Con quién compartimos los datos</h2>
+    <p>[PLACEHOLDER — Google AdSense, herramienta de analítica (p. ej. GA4), proveedor de formulario de contacto, proveedor de newsletter si aplica.]</p>
+
+    <h2>Tus derechos</h2>
+    <p>[PLACEHOLDER — acceso, rectificación, supresión, portabilidad, limitación y oposición, y cómo ejercerlos.]</p>
+
+    <h2>Última actualización</h2>
+    <p>[PLACEHOLDER — fecha real de la versión publicada.]</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+  .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+</style>

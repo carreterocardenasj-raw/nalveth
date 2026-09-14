@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Política editorial" description="Las reglas que seguimos para producir contenido en NALVETH: qué probamos, qué no inventamos y cómo nos financiamos.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Política editorial' }]} /></div>
+  <article class="container prose page">
+    <h1>Política editorial</h1>
+    <p>Estas son las reglas que gobiernan todo lo que publicamos en NALVETH. No son aspiracionales: cada pieza pasa por ellas antes de publicarse.</p>
+
+    <h2>1. Priorizamos la prueba real</h2>
+    <p>Probamos las herramientas siempre que es razonablemente posible, con el mismo caso de negocio y el mismo protocolo para cada una, de forma que las comparaciones sean justas. Cuando una pieza se basa solo en fuentes oficiales verificadas y no en una prueba propia todavía, lo decimos de forma visible en el propio artículo — nunca damos a entender que hemos probado algo que no hemos probado.</p>
+
+    <h2>2. No inventamos datos</h2>
+    <p>No inventamos precios, características, estadísticas, comisiones de afiliado, testimonios ni resultados. Cuando un dato no está verificado, lo marcamos explícitamente como pendiente en lugar de rellenarlo con una suposición. Preferimos publicar una tabla de precios incompleta y honesta que una completa e inventada.</p>
+
+    <h2>3. Fechamos lo que cambia</h2>
+    <p>Los precios, planes y características de software cambian con frecuencia. Cada review y comparativa lleva una fecha de comprobación visible, y actualizamos el contenido cuando detectamos que ha cambiado.</p>
+
+    <h2>4. Separamos fuentes de opinión</h2>
+    <p>Distinguimos siempre entre lo que hemos comprobado de primera mano, lo que dice la documentación oficial del proveedor, y lo que citan fuentes externas (reseñas de terceros, prensa). Nunca presentamos una opinión de un tercero como si fuera nuestra conclusión verificada.</p>
+
+    <h2>5. Cómo nos financiamos</h2>
+    <p>NALVETH se financia con publicidad (Google AdSense) y con enlaces de afiliado: si compras una herramienta a través de un enlace marcado como de afiliado, podemos recibir una comisión sin coste adicional para ti. Esto nunca determina si una herramienta recibe una reseña favorable — hemos publicado, y publicaremos, valoraciones negativas de herramientas con las que tenemos acuerdo de afiliación cuando la prueba real lo justifica.</p>
+
+    <h2>6. No hacemos contenido de relleno</h2>
+    <p>No publicamos artículos solo para generar volumen, ni noticias reempaquetadas sin aportar nada, ni comparativas sin haber investigado de verdad. Cada URL de NALVETH tiene una intención de búsqueda clara y un motivo real para existir.</p>
+
+    <h2>7. Corregimos errores</h2>
+    <p>Si detectamos (o nos avisas de) un error factual, lo corregimos y lo indicamos con la fecha de la corrección. Puedes escribirnos desde <a href="/contacto/">contacto</a>.</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+</style>

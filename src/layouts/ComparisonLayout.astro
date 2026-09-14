@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getCategory } from '../data/categories';
+import { render, type CollectionEntry } from 'astro:content';
+import RelatedContent from '../components/RelatedContent.astro';
+import { getRelatedContent } from '../lib/content';
+
+export interface Props { entry: CollectionEntry<'comparisons'> }
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const category = getCategory(data.category);
+const related = await getRelatedContent({ id: entry.id, kind: 'comparison', data });
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  author: { '@type': 'Organization', name: 'NALVETH' },
+  datePublished: data.publishDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+};
+---
+<BaseLayout title={data.title} description={data.description} type="article" schema={schema}>
+  <div class="container">
+    <Breadcrumbs items={[
+      ...(category ? [{ name: category.short, href: `/${category.slug}/` }] : []),
+      { name: data.title },
+    ]} />
+  </div>
+
+  <article class="container comparison">
+    <header class="comparison-head">
+      <span class="eyebrow">Comparativa · {data.toolsCompared.join(' vs. ')}</span>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <span class="tag">Datos comprobados: {dateFmt.format(data.verifiedDate)}</span>
+    </header>
+
+    {data.winnerByContext.length > 0 && (
+      <div class="winner-box">
+        <h4>Ganador según el contexto</h4>
+        <ul>
+          {data.winnerByContext.map((w) => (
+            <li><span class="context">{w.context}</span><span class="arrow">→</span><strong>{w.winner}</strong></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <div class="container"><RelatedContent entries={related} /></div>
+</BaseLayout>
+
+<style>
+  .comparison-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .lede { color: var(--ink-soft); font-size: var(--step-1); }
+
+  .winner-box {
+    max-width: var(--content-width); margin: var(--sp-4) 0 var(--sp-6);
+    background: var(--gold-soft); border: 1px solid var(--gold); border-radius: var(--radius);
+    padding: var(--sp-4);
+  }
+  .winner-box h4 { margin-bottom: var(--sp-2); color: var(--ink); }
+  .winner-box ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5em; }
+  .winner-box li { display: flex; align-items: baseline; gap: .5em; flex-wrap: wrap; font-size: var(--step--1); }
+  .winner-box .context { color: var(--ink-soft); }
+  .winner-box .arrow { color: var(--gold); }
+
+  .comparison { padding-bottom: var(--sp-8); }
+</style>

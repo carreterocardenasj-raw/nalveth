@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Aviso legal" description="Información legal sobre el titular y las condiciones de uso de NALVETH.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Aviso legal' }]} /></div>
+  <article class="container prose page">
+    <h1>Aviso legal</h1>
+    <p class="notice">[PLACEHOLDER — esqueleto de referencia, no un documento legal válido. Debe revisarlo un profesional antes de publicar el sitio.]</p>
+
+    <h2>Datos identificativos</h2>
+    <p>[PLACEHOLDER — nombre/razón social, NIF/CIF, domicilio, correo de contacto y, si aplica, datos de inscripción registral.]</p>
+
+    <h2>Condiciones de uso</h2>
+    <p>[PLACEHOLDER — condiciones de acceso y uso del sitio.]</p>
+
+    <h2>Propiedad intelectual</h2>
+    <p>[PLACEHOLDER — titularidad de los contenidos, marca NALVETH y condiciones de reproducción.]</p>
+
+    <h2>Limitación de responsabilidad</h2>
+    <p>[PLACEHOLDER — sobre la exactitud de precios y características de terceros, que pueden cambiar sin previo aviso.]</p>
+
+    <h2>Legislación aplicable</h2>
+    <p>[PLACEHOLDER — legislación y jurisdicción aplicable.]</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+  .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+</style>

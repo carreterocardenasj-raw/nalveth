@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import Seo, { type Props as SeoProps } from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props extends SeoProps {
+  bodyClass?: string;
+}
+
+const { bodyClass, ...seoProps } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <Seo {...seoProps} />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 100;
+    background: var(--ink); color: var(--bg); padding: .7em 1.2em; border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { left: 0; }
+</style>

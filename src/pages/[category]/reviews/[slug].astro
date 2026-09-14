@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import ReviewLayout from '../../../layouts/ReviewLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('reviews', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { category: entry.data.category, slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+<ReviewLayout entry={entry} />

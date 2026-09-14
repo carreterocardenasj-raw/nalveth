@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Sobre NALVETH" description="Qué es NALVETH, cómo probamos las herramientas que recomendamos y cómo nos financiamos.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Sobre NALVETH' }]} /></div>
+  <article class="container prose page">
+    <h1>Sobre NALVETH</h1>
+    <p>NALVETH es una plataforma editorial de recursos para negocios y profesionales. Probamos herramientas de IA, automatización, marketing, ecommerce y SEO, y publicamos lo que encontramos — con capturas, precios fechados y sin inventar datos.</p>
+
+    <h2>Cómo trabajamos</h2>
+    <ul>
+      <li>Probamos las herramientas siempre que es posible, con un protocolo reproducible y el mismo caso de negocio para poder comparar de forma justa.</li>
+      <li>Cuando no hemos podido probar algo de primera mano, lo decimos explícitamente en la propia pieza.</li>
+      <li>Los precios y características llevan fecha de comprobación, porque cambian.</li>
+      <li>No publicamos comisiones de afiliado ni cifras que no podamos verificar en una fuente oficial.</li>
+    </ul>
+    <p>El detalle completo de estas reglas está en nuestra <a href="/politica-editorial/">política editorial</a>.</p>
+
+    <h2>Cómo nos financiamos</h2>
+    <p>NALVETH se financia con publicidad (Google AdSense) y con enlaces de afiliado a algunas de las herramientas que reseñamos: si compras a través de esos enlaces, podemos recibir una comisión sin coste adicional para ti. Esto nunca condiciona si una herramienta recibe una reseña favorable o no.</p>
+
+    <h2>Quiénes somos</h2>
+    <p>[PLACEHOLDER — nombre del titular/equipo editorial, breve bio y foto o logo. Sustituir antes de publicar.]</p>
+
+    <h2>Contacto</h2>
+    <p>Puedes escribirnos desde la <a href="/contacto/">página de contacto</a>.</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+</style>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getCategory } from '../data/categories';
+import { render, type CollectionEntry } from 'astro:content';
+import RelatedContent from '../components/RelatedContent.astro';
+import { getRelatedContent } from '../lib/content';
+
+export interface Props { entry: CollectionEntry<'guides'> }
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const category = getCategory(data.category);
+const related = await getRelatedContent({ id: entry.id, kind: 'guide', data });
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const intentLabel = { informacional: 'Guía', tutorial: 'Tutorial', 'caso-de-uso': 'Caso de uso' }[data.intent];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': data.intent === 'tutorial' ? 'HowTo' : 'Article',
+  headline: data.title,
+  author: { '@type': 'Organization', name: 'NALVETH' },
+  datePublished: data.publishDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+};
+---
+<BaseLayout title={data.title} description={data.description} type="article" schema={schema}>
+  <div class="container">
+    <Breadcrumbs items={[
+      ...(category ? [{ name: category.short, href: `/${category.slug}/` }] : []),
+      { name: data.title },
+    ]} />
+  </div>
+
+  <article class="container guide">
+    <header class="guide-head">
+      <span class="eyebrow">{intentLabel}{category ? ` · ${category.short}` : ''}</span>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <p class="dates">
+        Publicado {dateFmt.format(data.publishDate)}
+        {data.updatedDate && ` · Actualizado ${dateFmt.format(data.updatedDate)}`}
+        {' · '}{data.author}
+      </p>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <div class="container"><RelatedContent entries={related} /></div>
+</BaseLayout>
+
+<style>
+  .guide-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .lede { color: var(--ink-soft); font-size: var(--step-1); }
+  .dates { font-size: .8rem; color: var(--ink-faint); font-family: var(--font-mono); }
+  .guide { padding-bottom: var(--sp-8); }
+</style>

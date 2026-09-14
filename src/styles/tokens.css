@@ -1,0 +1,84 @@
+/* NALVETH — design tokens
+   Editorial premium + herramientas. Sin cyberpunk, sin degradados excesivos, sin estética "SaaS genérico". */
+
+:root {
+  /* --- Color: light (default) --- */
+  --bg: #F5F4EF;
+  --surface: #FFFFFF;
+  --surface-alt: #ECE9E1;
+  --ink: #1B1F1D;
+  --ink-soft: #565D57;
+  --ink-faint: #8B9089;
+  --line: #DAD6CA;
+  --line-strong: #C3BEAE;
+
+  --accent: #1F5C4A;         /* verde bosque profundo — crecimiento/confianza, no genérico */
+  --accent-strong: #123D31;  /* para texto sobre superficie clara */
+  --accent-soft: #E3ECE7;    /* fondo tenue para badges/hover */
+  --gold: #B8863A;           /* acento secundario — destacados editoriales, precios, CTA */
+  --gold-soft: #F3E7D3;
+
+  --good: #2E7D46;
+  --warn: #A66A0A;
+  --warn-soft: #FBEED9;
+  --danger: #A23B27;
+  --danger-soft: #F7E5DF;
+
+  --shadow-sm: 0 1px 2px rgba(20, 24, 20, .06);
+  --shadow-md: 0 6px 20px -8px rgba(20, 24, 20, .18);
+
+  /* --- Type --- */
+  --font-display: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.45vw, 1.4rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.8rem);
+  --step-3: clamp(1.9rem, 1.6rem + 1.4vw, 2.6rem);
+  --step-4: clamp(2.4rem, 1.9rem + 2.4vw, 3.6rem);
+
+  /* --- Space (8px base) --- */
+  --sp-1: 0.5rem;
+  --sp-2: 0.75rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2rem;
+  --sp-6: 3rem;
+  --sp-7: 4.5rem;
+  --sp-8: 7rem;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --content-width: 74ch;
+  --page-width: 1180px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171A;
+    --surface: #1B1F1D;
+    --surface-alt: #212520;
+    --ink: #EDEBE4;
+    --ink-soft: #ABB0A9;
+    --ink-faint: #767C75;
+    --line: #2C312E;
+    --line-strong: #3A403C;
+
+    --accent: #4FAE8B;
+    --accent-strong: #8AD6BB;
+    --accent-soft: #1B2E27;
+    --gold: #D9A855;
+    --gold-soft: #2E2618;
+
+    --good: #4CAF6E;
+    --warn: #D69A3E;
+    --warn-soft: #2E2617;
+    --danger: #E0755F;
+    --danger-soft: #33211C;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-md: 0 10px 28px -10px rgba(0, 0, 0, .55);
+  }
+}

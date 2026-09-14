@@ -1,0 +1,21 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import type { AnyEntry } from '../lib/content';
+
+export interface Props { entries: AnyEntry[] }
+const { entries } = Astro.props;
+---
+{entries.length > 0 && (
+  <section class="related">
+    <h2>Sigue leyendo</h2>
+    <div class="grid">
+      {entries.map((e) => <ArticleCard entry={e} showCategory />)}
+    </div>
+  </section>
+)}
+
+<style>
+  .related { max-width: var(--page-width); margin: 0 auto; padding: var(--sp-6) 0 var(--sp-8); border-top: 1px solid var(--line); }
+  .related h2 { font-size: var(--step-2); margin-bottom: var(--sp-4); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--sp-4); }
+</style>

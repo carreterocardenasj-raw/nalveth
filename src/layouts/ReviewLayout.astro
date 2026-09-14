@@ -1,0 +1,155 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getCategory } from '../data/categories';
+import { render, type CollectionEntry } from 'astro:content';
+import RelatedContent from '../components/RelatedContent.astro';
+import { getRelatedContent, findReviewByToolName, entryHref } from '../lib/content';
+
+export interface Props { entry: CollectionEntry<'reviews'> }
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const category = getCategory(data.category);
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const related = await getRelatedContent({ id: entry.id, kind: 'review', data });
+const alternativeLinks = await Promise.all(
+  data.alternatives.map(async (name) => ({ name, entry: await findReviewByToolName(name) })),
+);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: { '@type': 'SoftwareApplication', name: data.toolName, url: data.toolUrl },
+  author: { '@type': 'Organization', name: 'NALVETH' },
+  datePublished: data.publishDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+};
+---
+<BaseLayout title={data.title} description={data.description} type="article" schema={schema}>
+  <div class="container">
+    <Breadcrumbs items={[
+      ...(category ? [{ name: category.short, href: `/${category.slug}/` }] : []),
+      { name: data.title },
+    ]} />
+  </div>
+
+  <article class="container review">
+    <header class="review-head">
+      <span class="eyebrow">Review · {data.toolName}</span>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <div class="badges">
+        <span class="tag">Precios comprobados: {dateFmt.format(data.verifiedDate)}</span>
+        {data.testedFirsthand
+          ? <span class="tag tag--gold">Probado de primera mano</span>
+          : <span class="tag">Basado en fuentes oficiales verificadas</span>}
+      </div>
+      {data.sourceNote && <p class="source-note">{data.sourceNote}</p>}
+    </header>
+
+    <div class="layout-grid">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <aside class="sidebar">
+        {data.pricing.length > 0 && (
+          <div class="card">
+            <h4>Precios</h4>
+            <ul class="pricing">
+              {data.pricing.map((p) => (
+                <li>
+                  <span class="plan">{p.plan}</span>
+                  <span class="price num">{p.price}</span>
+                  {p.note && <span class="note">{p.note}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {(data.pros.length > 0 || data.cons.length > 0) && (
+          <div class="card">
+            <h4>A favor / en contra</h4>
+            <div class="pc">
+              <div>
+                <p class="pc-label good">A favor</p>
+                <ul>{data.pros.map((p) => <li>{p}</li>)}</ul>
+              </div>
+              <div>
+                <p class="pc-label bad">En contra</p>
+                <ul>{data.cons.map((c) => <li>{c}</li>)}</ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {data.bestFor && (
+          <div class="card">
+            <h4>Para quién sirve</h4>
+            <p>{data.bestFor}</p>
+          </div>
+        )}
+
+        {data.alternatives.length > 0 && (
+          <div class="card">
+            <h4>Alternativas</h4>
+            <p class="alt-list">
+              {alternativeLinks.map((a, i) => (
+                <>
+                  {a.entry ? <a href={entryHref(a.entry)}>{a.name}</a> : <span>{a.name}</span>}
+                  {i < alternativeLinks.length - 1 ? ', ' : ''}
+                </>
+              ))}
+            </p>
+          </div>
+        )}
+
+        {data.affiliateUrl && (
+          <div class="card cta-card">
+            <a class="btn btn--primary" href={data.affiliateUrl} rel="sponsored noopener" target="_blank">
+              Visitar {data.toolName}
+            </a>
+            <p class="disclosure">Enlace de afiliado{data.affiliateVerified ? '' : ' (comisión pendiente de confirmar)'}.</p>
+          </div>
+        )}
+      </aside>
+    </div>
+  </article>
+
+  <div class="container"><RelatedContent entries={related} /></div>
+</BaseLayout>
+
+<style>
+  .review-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .lede { color: var(--ink-soft); font-size: var(--step-1); }
+  .badges { display: flex; flex-wrap: wrap; gap: .5em; margin-top: var(--sp-2); }
+  .source-note { font-size: .82rem; color: var(--ink-faint); font-style: italic; }
+
+  .layout-grid { display: grid; grid-template-columns: 1fr 320px; gap: var(--sp-6); padding-block: var(--sp-5) var(--sp-8); align-items: start; }
+  .sidebar { display: flex; flex-direction: column; gap: var(--sp-3); position: sticky; top: 90px; }
+  .sidebar h4 { margin-bottom: var(--sp-2); }
+
+  .pricing { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6em; }
+  .pricing li { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding-top: .5em; }
+  .pricing li:first-child { border-top: none; padding-top: 0; }
+  .plan { font-weight: 600; font-size: .85rem; }
+  .price { color: var(--gold); font-weight: 600; }
+  .note { font-size: .76rem; color: var(--ink-faint); }
+
+  .pc { display: grid; gap: var(--sp-3); }
+  .pc-label { font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .3em; }
+  .pc-label.good { color: var(--good); }
+  .pc-label.bad { color: var(--danger); }
+  .pc ul { margin: 0; padding-left: 1.1em; font-size: .88rem; }
+
+  .cta-card { text-align: center; background: var(--accent-soft); border-color: var(--accent); }
+  .cta-card .btn { width: 100%; justify-content: center; }
+  .disclosure { font-size: .72rem; color: var(--ink-faint); margin: .6em 0 0; }
+
+  @media (max-width: 900px) {
+    .layout-grid { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+  }
+</style>

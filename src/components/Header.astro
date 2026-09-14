@@ -1,0 +1,86 @@
+---
+import { getVisibleCategories } from '../lib/content';
+
+const categories = await getVisibleCategories();
+const current = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="container bar">
+    <a href="/" class="brand">NALVETH</a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        {categories.map((c) => (
+          <li>
+            <a href={`/${c.slug}/`} aria-current={current.startsWith(`/${c.slug}`) ? 'page' : undefined}>
+              {c.short}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">
+      <span class="sr-only">Abrir menú</span>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobileNav" class="mobile-nav" aria-label="Principal (móvil)" hidden>
+    <ul>
+      {categories.map((c) => (
+        <li><a href={`/${c.slug}/`}>{c.short}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); padding-block: var(--sp-3); }
+  .brand {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.4rem;
+    letter-spacing: .01em; color: var(--ink); text-decoration: none;
+  }
+  .nav ul { list-style: none; display: flex; gap: var(--sp-4); margin: 0; padding: 0; }
+  .nav a {
+    color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: var(--step--1);
+    padding: .4em 0; border-bottom: 2px solid transparent;
+  }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current='page'] { color: var(--accent-strong); border-color: var(--gold); }
+
+  .nav-toggle {
+    display: none; background: none; border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+    padding: .4em; color: var(--ink); cursor: pointer;
+  }
+  .mobile-nav { display: none; }
+
+  @media (max-width: 780px) {
+    .nav { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .mobile-nav.open { display: block; border-top: 1px solid var(--line); }
+    .mobile-nav ul { list-style: none; margin: 0; padding: var(--sp-2) 0; }
+    .mobile-nav a {
+      display: block; padding: var(--sp-2) var(--sp-4); color: var(--ink); text-decoration: none; font-weight: 600;
+    }
+    .mobile-nav a:hover { background: var(--surface-alt); }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  toggle?.addEventListener('click', () => {
+    const open = mobileNav?.classList.toggle('open');
+    mobileNav?.toggleAttribute('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(!!open));
+  });
+</script>

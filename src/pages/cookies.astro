@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Política de cookies" description="Qué cookies usa NALVETH y para qué.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Cookies' }]} /></div>
+  <article class="container prose page">
+    <h1>Política de cookies</h1>
+    <p class="notice">[PLACEHOLDER — esqueleto de referencia. Antes de publicar, sustituir por el texto real generado junto con el banner de consentimiento (CMP) elegido, compatible con Google Consent Mode v2.]</p>
+
+    <h2>Qué son las cookies</h2>
+    <p>[PLACEHOLDER — explicación estándar.]</p>
+
+    <h2>Cookies que usamos</h2>
+    <table>
+      <thead><tr><th>Tipo</th><th>Finalidad</th><th>Proveedor</th></tr></thead>
+      <tbody>
+        <tr><td>Necesarias</td><td>Funcionamiento básico del sitio</td><td>[PLACEHOLDER]</td></tr>
+        <tr><td>Analítica</td><td>Medir tráfico y uso del sitio</td><td>[PLACEHOLDER — p. ej. Google Analytics 4]</td></tr>
+        <tr><td>Publicidad</td><td>Mostrar y medir anuncios</td><td>Google AdSense</td></tr>
+        <tr><td>Afiliación</td><td>Atribuir referidos a programas de afiliados</td><td>[PLACEHOLDER — según programas activos]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Cómo gestionar tus preferencias</h2>
+    <p>[PLACEHOLDER — instrucciones del banner de consentimiento (CMP) una vez integrado.]</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+  .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+</style>

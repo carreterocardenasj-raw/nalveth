@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Contacto" description="Cómo ponerte en contacto con el equipo de NALVETH.">
+  <div class="container"><Breadcrumbs items={[{ name: 'Contacto' }]} /></div>
+  <article class="container prose page">
+    <h1>Contacto</h1>
+    <p>¿Tienes una corrección, una sugerencia de herramienta a probar, o una propuesta de colaboración? Escríbenos.</p>
+
+    <h2>Correo</h2>
+    <p>[PLACEHOLDER — dirección de correo real, p. ej. hola@nalveth.com. Sustituir antes de publicar.]</p>
+
+    <h2>Dirección postal (si aplica)</h2>
+    <p>[PLACEHOLDER — dirección física si se declara como empresa/autónomo. Solo necesaria si la normativa aplicable lo exige.]</p>
+
+    <h2>Formulario</h2>
+    <p>[PLACEHOLDER — aquí se integrará un formulario de contacto cuando el sitio esté en producción, en vez de exponer el correo directamente.]</p>
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-block: var(--sp-5) var(--sp-8); }
+</style>
