@@ -1,0 +1,8 @@
+---
+import { getEntry } from 'astro:content';
+import VerifactuLayout from '../layouts/VerifactuLayout.astro';
+
+const entry = await getEntry('verifactu', 'autonomos');
+if (!entry) throw new Error('Falta src/content/verifactu/autonomos.md');
+---
+<VerifactuLayout entry={entry} href="/verifactu-autonomos/" />

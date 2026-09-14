@@ -1,0 +1,35 @@
+---
+import { getEntry } from 'astro:content';
+import VerifactuLayout from '../../layouts/VerifactuLayout.astro';
+
+const entry = await getEntry('verifactu', 'pilar');
+if (!entry) throw new Error('Falta src/content/verifactu/pilar.md');
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿VERI*FACTU es obligatorio ya, en 2026?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Según la nota informativa de la AEAT (Real Decreto-ley 15/2025), las entidades sujetas al Impuesto sobre Sociedades deben tener adaptados sus sistemas antes del 1 de enero de 2027, y el resto de obligados tributarios antes del 1 de julio de 2027. Durante 2026 no hay obligación legal de haber adaptado el sistema, aunque sí conviene empezar a prepararse.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿VERI*FACTU es un programa de facturación?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No exactamente. VERI*FACTU es el nombre coloquial del Reglamento (RD 1007/2023) que regula los requisitos de los sistemas informáticos de facturación (SIF), y también el nombre de una de las dos modalidades de cumplimiento (la otra es la modalidad NO VERI*FACTU). No es un producto ni una marca de software.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Quién está excluido de VERI*FACTU?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Según la AEAT, quedan fuera los empresarios adscritos al Suministro Inmediato de Información (SII), las operaciones que la normativa no obliga a facturar, y los residentes en País Vasco y Navarra (territorios forales con normativa propia, como TicketBAI).' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿La aplicación gratuita de la AEAT sirve para cualquier negocio?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Según la propia AEAT, esa aplicación solo admite facturas completas (con identificación completa del cliente) y no permite facturas simplificadas (tickets) ni facturas con varios destinatarios — está pensada para empresarios y profesionales con un número reducido de facturas al año.' },
+    },
+  ],
+};
+---
+<VerifactuLayout entry={entry} href="/verifactu/" schema={faqSchema} />

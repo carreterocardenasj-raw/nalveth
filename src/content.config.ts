@@ -85,4 +85,23 @@ const comparisons = defineCollection({
   }),
 });
 
-export const collections = { guides, reviews, comparisons };
+// Clúster VERI*FACTU: mini-cluster de 5 páginas con URLs planas fuera del esquema de
+// categorías (/verifactu/, /verifactu-autonomos/...), por diseño explícito (estrategia de
+// páginas pilar). No usa las rutas dinámicas [category]/... — cada página tiene su propio
+// archivo en src/pages/. Ver docs/VERIFACTU-CLUSTER.md.
+const verifactu = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/verifactu' }),
+  schema: () => z.object({
+    title: z.string(),
+    description: z.string().max(160),
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    updatedLabel: z.string(), // texto visible tipo "Actualizado: septiembre de 2026"
+    author: z.string().default('Equipo NALVETH'),
+    draft: z.boolean().default(true),
+    pageType: z.enum(['pilar', 'decision', 'comercial', 'gratis', 'comparativa-normativa']),
+    keyword: z.string(), // keyword principal SEO de la página
+  }),
+});
+
+export const collections = { guides, reviews, comparisons, verifactu };

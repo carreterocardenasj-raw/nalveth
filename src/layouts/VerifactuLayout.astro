@@ -1,0 +1,64 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import VerifactuClusterNav from '../components/VerifactuClusterNav.astro';
+import { render, type CollectionEntry } from 'astro:content';
+
+export interface Props {
+  entry: CollectionEntry<'verifactu'>;
+  href: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { entry, href, schema } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const typeLabel: Record<string, string> = {
+  pilar: 'Pilar del clúster',
+  decision: 'Guía de decisión',
+  comercial: 'Comparativa de software',
+  gratis: 'Guía de decisión',
+  'comparativa-normativa': 'Comparativa normativa',
+};
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  author: { '@type': 'Organization', name: 'NALVETH' },
+  datePublished: data.publishDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+};
+const schemaList = [baseSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
+---
+<BaseLayout title={data.title} description={data.description} type="article" schema={schemaList}>
+  <div class="container">
+    <Breadcrumbs items={[
+      { name: 'VERI*FACTU', href: '/verifactu/' },
+      { name: data.title },
+    ]} />
+  </div>
+
+  <article class="container verifactu-page">
+    <header class="page-head">
+      <span class="eyebrow">{typeLabel[data.pageType]}</span>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.description}</p>
+      <p class="dates">{data.updatedLabel} · {data.author}</p>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <div class="container"><VerifactuClusterNav current={href} /></div>
+</BaseLayout>
+
+<style>
+  .page-head { max-width: var(--content-width); padding-block: var(--sp-4) var(--sp-2); }
+  .lede { color: var(--ink-soft); font-size: var(--step-1); }
+  .dates { font-size: .8rem; color: var(--ink-faint); font-family: var(--font-mono); }
+  .verifactu-page { padding-bottom: var(--sp-8); }
+</style>
