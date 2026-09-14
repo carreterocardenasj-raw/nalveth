@@ -18,6 +18,9 @@ Log cronológico de decisiones ya tomadas. No se reabren sin una instrucción ex
 | 2026-09-14 | Gestor de contenido | Astro Content Collections (`src/content.config.ts`), 3 colecciones: `guides`, `reviews`, `comparisons`. Sin CMS externo por ahora. |
 | 2026-09-14 | Sistema de diseño | Editorial premium: tipografía Newsreader (display) + Public Sans (cuerpo) + IBM Plex Mono (datos/precios). Paleta verde bosque + oro envejecido sobre papel cálido, sin cyberpunk/gradientes/estética "SaaS genérica". |
 | 2026-09-14 | Gestión de contexto del proyecto | A partir de esta fecha, `docs/PROJECT-CONTEXT.md` y `docs/RESEARCH-WHATSAPP-IA.md` son la memoria operativa principal — no se vuelve a cargar la investigación histórica completa salvo que se necesite un detalle no recogido ahí. |
+| 2026-09-14 | Identidad de commits del proyecto | Git configurado localmente (solo este repo, no global) con `user.name = NALVETH`, `user.email = carreterocardenasj@gmail.com`, por instrucción explícita del usuario. |
+| 2026-09-14 | 10 clústeres prioritarios de contenido | WhatsApp+IA (activo) + firma electrónica/gestión documental, fotos de producto IA, facturación/Verifactu, descripciones de producto IA, herramientas SEO+GEO, automatización no-code, redes sociales IA, anuncios IA, GEO/AEO práctico. Detalle y razonamiento en `docs/SEO-CONTENT-MASTERPLAN.md`. |
+| 2026-09-14 | Calendario de publicación 90 días | 24 de 30 piezas planificadas dentro del trimestre a ritmo sostenible (~2-3/semana con prueba real); 6 en cola para el trimestre siguiente. Ver `docs/CONTENT-ROADMAP-90-DAYS.md`. Ninguna pieza de este calendario se ha escrito todavía. |
 
 ## Decisiones pendientes (no resueltas, no bloquean el avance)
 - Datos legales reales del titular (NIF, dirección, correo) — placeholders en `/privacidad`, `/aviso-legal`, `/contacto` hasta que se proporcionen.
