@@ -71,7 +71,7 @@ Ninguna herramienta de esta lista ha sido probada de primera mano por NALVETH to
 
 **Qué es realmente:** CRM/Plataforma de ventas y marketing — **no es una herramienta de WhatsApp**. WhatsApp se conecta mediante integraciones del marketplace de HubSpot, no es un canal nativo de la plataforma. No lo presentamos como opción "WhatsApp-first" porque no lo es.
 
-**Precio** (verificado el 15/09/2026 en hubspot.com/pricing, Marketing Hub): Free 0$, Starter desde 7$/mes/asiento (precio promocional; base 20$/mes/asiento), Professional desde 800$/mes, Enterprise desde 3.600$/mes.
+**Precio** (verificado el 15/09/2026 en hubspot.com/pricing — **Sales Hub**, el producto relevante para equipos comerciales, no Marketing Hub): Free 0$, Starter desde 7$/mes/asiento (precio promocional; base 20$/mes/asiento), Professional desde 90$/mes/asiento (precio promocional; base 100$/mes/asiento), Enterprise desde 150$/mes/asiento. HubSpot también vende Marketing Hub y Service Hub por separado, con su propio precio — no mezclamos características ni cifras de esos productos con las de Sales Hub.
 
 **Para quién:** equipos comerciales que ya usan o van a usar HubSpot como CRM central, y quieren que WhatsApp se sume a ese sistema — no negocios que solo buscan automatizar WhatsApp.
 
@@ -105,7 +105,7 @@ Ninguna herramienta de esta lista ha sido probada de primera mano por NALVETH to
 | Wati | API/Plataforma | 59€/mes | Especialista | ✅ 15-20% 12m |
 | Respond.io | Plataforma/Inbox | 79$/mes | Un canal más | ✅ Referidos: 100$ fijos |
 | Landbot | App/Workflow | Gratis (sin WA propio) / 32€/mes | Multicanal con IA | ✅ 20% hasta 2 años |
-| HubSpot | CRM/Plataforma | 7$/mes/asiento (promo) | Vía integración | ✅ 30% 12m |
+| HubSpot (Sales Hub) | CRM/Plataforma | 7$/mes/asiento (promo) | Vía integración | ✅ 30% 12m |
 | n8n | Workflow | 20€/mes | Vía integración | ✅ 30% 12m |
 | Tidio | App/Plataforma | 24,17€/mes | Canal adicional | ✅ hasta 30% |
 
@@ -124,7 +124,7 @@ Todas las herramientas de esta lista tienen un programa de afiliados confirmado 
 
 ## Los fabricantes
 
-<a href="https://manychat.com/pricing" target="_blank" rel="noopener">Manychat</a> · <a href="https://www.wati.io" target="_blank" rel="noopener">Wati</a> · <a href="https://respond.io/pricing" target="_blank" rel="noopener">Respond.io</a> · <a href="https://landbot.io" target="_blank" rel="noopener">Landbot</a> · <a href="https://www.hubspot.com/pricing" target="_blank" rel="noopener">HubSpot</a> · <a href="https://n8n.io/pricing/" target="_blank" rel="noopener">n8n</a> · <a href="https://www.tidio.com/pricing/" target="_blank" rel="noopener">Tidio</a>
+<a href="https://manychat.com/pricing" target="_blank" rel="noopener">Manychat</a> · <a href="https://www.wati.io" target="_blank" rel="noopener">Wati</a> · <a href="https://respond.io/pricing" target="_blank" rel="noopener">Respond.io</a> · <a href="https://landbot.io" target="_blank" rel="noopener">Landbot</a> · <a href="https://www.hubspot.com/pricing/sales" target="_blank" rel="noopener">HubSpot</a> · <a href="https://n8n.io/pricing/" target="_blank" rel="noopener">n8n</a> · <a href="https://www.tidio.com/pricing/" target="_blank" rel="noopener">Tidio</a>
 
 ## Siguiente paso
 

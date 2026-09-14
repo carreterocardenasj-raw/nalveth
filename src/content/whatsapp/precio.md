@@ -24,7 +24,18 @@ Este es el componente más malentendido, así que vamos directos a la fuente ofi
 - Existe una **ventana gratuita de 72 horas** desde ciertos puntos de entrada (anuncios "click to WhatsApp", por ejemplo) en la que todos los mensajes, incluidas plantillas, son gratuitos.
 - Desde el 1 de julio de 2025, hay **tarifas reducidas por volumen** para plantillas de utilidad y autenticación.
 
-**Cambio ya confirmado, vigente desde el 1 de octubre de 2026** (todavía no vigente en la fecha de esta redacción):
+**Meta Business Agent: un coste distinto, que ya está vigente hoy — no confundir con lo anterior.**
+
+Meta Business Agent es un producto propio de Meta (no una herramienta de terceros): su propio agente de IA integrado en WhatsApp, Messenger e Instagram, relacionado con la automatización/IA nativa de la plataforma. Según la documentación oficial de Meta for Developers, revisada el 15 de septiembre de 2026, Meta Business Agent tiene un **modelo de cobro específico por token**, distinto de las tarifas normales de plantillas (Marketing/Utilidad/Autenticación) explicadas arriba: el cargo combina en uno solo el procesamiento del agente de IA (consumo de tokens) y la entrega del mensaje.
+
+Este modelo de cobro por token **ya está vigente desde el 1 de agosto de 2026** — no es un cambio futuro, es un coste que ya se aplica hoy si usas Meta Business Agent. Es una cuestión **distinta** del cambio del 1 de octubre de 2026 (que afecta a los mensajes de servicio y utilidad de las herramientas normales de automatización, no a Meta Business Agent):
+
+- **1 de agosto de 2026 (ya vigente)**: Meta empieza a cobrar por token los mensajes de Meta Business Agent.
+- **1 de octubre de 2026 (todavía no vigente)**: Meta empieza a cobrar los mensajes de servicio y las plantillas de utilidad dentro de la ventana de 24 horas (ver más abajo) — esto no tiene relación con Meta Business Agent, afecta a los mensajes normales de cualquier herramienta.
+
+**Cifra exacta del cobro por token**: circula en varias fuentes de terceros la cifra de 2 USD por millón de tokens, pero no la hemos podido confirmar directamente en el texto navegable de la documentación oficial de Meta (existe un PDF vinculado, "Guía de precios de Meta Business Agent", que no hemos abierto y verificado). Hasta confirmarlo directamente: `[NO CONFIRMADO]`. No la presentamos como cifra oficial.
+
+**Cambio ya confirmado, vigente desde el 1 de octubre de 2026** (afecta a los mensajes normales de WhatsApp Business Platform — no a Meta Business Agent, que ya se explicó arriba; todavía no vigente en la fecha de esta redacción):
 
 - Los **mensajes de servicio** (los que hoy son gratis dentro de la ventana de 24h) empiezan a cobrarse, a la misma tarifa que utilidad/autenticación según el mercado — pero cada número de teléfono de empresa recibe **1.000 mensajes de servicio gratis al mes** (nivel nuevo, no acumulable de un mes a otro).
 - Las plantillas de **utilidad** enviadas dentro de la ventana de 24 horas **dejan de ser gratuitas** (termina el beneficio vigente desde julio de 2025).
@@ -73,6 +84,8 @@ Esto puede hacerlo el propio negocio en herramientas pensadas para no programar 
 | Componente | Estado |
 |---|---|
 | Mecánica de precios de Meta (cuándo se cobra, qué categorías, cambios de octubre de 2026) | ✅ Verificado en fuente oficial, 15/09/2026 |
+| Existencia y mecánica de cobro por token de Meta Business Agent (vigente desde 1/08/2026) | ✅ Verificado en fuente oficial, 15/09/2026 |
+| Cifra exacta del cobro por token de Meta Business Agent (2 USD/millón de tokens citado por terceros) | `[NO CONFIRMADO]` — no localizado en el texto navegable de la documentación oficial |
 | Cifras exactas en EUR por categoría y país | `[NO DISPONIBLE]` — requiere consultar tu propia hoja de tarifas |
 | Precio de las 7 herramientas comparadas | ✅ Verificado directamente en cada web oficial, 15/09/2026 (ver [comparativa](/mejor-herramienta-whatsapp-automatizacion/)) |
 | Coste de BSP independiente del coste de la herramienta | `[NO DISPONIBLE]` — varía por proveedor |
@@ -85,4 +98,4 @@ Esto puede hacerlo el propio negocio en herramientas pensadas para no programar 
 - ¿Todavía no sabes si necesitas la API? → **[WhatsApp Business vs. API](/whatsapp-business-vs-api/)**.
 - ¿Quieres la visión completa del clúster? → **[WhatsApp para empresas](/whatsapp/)**.
 
-*Mecánica de precios de Meta verificada directamente en [developers.facebook.com/documentation/business-messaging/whatsapp/pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing) el 15 de septiembre de 2026 (página con fecha de actualización del 10/09/2026). Esta página se revisará en cuanto entre en vigor el cambio del 1 de octubre de 2026.*
+*Mecánica de precios de Meta verificada directamente en [developers.facebook.com/documentation/business-messaging/whatsapp/pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing) el 15 de septiembre de 2026 (página con fecha de actualización del 10/09/2026). Mecánica de Meta Business Agent verificada en la página oficial "Próximas actualizaciones de precios para Meta Business Agent, servicios y mensajes de utilidad" (actualizada 25/08/2026), también el 15/09/2026. Esta página se revisará en cuanto entre en vigor el cambio del 1 de octubre de 2026, y en cuanto se confirme la cifra exacta del cobro por token de Meta Business Agent.*

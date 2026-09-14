@@ -39,7 +39,7 @@ Cuando quieres que las respuestas suenen naturales y puedan cubrir preguntas for
 
 ### Cuándo tiene sentido realmente un agente
 
-Un agente, para merecer el nombre, debería poder: decidir entre varias acciones (no solo responder texto), usar herramientas externas (consultar un pedido, actualizar el CRM, agendar una cita), mantener cierto contexto de la conversación, y actuar dentro de límites y con supervisión. Si una herramienta llama "agente" a algo que solo responde con texto generado y no puede hacer nada más, probablemente sea IA generativa dentro de un chatbot, no un agente.
+En la práctica, tiene sentido cuando necesitas que el sistema decida entre varias acciones y actúe por su cuenta —no solo que conteste—: consultar un pedido, actualizar el CRM, agendar una cita, dentro de límites claros y con supervisión. Si una herramienta llama "agente" a algo que solo responde con texto generado y no puede hacer nada más, probablemente no lo sea. La explicación completa de qué es (y qué no es) un agente de IA, con el criterio a fondo para distinguirlo de un chatbot, está en **[Qué es un agente de IA para WhatsApp](/ia-para-negocios/guias/que-es-agente-ia-whatsapp/)** — aquí nos quedamos con el criterio práctico de cuándo lo necesitas de verdad.
 
 **Regla que aplicamos en NALVETH**: antes de recomendar cualquier herramienta como "agente", nos preguntamos si es realmente un agente o principalmente una automatización, un chatbot o un workflow con una capa de IA encima. Lo señalamos explícitamente en cada ficha de **[herramientas](/mejor-herramienta-whatsapp-automatizacion/)** — no llamamos "agente" a cualquier cosa solo porque el fabricante lo haga.
 

@@ -22,7 +22,7 @@ Si tu negocio recibe demasiados mensajes de WhatsApp para responderlos todos a m
 
 ## WhatsApp Business App, Business Platform (API) y BSP: qué es cada cosa
 
-- **WhatsApp Business App**: la aplicación gratuita de Meta, pensada para un negocio pequeño con una persona (o pocas) respondiendo desde el móvil. Permite catálogo, respuestas rápidas, mensajes de ausencia/bienvenida y etiquetas — pero un solo número por dispositivo y automatización muy limitada.
+- **WhatsApp Business App**: la aplicación gratuita de Meta, pensada para un negocio pequeño con una persona (o pocas) respondiendo desde el móvil. Permite catálogo, respuestas rápidas, mensajes de ausencia/bienvenida y etiquetas — pero un único número de teléfono por cuenta, anclado a un teléfono principal (con hasta 4 dispositivos vinculados adicionales, según el Centro de Ayuda de WhatsApp), no varias personas trabajando de forma independiente con permisos propios. Y automatización muy limitada.
 - **WhatsApp Business Platform (también llamada API o Cloud API)**: la infraestructura de Meta pensada para que un software (no una persona con el móvil) envíe y reciba mensajes a escala, con varios usuarios simultáneos y automatización real. No se "descarga" como una app — se conecta a través de una herramienta o un BSP.
 - **BSP (Business Solution Provider)**: una empresa autorizada oficialmente por Meta para dar acceso técnico a la Business Platform y facturar el uso de mensajes en tu nombre. La inmensa mayoría de negocios que usan la API no hablan directamente con Meta — lo hacen a través de un BSP (que puede ser la propia herramienta que uses, como Wati o Respond.io, o un proveedor detrás de ella).
 
@@ -30,12 +30,7 @@ Resolvemos con detalle cuál de las dos vías (app o Platform/API) te conviene, 
 
 ## Automatización, chatbot, IA generativa y agente: no son lo mismo
 
-Es el error de vocabulario más habitual del sector, y por eso le dedicamos una página entera (**[Cómo automatizar WhatsApp](/automatizar-whatsapp/)**), pero el resumen es este:
-
-- **Automatización**: pasos predefinidos que se ejecutan solos (recibir un mensaje → crear un contacto → notificar al equipo). Predecible y fácil de auditar.
-- **Chatbot**: sigue un árbol de decisión con opciones y palabras clave. Si el mensaje no encaja, se atasca.
-- **IA generativa**: interpreta lenguaje libre, no solo botones — puede añadirse dentro de un chatbot o de una automatización sin que eso la convierta en un "agente" con autonomía real.
-- **Agente**: además de interpretar lenguaje libre, decide entre varias acciones, usa herramientas, y puede actuar con cierto margen sin que cada paso esté predefinido. No toda automatización con IA es un agente, aunque el marketing de muchas herramientas use esa palabra para cualquier cosa.
+Es el error de vocabulario más habitual del sector: automatización, chatbot, IA generativa y agente no son sinónimos, aunque el marketing de muchas herramientas los mezcle. No lo desarrollamos aquí en detalle porque ya existen dos piezas dedicadas a ello: **[qué es exactamente un agente de IA para WhatsApp y en qué se diferencia de un chatbot](/ia-para-negocios/guias/que-es-agente-ia-whatsapp/)** (el concepto, a fondo), y **[Cómo automatizar WhatsApp](/automatizar-whatsapp/)** (qué puedes automatizar en la práctica y con qué nivel de tecnología corresponde cada caso).
 
 ## Qué puedes automatizar (casos de uso reales)
 
