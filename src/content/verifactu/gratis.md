@@ -35,7 +35,7 @@ La respuesta corta: porque "cumplir VERI\*FACTU" y "gestionar un negocio" son co
 
 | | Aplicación gratuita AEAT | Software privado (rango general) |
 |---|---|---|
-| Coste | 0€ | Desde 0€ (algún plan gratuito real) hasta 15-30€/mes en planes de entrada |
+| Coste | 0€ | Desde 0€ (algún plan gratuito real) hasta aproximadamente 6-15€/mes en planes de entrada, según proveedor y promoción vigente |
 | Tipo de negocio recomendado | Autónomo con pocas facturas/año, clientes con datos completos | Cualquier negocio con volumen medio, ventas a consumidor final, o necesidad de automatización |
 | Facturas simplificadas (tickets) | **No** | Sí, en la mayoría de herramientas de pago investigadas |
 | Clientes | Sin gestión de fichas de cliente como tal | Ficha de cliente, historial, a veces portal de cliente |

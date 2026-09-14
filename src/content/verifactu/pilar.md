@@ -101,7 +101,7 @@ El **Suministro Inmediato de Información (SII)** es un sistema anterior y disti
 
 ## Cuánto cuesta esto
 
-La opción sin coste es la aplicación gratuita de la AEAT, con las limitaciones ya explicadas. Entre el software privado que hemos verificado directamente en septiembre de 2026, el rango de entrada se mueve aproximadamente entre 0€ (un plan gratuito real de un fabricante privado) y 30€/mes para autónomos y pequeños negocios, con planes superiores para empresas con más volumen o necesidades de contabilidad completa. El desglose herramienta por herramienta, con precios y fecha de verificación, está en **[mejores programas compatibles con VERI\*FACTU](/software-verifactu/)**.
+La opción sin coste es la aplicación gratuita de la AEAT, con las limitaciones ya explicadas — y hay al menos una alternativa privada con plan gratuito permanente (ver **[VERI\*FACTU gratis](/verifactu-gratis/)**). Entre el software de pago que hemos verificado directamente el 14 de septiembre de 2026, los planes de entrada se mueven aproximadamente **entre 6€ y 15€/mes, según proveedor y promoción vigente**, con planes superiores para empresas con más volumen o necesidades de contabilidad completa. El desglose herramienta por herramienta, con precios y fecha de verificación, está en **[mejores programas compatibles con VERI\*FACTU](/software-verifactu/)**.
 
 ## Qué hacer ahora
 

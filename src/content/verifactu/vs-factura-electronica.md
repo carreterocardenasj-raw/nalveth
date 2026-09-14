@@ -9,7 +9,7 @@ pageType: comparativa-normativa
 keyword: "VERI*FACTU vs factura electrónica"
 ---
 
-Es uno de los cruces de términos más habituales, y tiene sentido: ambas normativas tocan la facturación, ambas están entrando en vigor por fases entre 2026 y 2028, y ambas usan la palabra "electrónica" en algún momento. Pero **son dos regulaciones distintas, con objetivos, obligados y calendarios propios**. Mezclarlas lleva a errores reales al planificar cuándo y qué tienes que adaptar.
+Es uno de los cruces de términos más habituales, y tiene sentido: ambas normativas tocan la facturación, ambas se están desplegando por fases, y ambas usan la palabra "electrónica" en algún momento. Pero **son dos regulaciones distintas y relacionadas, no la misma cosa con dos nombres** — con objetivos, obligados y calendarios propios, y **ninguno de los dos calendarios se resume bien en una sola fecha**: VERI\*FACTU sí tiene fechas confirmadas (más abajo), mientras que la factura electrónica B2B depende todavía de un desarrollo normativo pendiente, como se explica en detalle en el siguiente apartado. Mezclarlas, o dar por cerrado un calendario que no lo está, lleva a errores reales al planificar cuándo y qué tienes que adaptar.
 
 ## Qué regula VERI\*FACTU (resumen)
 
@@ -36,9 +36,10 @@ El desarrollo reglamentario ya existe: el **Real Decreto 238/2026, de 25 de marz
 
 Para cerrar el cuadro conceptual completo, tres términos más que a veces se mezclan en la misma conversación — cada uno resuelto brevemente, sin profundizar porque no son el objeto de este clúster:
 
-- **SII (Suministro Inmediato de Información)**: sistema anterior y distinto, para el envío del Libro de IVA a la AEAT en pocos días tras facturar. Quien está adscrito al SII queda excluido de VERI\*FACTU (son sistemas de control que no se solapan sobre el mismo contribuyente).
-- **TicketBAI**: el equivalente a VERI\*FACTU, pero para los territorios forales del País Vasco (no para Navarra, que tiene su propio desarrollo). No es la misma normativa ni depende del mismo calendario estatal — si tributas en Álava, Bizkaia o Gipuzkoa, no te rige VERI\*FACTU sino TicketBAI.
-- **FACe**: la plataforma de recepción de facturas de las Administraciones Públicas (facturación B2G, empresa-a-administración), regulada desde 2015. No tiene relación directa con VERI\*FACTU ni con la factura electrónica B2B, que son para el sector privado.
+- **SII (Suministro Inmediato de Información)**: sistema anterior y distinto, para el envío del Libro de IVA a la AEAT en pocos días tras facturar. Quien está adscrito al SII queda excluido de VERI\*FACTU (son sistemas de control que no se solapan sobre el mismo contribuyente) — confirmado en fuente AEAT, ver el [pilar del clúster](/verifactu/).
+- **TicketBAI**: es el sistema equivalente a VERI\*FACTU para el País Vasco — según la información oficial del Gobierno Vasco, es "un proyecto compartido entre las tres Diputaciones Forales [Araba, Bizkaia y Gipuzkoa] y el Gobierno Vasco", regulado por disposiciones propias de cada institución foral. Si tu actividad tributa en uno de esos tres territorios, TicketBAI es tu sistema de referencia, no VERI\*FACTU — coherente con que la AEAT excluye expresamente de VERI\*FACTU a los residentes en País Vasco (ver el pilar). Fuente: [euskadi.eus/ticketbai](https://www.euskadi.eus/ticketbai/), Gobierno Vasco.
+- **Navarra**: la AEAT confirma que los residentes en Navarra también quedan fuera del ámbito de VERI\*FACTU, igual que los del País Vasco (territorio foral). Hemos visto referencias a un sistema propio en desarrollo para Navarra (a veces llamado "NaTicket"), pero no hemos encontrado todavía una fuente oficial del Gobierno de Navarra o de la Hacienda Foral de Navarra que lo confirme con el mismo nivel de detalle que tenemos para TicketBAI — `[POR VERIFICAR]` hasta que lo confirmemos directamente en fuente oficial navarra.
+- **FACe**: el Punto General de Entrada de Facturas Electrónicas de la Administración General del Estado — la plataforma para presentar facturas electrónicas a la Administración Pública (B2G, empresa-a-administración). Según su propia web oficial, es obligatorio su uso desde el 15 de enero de 2015 (voluntario antes de esa fecha), al amparo de la Ley 25/2013. No tiene relación directa con VERI\*FACTU ni con la factura electrónica B2B obligatoria, que son para el sector privado. Fuente: [facturae.gob.es/face](https://www.facturae.gob.es/face/Paginas/FACE.aspx), Administración General del Estado.
 
 ## Si te afectan las dos a la vez
 

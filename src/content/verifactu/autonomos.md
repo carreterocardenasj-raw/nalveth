@@ -44,7 +44,7 @@ Si vendes directamente a consumidores finales (por ejemplo, un comercio, un tall
 
 ## Cuánto te va a costar
 
-Si te sirve la aplicación de la AEAT o un plan gratuito privado con las funciones que necesitas, **0€**. Si necesitas software de pago, entre las herramientas que hemos verificado directamente el 14 de septiembre de 2026, los planes de entrada para autónomos se mueven aproximadamente entre 6€ y 15€ al mes — con matices importantes según lo que incluya cada uno (facturas ilimitadas o no, número de clientes, automatización de gastos). No repetimos aquí la tabla completa para no duplicar contenido: está fechada y desglosada en **[mejores programas compatibles con VERI\*FACTU](/software-verifactu/)**.
+Si te sirve la aplicación de la AEAT o un plan gratuito privado con las funciones que necesitas, **0€**. Si necesitas software de pago, los planes de entrada analizados se sitúan aproximadamente **entre 6€ y 15€/mes, según proveedor y promoción vigente** (precios verificados el 14 de septiembre de 2026) — con matices importantes según lo que incluya cada uno (facturas ilimitadas o no, número de clientes, automatización de gastos). No repetimos aquí la tabla completa para no duplicar contenido: está fechada y desglosada en **[mejores programas compatibles con VERI\*FACTU](/software-verifactu/)**.
 
 ## Qué pasa si no haces nada
 

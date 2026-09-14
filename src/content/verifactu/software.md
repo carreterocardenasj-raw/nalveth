@@ -25,7 +25,7 @@ Investigamos seis opciones por relevancia para autónomos y pymes españolas: la
 | **FacturaDirecta** | **Gratis, para siempre** (hasta 10 clientes) | Bronce 12€/mes | Incluido en todos los planes, también el gratuito |
 | **Billin (TS Facturas)** | Básico 6,6€/mes (80€+IVA/año) | Pro 14€/mes | Verifactu, Facturae y TicketBAI ilimitados en todos los planes |
 | **Quipu** | Starter 8,5€/mes (promo activa; base 17€/mes) | Solution 15€/mes (promo; base 30€/mes) | "Adaptado a Verifactu" en los 3 planes |
-| **Holded** | Plus 15€/mes (promo activa; base 7,50€ el primer tramo, luego 15€) | Básico 29€/mes (promo 14,50€) | Incluido, marcado como "Adaptado a Verifactu" |
+| **Holded** | Plus: base 15€/mes, promoción actual 7,50€/mes | Básico: base 29€/mes, promoción actual 14,50€/mes | Incluido, marcado como "Adaptado a Verifactu" |
 | **Declarando** | Verifactu Plus 9,90€/mes+IVA (solo facturación) | Básico 29,90€/mes+IVA (con asesoría fiscal) | "Cumple Verifactu" |
 
 *Precios verificados directamente el 14 de septiembre de 2026 en holded.com, billin.net, getquipu.com, facturadirecta.com y declarando.es. Holded y Quipu tenían una promoción de -50% durante 3 meses activa en el momento de la verificación — el precio recurrente después de la promoción es el que se muestra como base. Precios sin IVA salvo que se indique lo contrario.*
