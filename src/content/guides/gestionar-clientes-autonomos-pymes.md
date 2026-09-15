@@ -51,6 +51,6 @@ No hay un número mágico de clientes. Las señales reales son: se te ha olvidad
 
 ## Lo que no vamos a hacer en este territorio
 
-No vamos a publicar un ranking de "el mejor CRM" sin matices, ni vamos a llenar esta sección de reviews de una herramienta tras otra solo por completarla. Las piezas de este territorio están pensadas para ayudarte a decidir qué necesitas primero — la comparación exhaustiva de herramientas individuales llegará más adelante, cuando tenga sentido, no antes.
+No vamos a publicar un ranking de "el mejor CRM" sin matices, ni vamos a llenar esta sección de reviews de una herramienta tras otra solo por completarla. Las piezas de este territorio están pensadas para ayudarte a decidir qué necesitas primero, no para venderte una herramienta concreta.
 
 *Datos de precios y programas de afiliación de las piezas de este territorio verificados directamente en las webs oficiales de cada herramienta el 15 de septiembre de 2026.*
