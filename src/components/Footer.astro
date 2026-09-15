@@ -1,5 +1,6 @@
 ---
 import { getVisibleCategories } from '../lib/content';
+import { TERRITORIES } from '../data/territories';
 const categories = await getVisibleCategories();
 const year = new Date().getFullYear();
 ---
@@ -14,6 +15,7 @@ const year = new Date().getFullYear();
       <h4>Explorar</h4>
       <ul>
         {categories.map((c) => <li><a href={`/${c.slug}/`}>{c.short}</a></li>)}
+        {TERRITORIES.map((t) => <li><a href={t.href}>{t.short}</a></li>)}
       </ul>
     </div>
 

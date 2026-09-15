@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getPublishedContent, getVisibleCategories } from '../lib/content';
+import { TERRITORIES } from '../data/territories';
 
 const all = await getPublishedContent();
 const categories = await getVisibleCategories();
@@ -18,8 +19,20 @@ const comparisons = all.filter((e) => e.kind === 'comparison').slice(0, 3);
       <p class="sub">IA, automatización, software y estrategias explicadas de forma clara.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="/herramientas/">Explorar herramientas</a>
-        <a class="btn btn--ghost" href="/guias/">Ver guías</a>
+        <a class="btn btn--ghost" href="#territorios">Ver los grandes temas</a>
       </div>
+    </div>
+  </section>
+
+  <section class="container block" id="territorios">
+    <div class="block-head"><h2>Grandes temas de NALVETH</h2></div>
+    <div class="cat-grid">
+      {TERRITORIES.map((t) => (
+        <a class="card cat-card" href={t.href}>
+          <h3>{t.name}</h3>
+          <p>{t.description}</p>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -32,14 +45,14 @@ const comparisons = all.filter((e) => e.kind === 'comparison').slice(0, 3);
 
   {guides.length > 0 && (
     <section class="container block">
-      <div class="block-head"><h2>Guías</h2><a class="see-all" href="/guias/">Ver todas →</a></div>
+      <div class="block-head"><h2>Guías</h2></div>
       <div class="grid">{guides.map((e) => <ArticleCard entry={e} showCategory />)}</div>
     </section>
   )}
 
   {comparisons.length > 0 && (
     <section class="container block">
-      <div class="block-head"><h2>Comparativas</h2><a class="see-all" href="/comparativas/">Ver todas →</a></div>
+      <div class="block-head"><h2>Comparativas</h2></div>
       <div class="grid">{comparisons.map((e) => <ArticleCard entry={e} showCategory />)}</div>
     </section>
   )}

@@ -18,7 +18,7 @@ winnerByContext:
     winner: "Landbot (verificado: Wati Growth no permite añadir usuarios sin subir a Pro, un salto de +60-80€/mes)"
 ---
 
-Esta comparativa se apoya en precios y funciones verificados directamente en las webs oficiales de Landbot y Wati el 14 de septiembre de 2026 — **no hemos probado todavía ninguna de las dos herramientas de primera mano** (crear cuenta y usar el producto es el siguiente paso, pendiente de ejecutar). Lo de abajo es la comparación de lo que cada una promete y cuesta, no de cómo se siente usarlas.
+Esta comparativa se apoya en precios y funciones verificados directamente en las webs oficiales de Landbot y Wati el 14 de septiembre de 2026 — **no hemos probado todavía ninguna de las dos herramientas de primera mano** (crear cuenta y usar el producto es el siguiente paso, pendiente de ejecutar). Lo de abajo es la comparación de lo que cada una promete y cuesta, no de cómo se siente usarlas. Si quieres verlas junto a otras opciones de automatización de WhatsApp, no solo estas dos, está en [mejores herramientas para automatizar WhatsApp](/mejor-herramienta-whatsapp-automatizacion/).
 
 ## Lo que sabemos, lado a lado
 
@@ -33,10 +33,12 @@ Esta comparativa se apoya en precios y funciones verificados directamente en las
 | Coste variable aparte de la cuota | 0,05€/chat extra, 0,10€/chat de IA extra (reglas publicadas, sin letra pequeña) | Tarifa de mensajes de plantilla según tipo (marketing/utilidad/autenticación), variable |
 | Comisión de afiliado | ✓ 20% recurrente, hasta 2 años | ✓ 15-20% sobre suscripción, primeros 12 meses |
 
-Fuente de precios: landbot.io y wati.io/pricing, navegadas directamente el 14/09/2026 — detalle completo en `docs/testing/landbot-test-results.md` y `docs/testing/wati-test-results.md`.
+Fuente de precios: landbot.io y wati.io/pricing, navegadas directamente el 14/09/2026 — detalle completo en `docs/testing/landbot-test-results.md` y `docs/testing/wati-test-results.md`. Ninguna de las dos tablas incluye lo que cobra Meta aparte por los mensajes de WhatsApp — ese coste se explica por separado en [cuánto cuesta automatizar WhatsApp en España](/precio-whatsapp-business-api/).
 
 ## Por qué todavía no hay un único ganador
 
 Con los precios ya confirmados, la comparación de coste es clara (ver tabla) — pero el coste no es lo único que importa: facilidad de uso real, calidad de la automatización con IA, y qué tan bien funciona cada una en la práctica siguen siendo preguntas abiertas que solo responde usar el producto. Publicar un veredicto único de "mejor" ahora mismo, basado solo en precios de una página web, sería exactamente el tipo de conclusión prematura que la política editorial de NALVETH evita. Los tres contextos de arriba son honestos con lo que sabemos hoy; el veredicto completo llega con la prueba real.
 
 Esta pieza se actualizará con capturas, tiempos reales de configuración y la experiencia de uso en cuanto se complete la prueba práctica de ambas herramientas con el mismo caso de negocio.
+
+Si todavía no tienes claro si necesitas la app gratuita de WhatsApp Business o una plataforma como estas dos, resuelve esa duda antes en [WhatsApp Business vs. API](/whatsapp-business-vs-api/); y si quieres saber exactamente qué se puede automatizar antes de comparar herramientas, está en [Cómo automatizar WhatsApp](/automatizar-whatsapp/).

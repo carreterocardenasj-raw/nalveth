@@ -91,3 +91,7 @@ Ningún dato de esta tabla es de terceros: todos se navegaron directamente en `h
 - Fecha exacta de entrada en vigor de la orden ministerial de factura electrónica B2B (pendiente en la AEAT a 14/09/2026).
 - `/verifactu-excel/` — solo si Search Console demuestra demanda real (no se investiga ni se crea ahora).
 - Sage, Cegid, a3innuva, DELSOL — no investigados en esta fase (el usuario no pidió priorizarlos y añadirlos sin razón clara iría contra el principio de concentración/calidad del clúster).
+
+## 11. Integración en navegación (auditoría global, 15/09/2026)
+
+La auditoría global detectó que este clúster era descubrible solo por enlace directo y sitemap, no desde navegación general ni home. Se corrigió añadiendo `/verifactu/` a `src/data/territories.ts` — Header, Footer y la nueva sección "Grandes temas de NALVETH" en la home ahora enlazan a `/verifactu/` como puerta de entrada del clúster, sin crear categoría nueva ni tocar `getVisibleCategories()`. Detalle completo en `docs/DECISIONS.md` (entrada 2026-09-15).

@@ -107,3 +107,7 @@ Tras publicar el clúster se ejecutó una auditoría destructiva completa (sin c
 4. **Precisión menor**: "un solo número por dispositivo" (descripción de la app de WhatsApp Business en el pilar) se corrigió a la relación real — un número por cuenta, anclada a un teléfono principal con hasta 4 dispositivos vinculados adicionales, según el Centro de Ayuda de WhatsApp.
 
 Build verificado tras las correcciones: 26 páginas, 0 errores. Ninguna página nueva creada, arquitectura general sin tocar.
+
+## 12. Integración en navegación (auditoría global, 15/09/2026)
+
+La auditoría global del proyecto detectó que este clúster (junto con VERI\*FACTU) era descubrible solo por enlace directo y sitemap, no desde navegación general ni home. Se corrigió añadiendo `/whatsapp/` a `src/data/territories.ts` — Header, Footer y la nueva sección "Grandes temas de NALVETH" en la home ahora enlazan a `/whatsapp/` como puerta de entrada del clúster. No se creó ninguna categoría nueva ni se tocó `getVisibleCategories()`. Detalle completo de esta corrección en `docs/DECISIONS.md` (entrada 2026-09-15). Además, se añadió interlinking editorial (antes inexistente) desde `landbot.md`, `wati.md` y `landbot-vs-wati.md` hacia varias páginas de este clúster.

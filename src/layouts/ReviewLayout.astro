@@ -111,14 +111,20 @@ const schema = {
           </div>
         )}
 
-        {data.affiliateUrl && (
-          <div class="card cta-card">
-            <a class="btn btn--primary" href={data.affiliateUrl} rel="sponsored noopener" target="_blank">
-              Visitar {data.toolName}
+        <div class="card cta-card">
+          {data.affiliateVerified && data.affiliateUrl ? (
+            <>
+              <a class="btn btn--primary" href={data.affiliateUrl} rel="sponsored noopener" target="_blank">
+                Visitar {data.toolName}
+              </a>
+              <p class="disclosure">Enlace de afiliado.</p>
+            </>
+          ) : (
+            <a class="btn btn--primary" href={data.toolUrl} rel="noopener" target="_blank">
+              Ver {data.toolName}
             </a>
-            <p class="disclosure">Enlace de afiliado{data.affiliateVerified ? '' : ' (comisión pendiente de confirmar)'}.</p>
-          </div>
-        )}
+          )}
+        </div>
       </aside>
     </div>
   </article>

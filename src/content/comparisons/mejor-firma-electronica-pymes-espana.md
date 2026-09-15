@@ -51,6 +51,8 @@ Antes de comparar herramientas conviene aclarar un punto que genera confusión c
 
 Para la mayoría de pymes y autónomos que firman presupuestos, contratos de servicios o acuerdos comerciales, **la firma avanzada es suficiente** — es el nivel que cubren los planes intermedios de las cuatro herramientas comparadas aquí. Si tu caso concreto exige firma cualificada (algunos trámites notariales o con la administración), confírmalo con un asesor legal antes de elegir proveedor: no todas las herramientas de esta lista la ofrecen en todos sus planes, y ese dato no estaba confirmado en las páginas públicas de precios que hemos navegado — **[POR VERIFICAR]** caso por caso.
 
+Si quieres el contexto completo antes de esta comparativa — diferencia entre firma electrónica y gestión documental, qué tipo de herramienta encaja con tu negocio, y cuándo hace falta certificado — lo tienes en esta guía: [Firma electrónica y gestión documental: mejores herramientas para empresas y autónomos](/herramientas/guias/firma-electronica-gestion-documental/).
+
 ## Cuál elegir según tu caso
 
 Con los precios ya confirmados, no hay un único "mejor": depende de qué pesa más para tu negocio.

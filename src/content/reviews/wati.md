@@ -32,17 +32,21 @@ cons:
   - "La capa de IA (\"Copiloto de IA\") tiene créditos limitados por plan (250/mes en Growth) — para volumen medio-alto de conversaciones asistidas podría no ser suficiente, sin confirmar el coste de créditos extra"
 bestFor: "Negocios que ya tienen claro que quieren la API oficial de WhatsApp como canal principal, sin necesidad de gestionar Instagram, email u otros canales desde la misma herramienta."
 alternatives: ["Landbot", "ManyChat", "Chatfuel"]
+# affiliateUrl apunta hoy a la página de alta del programa (no a un enlace de referido con
+# tracking real) porque NALVETH todavía no se ha inscrito — ver docs/DECISIONS.md. Por eso
+# affiliateVerified es false: el CTA usa toolUrl (enlace normal) hasta que exista un enlace
+# de afiliado real, momento en el que este campo pasará a true.
 affiliateUrl: "https://www.wati.io/en/become-an-affiliate/"
-affiliateVerified: true
+affiliateVerified: false
 ---
 
 Wati se diferencia del resto de herramientas de esta primera tanda en que no es una plataforma multicanal con WhatsApp como una opción más: está construida específicamente alrededor de la API oficial de WhatsApp Business. Para un negocio cuyo canal principal (o único) es WhatsApp, esa especialización puede ser una ventaja real — o puede no aportar nada si de todas formas ibas a usar solo ese canal en cualquier herramienta.
 
 ## Precio real
 
-Wati empieza en **59€/mes (facturación anual) o 69€/mes (mensual)** con el plan Growth, que incluye WhatsApp con tu propio número, bandeja omnicanal y herramientas de ecommerce (catálogo, carrito abandonado, pedidos de Shopify) — pero fija en 3 el número de usuarios, sin opción de ampliar sin cambiar de plan. El salto a Pro (119-149€/mes) da automatización con IA de verdad y 5 usuarios (ampliables a 39€/usuario/mes extra). Al precio fijo hay que sumar el coste variable de los mensajes de plantilla, que Wati cobra aparte según el tipo de mensaje.
+Wati empieza en **59€/mes (facturación anual) o 69€/mes (mensual)** con el plan Growth, que incluye WhatsApp con tu propio número, bandeja omnicanal y herramientas de ecommerce (catálogo, carrito abandonado, pedidos de Shopify) — pero fija en 3 el número de usuarios, sin opción de ampliar sin cambiar de plan. El salto a Pro (119-149€/mes) da automatización con IA de verdad y 5 usuarios (ampliables a 39€/usuario/mes extra). Al precio fijo hay que sumar el coste variable de los mensajes de plantilla, que Wati cobra aparte según el tipo de mensaje — ese coste de Meta es independiente del de Wati; lo explicamos por separado en [cuánto cuesta automatizar WhatsApp en España](/precio-whatsapp-business-api/).
 
-Comparado con Landbot: Wati incluye WhatsApp real desde el plan más barato (59-69€/mes), mientras que en Landbot ese mismo WhatsApp con número propio no llega hasta los 80-100€/mes del plan Professional. Si lo único que necesitas es WhatsApp, Wati puede salir más barato para empezar — aunque el coste variable de plantillas complica comparar "cuánto cuesta al mes" con una sola cifra.
+Comparado con Landbot: Wati incluye WhatsApp real desde el plan más barato (59-69€/mes), mientras que en Landbot ese mismo WhatsApp con número propio no llega hasta los 80-100€/mes del plan Professional. Si lo único que necesitas es WhatsApp, Wati puede salir más barato para empezar — aunque el coste variable de plantillas complica comparar "cuánto cuesta al mes" con una sola cifra. Si quieres verla junto a otras herramientas de automatización de WhatsApp, no solo frente a Landbot, está en [mejores herramientas para automatizar WhatsApp](/mejor-herramienta-whatsapp-automatizacion/).
 
 ## Lo que sí está confirmado sobre afiliación
 

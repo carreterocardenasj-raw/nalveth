@@ -37,8 +37,12 @@ cons:
   - "No hemos podido confirmar de primera mano cómo es usar el canal de WhatsApp una vez conectado (estabilidad, facilidad de configuración) — eso exige la prueba práctica, todavía pendiente"
 bestFor: "Autónomos y pequeños negocios en España que quieren un proveedor con soporte en español y quieren poder seguir probando gratis después del periodo de prueba, sin presión de tarjeta de crédito."
 alternatives: ["Wati", "ManyChat", "Tidio"]
+# affiliateUrl apunta hoy a la página de alta del programa (no a un enlace de referido con
+# tracking real) porque NALVETH todavía no se ha inscrito — ver docs/DECISIONS.md. Por eso
+# affiliateVerified es false: el CTA usa toolUrl (enlace normal) hasta que exista un enlace
+# de afiliado real, momento en el que este campo pasará a true.
 affiliateUrl: "https://landbot.io/affiliates"
-affiliateVerified: true
+affiliateVerified: false
 ---
 
 Landbot es, de las herramientas de WhatsApp + IA que hemos empezado a investigar, la única con sede y origen españoles — nació en Barcelona en 2017 y ha crecido hasta más de 2.200 clientes de pago y unos 50.000 usuarios, con una ronda de 6,5 millones de euros liderada por Swanlaab en la que participaron CDTI y Bankinter. Eso no la hace automáticamente la mejor opción, pero sí la hace la más fácil de evaluar con criterio: hay prensa especializada, casos de uso locales y un idioma de soporte que no depende de traducción.
@@ -49,10 +53,10 @@ Landbot no es un simple árbol de decisión ni tampoco un agente de IA "libre" s
 
 ## Precio real
 
-La entrada es gratuita para siempre (plan Free, 100 chats/mes, sin tarjeta), pero **ese plan gratuito solo permite probar WhatsApp con el número de pruebas de Landbot, no el tuyo**. Para conectar tu propio número de WhatsApp hace falta el plan **Professional (desde 80€/mes en facturación anual, 100€/mes mensual)** con WhatsApp añadido, o directamente **Professional WA (160€/mes)**, que ya lo incluye. El plan Starter (32-40€/mes) queda en medio: sirve para web y otros canales, pero no para WhatsApp con número propio. Landbot publica además dos reglas de coste extra sin letra pequeña: 0,05€ por cada chat que supere el límite del plan, y 0,10€ por cada chat de IA adicional.
+La entrada es gratuita para siempre (plan Free, 100 chats/mes, sin tarjeta), pero **ese plan gratuito solo permite probar WhatsApp con el número de pruebas de Landbot, no el tuyo**. Para conectar tu propio número de WhatsApp hace falta el plan **Professional (desde 80€/mes en facturación anual, 100€/mes mensual)** con WhatsApp añadido, o directamente **Professional WA (160€/mes)**, que ya lo incluye. El plan Starter (32-40€/mes) queda en medio: sirve para web y otros canales, pero no para WhatsApp con número propio. Landbot publica además dos reglas de coste extra sin letra pequeña: 0,05€ por cada chat que supere el límite del plan, y 0,10€ por cada chat de IA adicional. Este precio es solo el de la herramienta — a él se suma, aparte, lo que cobra Meta por los mensajes de WhatsApp; el desglose completo está en [cuánto cuesta automatizar WhatsApp en España](/precio-whatsapp-business-api/).
 
 ## Lo más importante antes de decidir
 
-Landbot está pensado sobre todo para negocios que ya tienen cierto volumen de conversación — el salto real de precio no está en "entrar" (gratis) sino en "tener WhatsApp con tu propio número", que empieza en 80€/mes. Si tu negocio es muy pequeño y solo quieres probar el concepto en web antes de comprometerte, el plan Free permite hacerlo sin coste ni tarjeta; para WhatsApp real desde el primer día, cuenta con presupuesto de al menos 80-100€/mes.
+Landbot está pensado sobre todo para negocios que ya tienen cierto volumen de conversación — el salto real de precio no está en "entrar" (gratis) sino en "tener WhatsApp con tu propio número", que empieza en 80€/mes. Si tu negocio es muy pequeño y solo quieres probar el concepto en web antes de comprometerte, el plan Free permite hacerlo sin coste ni tarjeta; para WhatsApp real desde el primer día, cuenta con presupuesto de al menos 80-100€/mes. Si todavía no tienes claro si te basta con la app de WhatsApp Business o necesitas ya una plataforma como esta, conviene resolver esa duda antes: [WhatsApp Business vs. API](/whatsapp-business-vs-api/).
 
 *Esta ficha se completará con capturas, tiempos reales y una puntuación en cuanto se ejecute la prueba práctica del protocolo de testing del proyecto.*
