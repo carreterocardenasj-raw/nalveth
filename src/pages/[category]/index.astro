@@ -2,36 +2,70 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection, render } from 'astro:content';
 import { getPublishedContent } from '../../lib/content';
 import { CATEGORIES, getCategory } from '../../data/categories';
 
 export async function getStaticPaths() {
   const all = await getPublishedContent();
+  const hubs = await getCollection('guides', ({ data }) => !data.draft && data.isHub);
   const populated = new Set(all.map((e) => e.data.category));
-  return CATEGORIES.filter((c) => populated.has(c.slug)).map((c) => ({
-    params: { category: c.slug },
-    props: { entries: all.filter((e) => e.data.category === c.slug) },
-  }));
+
+  return CATEGORIES.filter((c) => populated.has(c.slug)).map((c) => {
+    const hub = hubs.find((h) => h.data.category === c.slug);
+    return {
+      params: { category: c.slug },
+      props: {
+        entries: all.filter((e) => e.data.category === c.slug && !(hub && e.kind === 'guide' && e.id === hub.id)),
+        hub,
+      },
+    };
+  });
 }
 
 const { category: slug } = Astro.params;
-const { entries } = Astro.props as { entries: Awaited<ReturnType<typeof getPublishedContent>> };
+const { entries, hub } = Astro.props as {
+  entries: Awaited<ReturnType<typeof getPublishedContent>>;
+  hub?: Awaited<ReturnType<typeof getCollection<'guides'>>>[number];
+};
 const category = getCategory(slug!)!;
+const { Content: HubContent } = hub ? await render(hub) : { Content: undefined };
+const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const pageTitle = hub ? hub.data.title : category.name;
+const pageDescription = hub ? hub.data.description : category.description;
+const schema = hub
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: hub.data.title,
+      author: { '@type': 'Organization', name: 'NALVETH' },
+      datePublished: hub.data.publishDate.toISOString(),
+      dateModified: (hub.data.updatedDate ?? hub.data.publishDate).toISOString(),
+    }
+  : undefined;
 ---
-<BaseLayout title={category.name} description={category.description}>
+<BaseLayout title={pageTitle} description={pageDescription} type={hub ? 'article' : 'website'} schema={schema}>
   <div class="container">
     <Breadcrumbs items={[{ name: category.short }]} />
   </div>
 
   <header class="container cat-head">
-    <h1>{category.name}</h1>
-    <p class="lede">{category.description}</p>
+    <h1>{pageTitle}</h1>
+    <p class="lede">{pageDescription}</p>
     {category.subAreas && (
       <ul class="subareas">
         {category.subAreas.map((s) => <li>{s.name}</li>)}
       </ul>
     )}
+    {hub && <p class="dates">Publicado {dateFmt.format(hub.data.publishDate)}{hub.data.updatedDate && ` · Actualizado ${dateFmt.format(hub.data.updatedDate)}`} · {hub.data.author}</p>}
   </header>
+
+  {hub && (
+    <div class="container prose hub-prose">
+      <HubContent />
+    </div>
+  )}
 
   <section class="container grid">
     {entries.map((entry) => <ArticleCard entry={entry} />)}
@@ -41,11 +75,13 @@ const category = getCategory(slug!)!;
 <style>
   .cat-head { padding-block: var(--sp-4) var(--sp-5); max-width: var(--content-width); }
   .lede { color: var(--ink-soft); font-size: var(--step-1); }
+  .dates { font-size: .8rem; color: var(--ink-faint); font-family: var(--font-mono); margin-top: var(--sp-2); }
   .subareas { list-style: none; display: flex; flex-wrap: wrap; gap: .5em; padding: 0; margin: var(--sp-3) 0 0; }
   .subareas li {
     font-size: .78rem; font-weight: 600; color: var(--accent-strong); background: var(--accent-soft);
     padding: .3em .8em; border-radius: 99px;
   }
+  .hub-prose { max-width: var(--content-width); padding-bottom: var(--sp-6); }
   .grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-4);
     padding-bottom: var(--sp-8);

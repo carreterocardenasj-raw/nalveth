@@ -40,6 +40,8 @@ export async function getContentByCategory(categorySlug: string): Promise<AnyEnt
 }
 
 export function entryHref(entry: AnyEntry): string {
+  // Una guía isHub no tiene página propia — vive en /{categoria}/ (ver [category]/index.astro).
+  if (entry.kind === 'guide' && entry.data.isHub) return `/${entry.data.category}/`;
   const plural = entry.kind === 'guide' ? 'guias' : entry.kind === 'review' ? 'reviews' : 'comparativas';
   return `/${entry.data.category}/${plural}/${entry.id}/`;
 }

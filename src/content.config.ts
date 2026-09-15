@@ -10,6 +10,7 @@ const categorySlug = z.enum([
   'seo-geo',
   'comparativas',
   'guias',
+  'gestionar-clientes',
 ]);
 
 // heroImage usa el helper image() de Astro: valida que el archivo exista localmente
@@ -36,6 +37,11 @@ const guides = defineCollection({
     ...baseFields(image),
     intent: z.enum(['informacional', 'tutorial', 'caso-de-uso']),
     steps: z.number().optional(), // nº de pasos, solo para tutoriales
+    // Marca esta guía como el pilar/hub de su categoría: en vez de generar su propia
+    // página en /{categoria}/guias/{slug}/, su contenido se renderiza directamente en
+    // /{categoria}/ (la página de categoría), por encima del listado de piezas — y esa
+    // pieza queda excluida del listado. Como mucho una guía con isHub:true por categoría.
+    isHub: z.boolean().default(false),
   }),
 });
 

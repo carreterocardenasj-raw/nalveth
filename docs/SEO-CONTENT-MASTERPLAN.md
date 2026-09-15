@@ -6,6 +6,8 @@ Compilado 2026-09-14 a partir de 5 investigaciones paralelas (automatización, h
 
 **Nota técnica para quien continúe el proyecto:** `src/data/categories.ts` incluye `comparativas` y `guias` como categorías de nivel superior, pero en la práctica el formato (review/comparativa/guía) ya se resuelve por sub-ruta (`/[categoria]/reviews/`, `/[categoria]/comparativas/`, `/[categoria]/guias/`) dentro de una categoría **temática**. Ninguna pieza de este masterplan usa `category: comparativas` ni `category: guias` — todas usan una de las 6 categorías temáticas. Limpiar ese solape queda pendiente, no bloquea nada.
 
+**Nota de actualización (2026-09-15):** el 4.º gran territorio construido, **Gestión comercial práctica para autónomos y pequeñas empresas** (categoría `gestionar-clientes`, 5 piezas publicadas — detalle en `docs/DECISIONS.md`), no corresponde a ninguno de los 10 clústeres numerados arriba. Es una decisión editorial posterior y más específica que la entrada de reserva "CRM fuera de WhatsApp (automatización, 🟡)" mencionada en la línea de reserva de más arriba — esa entrada de reserva queda superada por el territorio real construido, no se persigue por separado.
+
 ---
 
 ## Los 10 clústeres prioritarios

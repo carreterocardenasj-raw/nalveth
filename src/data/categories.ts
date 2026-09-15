@@ -69,6 +69,18 @@ export const CATEGORIES: Category[] = [
     description: 'Visibilidad en buscadores tradicionales y en asistentes de IA (GEO): qué cambia y cómo adaptarse.',
   },
   {
+    slug: 'gestionar-clientes',
+    name: 'Gestión comercial',
+    short: 'Gestión comercial',
+    description:
+      'Captar clientes, organizar leads y hacer seguimiento comercial sin complicarte con herramientas enterprise — el CRM es una solución más, no el punto de partida.',
+    subAreas: [
+      { slug: 'seguimiento', name: 'Seguimiento de clientes' },
+      { slug: 'crm', name: 'CRM' },
+      { slug: 'leads', name: 'Leads y ventas' },
+    ],
+  },
+  {
     slug: 'comparativas',
     name: 'Comparativas',
     short: 'Comparativas',

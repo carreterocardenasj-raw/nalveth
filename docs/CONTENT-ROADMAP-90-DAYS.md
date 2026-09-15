@@ -26,6 +26,9 @@ Cerrar el lote de contenido de WhatsApp+IA (criterio de salida de Fase 3 del pro
 ## Cola para el trimestre siguiente (día 91+)
 #24 Hub herramientas IA para redes sociales · #25 Review Metricool · #26 Guía Meta Advantage+/Google Performance Max · #27 Review AdCreative.ai · #29 Herramientas para medir visibilidad en IA (Otterly/Peec) · #30 Checklist GEO para pymes — más los clústeres de reserva del masterplan (chatbots en tienda, email marketing, CRM, vídeo/avatares IA).
 
+## Nota de actualización (2026-09-15)
+Este calendario quedó superado en la práctica por encargos directos del usuario fuera de la secuencia #1-30: el clúster VERI\*FACTU, el clúster de automatización práctica de WhatsApp y, ahora, el 4.º gran territorio **Gestión comercial práctica para autónomos y pequeñas empresas** (categoría `gestionar-clientes`, 5 piezas — ver `docs/DECISIONS.md`, entrada 2026-09-15) se construyeron por prioridad editorial directa, no por este calendario. Se conserva sin reescribir como referencia histórica de la planificación original; no dirige el trabajo actual.
+
 ## Reglas de ritmo (no negociables)
 1. Ninguna review se publica sin haber ejecutado (o al menos verificado en fuente oficial) la información que contiene — las semanas de "tareas previas" no son opcionales.
 2. Si una tarea previa no se completa a tiempo, la pieza se retrasa una semana — no se publica con datos sin verificar para cumplir el calendario.

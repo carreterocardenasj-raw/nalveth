@@ -10,6 +10,8 @@ A partir de ahora, **todo el masterplan se divide en dos tipos**, marcados en la
 
 Esta división es la respuesta directa a "no quiero detener el proyecto": hay Tipo A de sobra para no parar mientras el Tipo B espera su turno.
 
+**Nota de actualización (2026-09-15):** el 4.º gran territorio, **Gestión comercial práctica para autónomos y pequeñas empresas** (categoría `gestionar-clientes`), no pasó por esta matriz de puntuación — fue un encargo directo del usuario con posicionamiento ya decidido, igual que VERI\*FACTU y WhatsApp antes. Las 5 piezas publicadas son todas Tipo A (investigación y fuentes primarias, sin prueba propia de ninguna herramienta todavía). Detalle en `docs/DECISIONS.md`, entrada 2026-09-15.
+
 ## 2) Comparación objetiva de los 8 clústeres temáticos (sin favorecer a WhatsApp por tener ya investigación)
 
 Puntuación 1-5 por factor (5 = mejor), suma simple sobre 40 — esta tabla es una vista comparativa rápida; la puntuación que manda para ordenar piezas individuales es la ponderada de la sección 3.

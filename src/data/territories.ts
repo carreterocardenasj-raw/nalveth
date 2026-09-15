@@ -31,4 +31,9 @@ export const TERRITORIES: Territory[] = [
     description: 'Cómo automatizar atención, ventas y leads por WhatsApp.',
     href: '/whatsapp/',
   },
+  // "Gestión comercial" (el 4º territorio) NO se añade aquí: a diferencia de los anteriores,
+  // es una categoría real de pleno derecho (src/data/categories.ts, slug `gestionar-clientes`)
+  // con su propio pilar servido por el mecanismo `isHub` de [category]/index.astro — por eso
+  // ya aparece automáticamente en Header/Footer/Home vía getVisibleCategories(), sin necesitar
+  // esta lista. Añadirlo aquí también duplicaría el enlace. Ver docs/DECISIONS.md, 2026-09-15.
 ];

@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import GuideLayout from '../../../layouts/GuideLayout.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('guides', ({ data }) => !data.draft);
+  // Las guías marcadas isHub se sirven en /{categoria}/ (ver [category]/index.astro),
+  // no en su propia ruta — evita contenido duplicado en dos URLs.
+  const entries = await getCollection('guides', ({ data }) => !data.draft && !data.isHub);
   return entries.map((entry) => ({
     params: { category: entry.data.category, slug: entry.id },
     props: { entry },
