@@ -20,11 +20,13 @@ const { bodyClass, ...seoProps } = Astro.props;
     <Seo {...seoProps} />
     <!--
       Punto de integración de la CMP (plataforma de consentimiento), todavía sin activar.
-      Cuando el titular tenga cuenta en la CMP elegida (ver docs/LEGAL-COMPLIANCE.md), el
-      snippet de esa CMP se añade AQUÍ, antes que cualquier script de AdSense/analítica —
-      nunca al revés. No añadir ningún script de AdSense, Google Analytics/Tag Manager u
-      otra herramienta que dependa de consentimiento hasta que ese snippet esté cargando
-      correctamente y probado (ver checklist de la sección 15 del encargo "FASE 1").
+      CMP elegida: InMobi CMP (docs/LEGAL-COMPLIANCE.md, Fase 1B) — requiere una cuenta en
+      choice.inmobi.com (alta gratuita) que todavía no se ha creado. Una vez creada y el
+      sitio añadido en el portal, InMobi genera un "Web Tag" (script único, asíncrono, que
+      no debe modificarse) desde el botón "Web Tag" del portal — ese script se pega AQUÍ,
+      el primero de todos, antes que cualquier script de AdSense/analítica, nunca al revés.
+      Cualquier script futuro que dependa de consentimiento debe engancharse a través de
+      src/lib/consent.ts (API estándar __tcfapi), no cargarse directamente.
     -->
   </head>
   <body class={bodyClass}>
