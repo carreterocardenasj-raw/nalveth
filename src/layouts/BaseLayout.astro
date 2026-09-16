@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Seo, { type Props as SeoProps } from '../components/Seo.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { INMOBI_UNIVERSAL_TAG } from '../lib/inmobi-universal-tag';
 
 export interface Props extends SeoProps {
   bodyClass?: string;
@@ -19,15 +20,15 @@ const { bodyClass, ...seoProps } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <Seo {...seoProps} />
     <!--
-      Punto de integración de la CMP (plataforma de consentimiento), todavía sin activar.
-      CMP elegida: InMobi CMP (docs/LEGAL-COMPLIANCE.md, Fase 1B) — requiere una cuenta en
-      choice.inmobi.com (alta gratuita) que todavía no se ha creado. Una vez creada y el
-      sitio añadido en el portal, InMobi genera un "Web Tag" (script único, asíncrono, que
-      no debe modificarse) desde el botón "Web Tag" del portal — ese script se pega AQUÍ,
-      el primero de todos, antes que cualquier script de AdSense/analítica, nunca al revés.
-      Cualquier script futuro que dependa de consentimiento debe engancharse a través de
-      src/lib/consent.ts (API estándar __tcfapi), no cargarse directamente.
+      InMobi Choice — Universal Tag (CMP ID 10), instalado el 16/09/2026 en TODAS las
+      páginas (BaseLayout.astro es el único layout raíz del sitio). Debe ser el PRIMER
+      script de terceros del <head> — cualquier script futuro de AdSense/analítica/Tag
+      Manager se añade DESPUÉS de esta línea, nunca antes. El contenido exacto (no editado
+      a mano) vive en src/lib/inmobi-universal-tag.ts. Este tag ya expone sus propios
+      stubs __tcfapi/__gpp/__uspapi — src/lib/consent.ts solo los CONSULTA (API estándar),
+      no crea una segunda implementación ni los sobrescribe.
     -->
+    <Fragment set:html={INMOBI_UNIVERSAL_TAG} />
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main">Saltar al contenido</a>

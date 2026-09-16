@@ -1,14 +1,20 @@
 // Capa técnica de consentimiento (IAB TCF) — el punto único por el que DEBE
 // pasar cualquier script futuro de AdSense, analítica o Tag Manager antes de
 // cargar. No implementa ningún banner propio ("banner casero" prohibido por
-// encargo) — se apoya en la API estándar `__tcfapi` que expone cualquier CMP
-// certificada por Google e integrada con TCF 2.3 una vez instalada (ver la
-// CMP elegida para NALVETH en docs/LEGAL-COMPLIANCE.md).
+// encargo) — se apoya en la API estándar `__tcfapi` que expone la CMP ya
+// instalada en el sitio: InMobi Choice (Universal Tag, CMP ID 10, ver
+// src/lib/inmobi-universal-tag.ts y docs/LEGAL-COMPLIANCE.md).
 //
-// Mientras no haya ninguna CMP instalada (estado actual de NALVETH: ninguna
-// tecnología de analítica/publicidad activa), `window.__tcfapi` no existe y
-// estas funciones no invocan nunca el callback — la posición seguridad por
-// defecto es "sin consentimiento", nunca lo contrario.
+// IMPORTANTE: este archivo es solo una capa de LECTURA/CONSULTA de esa API.
+// El propio Universal Tag de InMobi ya crea y gestiona los stubs
+// `window.__tcfapi` / `window.__gpp` / `window.__uspapi` — este archivo nunca
+// asigna ni sobrescribe ninguno de los tres, solo los consulta. No crear aquí
+// una segunda implementación de esos stubs bajo ningún concepto.
+//
+// Mientras el Universal Tag no haya terminado de cargar (o si por algún
+// motivo no llegara a cargar), `window.__tcfapi` no existe todavía y estas
+// funciones no invocan nunca el callback — la posición segura por defecto es
+// "sin consentimiento", nunca lo contrario.
 
 type TCData = {
   eventStatus?: string;
