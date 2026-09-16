@@ -1,37 +1,70 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { TITULAR, TITULAR_COMPLETO } from '../data/legal';
 ---
-<BaseLayout title="Política de privacidad" description="Cómo trata NALVETH los datos personales de sus visitantes.">
+<BaseLayout title="Política de privacidad" description="Cómo trata NALVETH los datos personales de sus visitantes." noindex>
   <div class="container"><Breadcrumbs items={[{ name: 'Privacidad' }]} /></div>
   <article class="container prose page">
     <h1>Política de privacidad</h1>
-    <p class="notice">[PLACEHOLDER — este texto es un esqueleto de referencia, no un documento legal válido. Debe revisarlo y completarlo un profesional antes de publicar el sitio, con los datos reales del responsable del tratamiento.]</p>
 
-    <h2>Responsable del tratamiento</h2>
-    <p>[PLACEHOLDER — nombre/razón social, NIF, dirección y correo de contacto del responsable.]</p>
+    {!TITULAR_COMPLETO && (
+      <p class="notice">
+        Los datos identificativos del responsable marcados como <code>[DATO DEL TITULAR PENDIENTE]</code> todavía no se han incorporado — no se ha inventado ningún dato para rellenarlos. El resto de esta política describe el funcionamiento real y actual del sitio.
+      </p>
+    )}
 
-    <h2>Qué datos recogemos</h2>
-    <p>[PLACEHOLDER — detallar: datos de navegación (analítica), datos de formularios de contacto, datos de suscripción a newsletter si aplica.]</p>
+    <p>Esta política explica qué datos trata NALVETH, con qué finalidad y qué derechos tienes al respecto. Está escrita para reflejar el funcionamiento <strong>real y actual</strong> del sitio: no describe formularios, cuentas de usuario, newsletter ni herramientas que todavía no existen en NALVETH.</p>
 
-    <h2>Con qué finalidad</h2>
-    <p>[PLACEHOLDER — analítica de tráfico, respuesta a consultas de contacto, envío de comunicaciones si el usuario se suscribe.]</p>
+    <h2>1. Responsable del tratamiento</h2>
+    <ul>
+      <li><strong>Titular:</strong> {TITULAR.nombre}</li>
+      <li><strong>NIF/CIF:</strong> {TITULAR.nif}</li>
+      <li><strong>Domicilio:</strong> {TITULAR.domicilio}, {TITULAR.localidad}, {TITULAR.provincia}, {TITULAR.codigoPostal}, {TITULAR.pais}</li>
+      <li><strong>Correo de contacto:</strong> <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+    </ul>
 
-    <h2>Publicidad y afiliación</h2>
-    <p>Este sitio muestra anuncios a través de Google AdSense y participa en programas de afiliación de terceros. Estos servicios pueden usar cookies o identificadores para personalizar anuncios — ver <a href="/cookies/">política de cookies</a>.</p>
+    <h2>2. Qué datos tratamos hoy, y de dónde proceden</h2>
+    <p>Actualmente NALVETH es un sitio de solo lectura: no tiene registro de usuarios, formularios de contacto con envío de datos, comentarios ni newsletter. Los datos personales que se tratan hoy son, exclusivamente:</p>
+    <ul>
+      <li><strong>Datos técnicos de navegación</strong> que el navegador envía de forma estándar a cualquier servidor web al cargar una página (dirección IP, tipo de navegador, páginas visitadas), procesados por el proveedor de alojamiento/CDN para poder servir el sitio y mantener su seguridad — es un tratamiento técnico necesario para que la web funcione, no un análisis de comportamiento.</li>
+      <li><strong>Los datos que tú mismo nos envíes por correo electrónico</strong> si escribes a la dirección de contacto (ver <a href="/contacto/">contacto</a>) — tu dirección de correo y el contenido de tu mensaje.</li>
+    </ul>
+    <p>NALVETH <strong>no recoge hoy</strong> datos mediante formularios propios, cookies de analítica, cookies de publicidad ni ningún otro mecanismo — ver el inventario completo y fechado en la <a href="/cookies/">política de cookies</a>.</p>
 
-    <h2>Con quién compartimos los datos</h2>
-    <p>[PLACEHOLDER — Google AdSense, herramienta de analítica (p. ej. GA4), proveedor de formulario de contacto, proveedor de newsletter si aplica.]</p>
+    <h2>3. Con qué finalidad</h2>
+    <ul>
+      <li>Servir correctamente el sitio y garantizar su seguridad básica (datos técnicos de navegación).</li>
+      <li>Responder a las consultas que nos envíes por correo (datos que tú nos facilitas voluntariamente).</li>
+    </ul>
 
-    <h2>Tus derechos</h2>
-    <p>[PLACEHOLDER — acceso, rectificación, supresión, portabilidad, limitación y oposición, y cómo ejercerlos.]</p>
+    <h2>4. Base jurídica</h2>
+    <p>El tratamiento de datos técnicos de navegación se basa en el interés legítimo de mantener el sitio operativo y seguro (art. 6.1.f RGPD). El tratamiento de los correos que nos envías se basa en tu consentimiento, prestado al escribirnos voluntariamente (art. 6.1.a RGPD).</p>
 
-    <h2>Última actualización</h2>
-    <p>[PLACEHOLDER — fecha real de la versión publicada.]</p>
+    <h2>5. Conservación</h2>
+    <p>Los correos que nos envíes se conservan mientras sea necesario para atender tu consulta y, después, el tiempo razonable para dejar constancia de la respuesta, salvo que la normativa aplicable exija un plazo distinto. Los datos técnicos de navegación se conservan el tiempo que determine la configuración del proveedor de alojamiento/CDN — `[POR VERIFICAR]` el plazo exacto en el momento en que se confirme el proveedor definitivo.</p>
+
+    <h2>6. Destinatarios y proveedores</h2>
+    <p>Hoy, el único tercero que interviene técnicamente en servir el sitio es el proveedor de alojamiento/hosting — `[POR VERIFICAR]` una vez esté confirmado el proveedor de producción definitivo. Las fuentes tipográficas del sitio se cargan desde los servidores de Google Fonts (fonts.googleapis.com / fonts.gstatic.com), lo que implica una solicitud técnica a Google al cargar la página, sin que se instale ninguna cookie de Google Fonts en este proceso.</p>
+    <p>Este sitio <strong>todavía no tiene activados</strong> Google AdSense ni ninguna herramienta de analítica (por ejemplo, Google Analytics). Cuando se activen, esta sección y la <a href="/cookies/">política de cookies</a> se actualizarán antes de la puesta en marcha, indicando el proveedor exacto, su finalidad y cómo gestionar el consentimiento — ver el estado de esa preparación en la propia política de cookies.</p>
+    <p>NALVETH participa en programas de afiliación de software de terceros (ver <a href="/politica-editorial/">política editorial</a>): un enlace de afiliado no implica en sí mismo una transferencia de datos personales tuyos al hacer clic, salvo la información técnica estándar que cualquier web de destino recibe al recibir una visita (referer, IP).</p>
+
+    <h2>7. Transferencias internacionales</h2>
+    <p>Google Fonts puede implicar una comunicación técnica con servidores de Google, que opera a nivel internacional. Cuando se activen AdSense o herramientas de analítica, esta sección se actualizará con el detalle de las transferencias internacionales que correspondan y sus garantías (cláusulas contractuales tipo u otro mecanismo válido conforme al RGPD).</p>
+
+    <h2>8. Tus derechos</h2>
+    <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a>, indicando el derecho que quieres ejercer y aportando la documentación necesaria para verificar tu identidad.</p>
+    <p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, también puedes presentar una reclamación ante la <a href="https://www.aepd.es" rel="noopener noreferrer" target="_blank">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+
+    <h2>9. Cambios en esta política</h2>
+    <p>Actualizaremos esta política cada vez que cambie de forma sustancial lo que el sitio realmente trata — en particular, antes de activar Google AdSense o cualquier herramienta de analítica.</p>
+    <p class="updated">Última actualización: 16 de septiembre de 2026.</p>
   </article>
 </BaseLayout>
 
 <style>
   .page { padding-block: var(--sp-5) var(--sp-8); }
   .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+  .notice code { background: none; padding: 0; font-size: inherit; }
+  .updated { color: var(--ink-faint); font-size: var(--step--1); }
 </style>

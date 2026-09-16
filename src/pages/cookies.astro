@@ -2,32 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
-<BaseLayout title="Política de cookies" description="Qué cookies usa NALVETH y para qué.">
+<BaseLayout title="Política de cookies" description="Qué cookies y almacenamiento usa NALVETH hoy, y qué se activará en el futuro." noindex>
   <div class="container"><Breadcrumbs items={[{ name: 'Cookies' }]} /></div>
   <article class="container prose page">
     <h1>Política de cookies</h1>
-    <p class="notice">[PLACEHOLDER — esqueleto de referencia. Antes de publicar, sustituir por el texto real generado junto con el banner de consentimiento (CMP) elegido, compatible con Google Consent Mode v2.]</p>
 
-    <h2>Qué son las cookies</h2>
-    <p>[PLACEHOLDER — explicación estándar.]</p>
+    <p class="notice">Esta política describe el estado <strong>real y actual</strong> del sitio, verificado directamente en su código fuente el 16 de septiembre de 2026 — no se declara ninguna cookie o herramienta como activa si todavía no lo está.</p>
 
-    <h2>Cookies que usamos</h2>
+    <h2>1. Qué son las cookies</h2>
+    <p>Las cookies son pequeños archivos que un sitio web puede guardar en tu navegador para recordar información entre visitas — por ejemplo, tus preferencias o si has aceptado un aviso. No todo lo que guarda información en tu navegador es una cookie de terceros ni requiere consentimiento: las cookies estrictamente necesarias para el funcionamiento básico de una web están exentas.</p>
+
+    <h2>2. Estado actual: NALVETH no instala cookies de analítica, publicidad ni preferencias</h2>
+    <p>Hoy, NALVETH es un sitio estático que no instala ninguna cookie de analítica, publicidad, redes sociales o preferencias. No usamos Google Analytics, Google AdSense, Google Tag Manager, píxeles de redes sociales ni ningún otro servicio de este tipo todavía. Tampoco usamos <code>localStorage</code> ni <code>sessionStorage</code> para nada distinto del funcionamiento básico del sitio.</p>
+
     <table>
-      <thead><tr><th>Tipo</th><th>Finalidad</th><th>Proveedor</th></tr></thead>
+      <thead><tr><th>Tipo</th><th>¿Activa hoy?</th><th>Proveedor</th><th>Finalidad</th></tr></thead>
       <tbody>
-        <tr><td>Necesarias</td><td>Funcionamiento básico del sitio</td><td>[PLACEHOLDER]</td></tr>
-        <tr><td>Analítica</td><td>Medir tráfico y uso del sitio</td><td>[PLACEHOLDER — p. ej. Google Analytics 4]</td></tr>
-        <tr><td>Publicidad</td><td>Mostrar y medir anuncios</td><td>Google AdSense</td></tr>
-        <tr><td>Afiliación</td><td>Atribuir referidos a programas de afiliados</td><td>[PLACEHOLDER — según programas activos]</td></tr>
+        <tr><td>Necesarias/técnicas</td><td>No se usa ninguna cookie propia — solo lo que tu navegador gestiona por defecto al cargar cualquier página (sin cookie explícita instalada por NALVETH)</td><td>—</td><td>—</td></tr>
+        <tr><td>Preferencias</td><td>No activa</td><td>—</td><td>—</td></tr>
+        <tr><td>Analítica</td><td>No activa</td><td>—</td><td>—</td></tr>
+        <tr><td>Publicidad</td><td>No activa (Google AdSense todavía no está integrado — ver <a href="/sobre-nalveth/">sobre NALVETH</a>)</td><td>—</td><td>—</td></tr>
+        <tr><td>Terceros — tipografías</td><td>Sí, un recurso técnico (no una cookie)</td><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Cargar las tipografías del sitio. No instala cookies, pero implica una solicitud técnica a servidores de Google — ver detalle en la <a href="/privacidad/">política de privacidad</a></td></tr>
       </tbody>
     </table>
 
-    <h2>Cómo gestionar tus preferencias</h2>
-    <p>[PLACEHOLDER — instrucciones del banner de consentimiento (CMP) una vez integrado.]</p>
+    <h2>3. Qué cambiará cuando se activen AdSense y/o analítica</h2>
+    <p>Cuando NALVETH active Google AdSense o una herramienta de analítica, estas categorías empezarán a aplicar de verdad, y esta tabla se actualizará con el proveedor exacto, su duración y su finalidad, <strong>antes</strong> de que ese servicio empiece a cargar para cualquier visitante desde España, la UE, el EEE, el Reino Unido o Suiza:</p>
+    <ul>
+      <li><strong>Publicidad</strong>: Google AdSense, para mostrar y medir anuncios.</li>
+      <li><strong>Analítica</strong>: herramienta todavía por confirmar (`[POR VERIFICAR]`), para medir tráfico y uso del sitio.</li>
+      <li><strong>Afiliación</strong>: los programas de afiliados de las herramientas que reseñamos pueden usar parámetros en la URL o cookies propias del sitio de destino al hacer clic en un enlace de afiliado — no cookies instaladas por NALVETH en tu navegador.</li>
+    </ul>
+    <p>Esa activación requiere primero una plataforma de consentimiento (CMP) certificada por Google e integrada con IAB TCF — el estado de esa integración está documentado en detalle en <code>docs/LEGAL-COMPLIANCE.md</code> (documento técnico interno del proyecto). Ninguna de estas tecnologías se activará antes de que ese consentimiento esté correctamente implementado y puedas aceptar, rechazar o configurar tus preferencias con el mismo nivel de visibilidad.</p>
+
+    <h2>4. Cómo gestionar o revocar tu consentimiento</h2>
+    <p>En cuanto el banner de consentimiento esté activo, podrás aceptar, rechazar o configurar tus preferencias por categoría desde el propio banner al visitar el sitio, y modificarlas después desde un enlace de "Configurar cookies" visible en esta página y en el pie de página. Hasta entonces, no hay preferencias que configurar porque no hay cookies no necesarias activas.</p>
+    <p>Independientemente de la configuración de NALVETH, siempre puedes bloquear o eliminar cookies desde los ajustes de tu propio navegador.</p>
+
+    <p class="updated">Última actualización: 16 de septiembre de 2026.</p>
   </article>
 </BaseLayout>
 
 <style>
   .page { padding-block: var(--sp-5) var(--sp-8); }
   .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+  .updated { color: var(--ink-faint); font-size: var(--step--1); }
 </style>

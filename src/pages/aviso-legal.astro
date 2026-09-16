@@ -1,31 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { TITULAR, ACTIVIDAD, TITULAR_COMPLETO } from '../data/legal';
 ---
-<BaseLayout title="Aviso legal" description="Información legal sobre el titular y las condiciones de uso de NALVETH.">
+<BaseLayout title="Aviso legal" description="Información legal sobre el titular y las condiciones de uso de NALVETH." noindex>
   <div class="container"><Breadcrumbs items={[{ name: 'Aviso legal' }]} /></div>
   <article class="container prose page">
     <h1>Aviso legal</h1>
-    <p class="notice">[PLACEHOLDER — esqueleto de referencia, no un documento legal válido. Debe revisarlo un profesional antes de publicar el sitio.]</p>
 
-    <h2>Datos identificativos</h2>
-    <p>[PLACEHOLDER — nombre/razón social, NIF/CIF, domicilio, correo de contacto y, si aplica, datos de inscripción registral.]</p>
+    {!TITULAR_COMPLETO && (
+      <p class="notice">
+        Los datos identificativos del titular marcados como <code>[DATO DEL TITULAR PENDIENTE]</code> todavía no se han incorporado a este documento — no se ha inventado ningún dato para rellenarlos. Este aviso se completará en cuanto esos datos estén disponibles.
+      </p>
+    )}
 
-    <h2>Condiciones de uso</h2>
-    <p>[PLACEHOLDER — condiciones de acceso y uso del sitio.]</p>
+    <h2>1. Datos identificativos</h2>
+    <p>En cumplimiento del deber de información de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los siguientes datos del titular de este sitio web:</p>
+    <ul>
+      <li><strong>Titular:</strong> {TITULAR.nombre}</li>
+      <li><strong>NIF/CIF:</strong> {TITULAR.nif}</li>
+      <li><strong>Domicilio:</strong> {TITULAR.domicilio}, {TITULAR.localidad}, {TITULAR.provincia}, {TITULAR.codigoPostal}, {TITULAR.pais}</li>
+      <li><strong>Correo de contacto:</strong> <a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></li>
+      <li><strong>Actividad:</strong> {ACTIVIDAD}</li>
+    </ul>
 
-    <h2>Propiedad intelectual</h2>
-    <p>[PLACEHOLDER — titularidad de los contenidos, marca NALVETH y condiciones de reproducción.]</p>
+    <h2>2. Objeto y condiciones de uso</h2>
+    <p>Este aviso legal regula el acceso y uso del sitio web nalveth.com (en adelante, "NALVETH" o "el sitio"). El acceso al sitio es gratuito y no requiere registro previo. El uso del sitio atribuye la condición de usuario e implica la aceptación de las condiciones recogidas en este aviso legal.</p>
+    <p>El usuario se compromete a hacer un uso adecuado y lícito del sitio, de conformidad con la legislación aplicable, este aviso legal, la moral y el orden público, y a no utilizarlo para actividades ilícitas o lesivas de los derechos de terceros.</p>
 
-    <h2>Limitación de responsabilidad</h2>
-    <p>[PLACEHOLDER — sobre la exactitud de precios y características de terceros, que pueden cambiar sin previo aviso.]</p>
+    <h2>3. Propiedad intelectual</h2>
+    <p>Los textos, diseño, estructura, marca NALVETH y demás contenidos originales de este sitio son propiedad del titular o se usan con la debida autorización, y están protegidos por la normativa de propiedad intelectual e industrial. No está permitida su reproducción, distribución o transformación sin autorización previa, salvo cita habitual con enlace a la fuente original.</p>
+    <p>Las marcas, nombres comerciales y logotipos de terceros (fabricantes de software mencionados en reseñas y comparativas) pertenecen a sus respectivos titulares y se citan con fines meramente informativos e identificativos, sin que ello implique relación, patrocinio o afiliación salvo cuando se indique expresamente.</p>
 
-    <h2>Legislación aplicable</h2>
-    <p>[PLACEHOLDER — legislación y jurisdicción aplicable.]</p>
+    <h2>4. Limitación de responsabilidad</h2>
+    <p>NALVETH publica información sobre precios, características y condiciones de herramientas de terceros con fecha de comprobación visible, pero estos datos pueden cambiar sin previo aviso por decisión del fabricante. Recomendamos verificar siempre el precio y las condiciones actuales en la web oficial de cada herramienta antes de contratarla.</p>
+    <p>El titular no se hace responsable de los daños derivados del uso incorrecto del sitio, ni de la disponibilidad técnica, errores u omisiones en los contenidos, sin perjuicio de las correcciones que se realicen cuando se detecten (ver <a href="/politica-editorial/">política editorial</a>).</p>
+
+    <h2>5. Enlaces externos</h2>
+    <p>Este sitio incluye enlaces a webs de terceros, algunos de ellos enlaces de afiliado (ver <a href="/politica-editorial/">política editorial</a> y <a href="/privacidad/">política de privacidad</a>). El titular no controla ni se responsabiliza del contenido de esos sitios externos ni de sus propias políticas de privacidad o cookies.</p>
+
+    <h2>6. Modificación de los contenidos</h2>
+    <p>El titular se reserva el derecho a modificar, actualizar o eliminar contenidos de este sitio en cualquier momento, sin necesidad de previo aviso, incluido este propio aviso legal.</p>
+
+    <h2>7. Legislación aplicable</h2>
+    <p>Este sitio está dirigido a usuarios en España y su actividad se rige por la legislación española, en particular la LSSI-CE y el Reglamento (UE) 2016/679 (RGPD) junto con la Ley Orgánica 3/2018 (LOPDGDD) en lo relativo a protección de datos. El fuero y la jurisdicción concretos aplicables a cualquier controversia (juzgados y tribunales competentes) se determinarán conforme al domicilio del titular una vez incorporado a este documento — <span class="pending">{TITULAR.domicilio}</span>.</p>
   </article>
 </BaseLayout>
 
 <style>
   .page { padding-block: var(--sp-5) var(--sp-8); }
   .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
+  .notice code { background: none; padding: 0; font-size: inherit; }
+  .pending { color: var(--ink-faint); font-style: italic; }
 </style>
