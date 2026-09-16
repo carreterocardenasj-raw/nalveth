@@ -9,19 +9,20 @@ export const PENDING = '[DATO DEL TITULAR PENDIENTE]';
 
 export const TITULAR = {
   // Nombre y apellidos, o razón social si se opera como sociedad.
-  nombre: PENDING,
+  nombre: 'Jonathan Carretero Cardenas',
   // NIF o CIF.
-  nif: PENDING,
+  nif: '77181910M',
   // Domicilio (calle y número).
-  domicilio: PENDING,
-  localidad: PENDING,
-  provincia: PENDING,
-  codigoPostal: PENDING,
-  pais: PENDING,
+  domicilio: 'Santa Magdalena',
+  localidad: 'Alhaurín de la Torre',
+  provincia: 'Málaga',
+  codigoPostal: '29130',
+  pais: 'España',
   // Correo de contacto ya definido para el proyecto — mismo usado como identidad
   // de commits de git (docs/DECISIONS.md, entrada 2026-09-14: "Identidad de
   // commits del proyecto"). No se ha creado ni comprado un correo @nalveth.com.
   email: 'carreterocardenasj@gmail.com',
+  // Sin teléfono público, por instrucción explícita del titular (2026-09-16).
 };
 
 // Formulación prudente de la actividad económica — sin CNAE, epígrafe fiscal

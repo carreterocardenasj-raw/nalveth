@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { TITULAR, TITULAR_COMPLETO } from '../data/legal';
+import { TITULAR } from '../data/legal';
 ---
 <BaseLayout title="Contacto" description="Cómo ponerte en contacto con el equipo de NALVETH.">
   <div class="container"><Breadcrumbs items={[{ name: 'Contacto' }]} /></div>
@@ -12,16 +12,11 @@ import { TITULAR, TITULAR_COMPLETO } from '../data/legal';
     <h2>Correo</h2>
     <p><a href={`mailto:${TITULAR.email}`}>{TITULAR.email}</a></p>
 
-    {!TITULAR_COMPLETO && (
-      <>
-        <h2>Dirección postal</h2>
-        <p class="pending">{TITULAR.domicilio} — se publicará aquí solo si la normativa aplicable a la actividad lo exige, una vez confirmados los datos del titular.</p>
-      </>
-    )}
+    <p class="note">Los datos identificativos completos del titular (domicilio incluido) están disponibles en el <a href="/aviso-legal/">aviso legal</a>, conforme a la LSSI-CE.</p>
   </article>
 </BaseLayout>
 
 <style>
   .page { padding-block: var(--sp-5) var(--sp-8); }
-  .pending { color: var(--ink-faint); font-style: italic; }
+  .note { color: var(--ink-faint); font-size: var(--step--1); }
 </style>

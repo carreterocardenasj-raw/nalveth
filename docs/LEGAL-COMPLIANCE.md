@@ -2,6 +2,8 @@
 
 Ejecutado el 16/09/2026, por encargo directo del usuario ("FASE 1: CIERRE LEGAL + PRIVACIDAD + COOKIES + CMP"), con prioridad sobre cualquier expansión de contenido y sin tocar los 4 territorios editoriales existentes. Este documento recoge primero la auditoría de qué existía, y después las decisiones y cambios aplicados.
 
+**Actualización, mismo día (16/09/2026):** el usuario facilitó los datos reales de identidad del titular, pendientes en la primera versión de este documento — ver sección 2, ahora marcada como completa.
+
 ## 1. Auditoría inicial (estado antes de esta fase)
 
 Verificado directamente sobre el código fuente el 16/09/2026, no sobre suposiciones:
@@ -16,13 +18,19 @@ Verificado directamente sobre el código fuente el 16/09/2026, no sobre suposici
 
 ## 2. Datos del titular
 
-**Ninguno de los datos de identidad personal (nombre/razón social, NIF/CIF, domicilio, localidad, provincia, código postal, país) estaba disponible en el proyecto** — no se ha inventado ningún valor. Se ha creado una única fuente de verdad para estos datos: [`src/data/legal.ts`](../src/data/legal.ts), con la constante `TITULAR`. Todas las páginas legales (`aviso-legal.astro`, `privacidad.astro`, `contacto.astro`) importan de ahí, así que **completar el aviso legal, la privacidad y el contacto en el futuro es editar un único archivo**, no cuatro.
+**Estado: completo desde el 16/09/2026.** El usuario facilitó los 7 datos de identidad personal que faltaban, y se han incorporado a la única fuente de verdad para estos datos: [`src/data/legal.ts`](../src/data/legal.ts), constante `TITULAR`:
 
-- Los 7 campos de identidad personal quedan como `[DATO DEL TITULAR PENDIENTE]` (constante `PENDING` en `legal.ts`).
-- El **correo de contacto** sí estaba disponible: `carreterocardenasj@gmail.com`, ya documentado como identidad del proyecto en `docs/DECISIONS.md` (entrada 2026-09-14, "Identidad de commits del proyecto"). Se ha usado ese correo, tal como pidió el encargo ("el correo de contacto existente que ya se haya definido para NALVETH"). **No se ha creado ni comprado ningún correo `@nalveth.com`.**
-- La constante `TITULAR_COMPLETO` en `legal.ts` controla si las páginas legales muestran el aviso de "borrador pendiente" — pasará a `true` automáticamente en cuanto se rellenen los 7 campos, sin tocar las páginas.
+- **Nombre:** Jonathan Carretero Cardenas
+- **NIF:** 77181910M
+- **Domicilio:** Santa Magdalena, Alhaurín de la Torre, Málaga, 29130, España
+- **Correo de contacto:** `carreterocardenasj@gmail.com` (mismo ya documentado como identidad del proyecto en `docs/DECISIONS.md`, entrada 2026-09-14 — no se ha creado ni comprado ningún correo `@nalveth.com`)
+- **Teléfono público:** no se publica, por instrucción explícita del titular
 
-**Riesgo a tu atención (no bloqueante, pero real):** he usado `carreterocardenasj@gmail.com` como correo de contacto público del sitio porque es el único correo que el proyecto tiene documentado como suyo. Si ese correo es personal y no quieres exponerlo públicamente en `/contacto/`, `/aviso-legal/` y `/privacidad/`, dímelo y lo sustituyo por el que prefieras (no tiene por qué ser `@nalveth.com` — puede ser cualquier correo que ya controles).
+`TITULAR.nombre`, `.nif`, `.domicilio`, `.localidad`, `.provincia`, `.codigoPostal`, `.pais` y `.email` se usan en `aviso-legal.astro`, `privacidad.astro`, `contacto.astro` y `sobre-nalveth.astro` — todas leen del mismo objeto, así que los datos son consistentes por construcción entre las 4 páginas. La constante `TITULAR_COMPLETO` es ahora `true`, por lo que los avisos de "borrador pendiente de datos" que existían en `/aviso-legal/` y `/privacidad/` ya no se renderizan (el código que los muestra se ha dejado en su sitio, inerte, como salvaguarda si `legal.ts` volviera a quedar incompleto en el futuro).
+
+La sección 7 del aviso legal ("Legislación aplicable") se actualizó para indicar el fuero concreto (Juzgados y Tribunales de Málaga, correspondiente al domicilio del titular) ahora que el domicilio es un dato real, en vez de dejarlo pendiente. La sección "Quiénes somos" de `/sobre-nalveth/` ahora nombra al titular, sin inventar biografía ni foto (esos dos datos no se pidieron ni se han facilitado, y no se han inventado).
+
+**No se ha añadido ningún dato no facilitado explícitamente**: sin CNAE, sin epígrafe IAE, sin forma societaria, sin actividad de VTC del titular, sin teléfono.
 
 ## 3. Actividad económica declarada
 
@@ -99,8 +107,8 @@ No se ha integrado ningún script de AdSense ni se ha solicitado la cuenta, tal 
 
 ## 10. Acciones pendientes del titular
 
-1. **Rellenar `src/data/legal.ts`** con los datos reales de identidad (nombre/razón social, NIF/CIF, domicilio, localidad, provincia, código postal, país) — un único archivo, sin tocar las páginas.
-2. **Confirmar si `carreterocardenasj@gmail.com` es el correo que quieres publicar** en `/contacto/`, `/aviso-legal/` y `/privacidad/`, o indicar otro (sección 2).
+1. ~~Rellenar `src/data/legal.ts` con los datos reales de identidad~~ — **hecho el 16/09/2026** (sección 2).
+2. ~~Confirmar el correo de contacto público~~ — **confirmado**: `carreterocardenasj@gmail.com`.
 3. **Decidir y crear la cuenta de CMP** cuando corresponda — dos rutas posibles, ninguna ejecutada por mí (creación de cuentas de terceros fuera de mi alcance):
    - Esperar a solicitar AdSense y usar su CMP gratuita integrada ("Privacidad y mensajes") — más simple, un proveedor menos.
    - O crear ya una cuenta gratuita en **InMobi CMP** (antes Quantcast Choice) para tener el banner activo antes de solicitar AdSense.

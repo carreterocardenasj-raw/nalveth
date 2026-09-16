@@ -43,7 +43,7 @@ import { TITULAR, ACTIVIDAD, TITULAR_COMPLETO } from '../data/legal';
     <p>El titular se reserva el derecho a modificar, actualizar o eliminar contenidos de este sitio en cualquier momento, sin necesidad de previo aviso, incluido este propio aviso legal.</p>
 
     <h2>7. Legislación aplicable</h2>
-    <p>Este sitio está dirigido a usuarios en España y su actividad se rige por la legislación española, en particular la LSSI-CE y el Reglamento (UE) 2016/679 (RGPD) junto con la Ley Orgánica 3/2018 (LOPDGDD) en lo relativo a protección de datos. El fuero y la jurisdicción concretos aplicables a cualquier controversia (juzgados y tribunales competentes) se determinarán conforme al domicilio del titular una vez incorporado a este documento — <span class="pending">{TITULAR.domicilio}</span>.</p>
+    <p>Este sitio está dirigido a usuarios en España y su actividad se rige por la legislación española, en particular la LSSI-CE y el Reglamento (UE) 2016/679 (RGPD) junto con la Ley Orgánica 3/2018 (LOPDGDD) en lo relativo a protección de datos. Para cualquier controversia derivada del uso del sitio, y sin perjuicio del fuero que pudiera corresponder por normativa de protección de consumidores y usuarios, las partes se someten a los Juzgados y Tribunales de {TITULAR.provincia}, correspondientes al domicilio del titular.</p>
   </article>
 </BaseLayout>
 
@@ -51,5 +51,4 @@ import { TITULAR, ACTIVIDAD, TITULAR_COMPLETO } from '../data/legal';
   .page { padding-block: var(--sp-5) var(--sp-8); }
   .notice { background: var(--warn-soft); border: 1px solid var(--warn); border-radius: var(--radius); padding: var(--sp-3); color: var(--ink); }
   .notice code { background: none; padding: 0; font-size: inherit; }
-  .pending { color: var(--ink-faint); font-style: italic; }
 </style>
