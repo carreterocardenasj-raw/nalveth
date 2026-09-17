@@ -1,4 +1,4 @@
-# NALVETH — Cumplimiento legal, privacidad, cookies y CMP (Fase 1 + 1B + 1C)
+# NALVETH — Cumplimiento legal, privacidad, cookies y CMP (Fase 1 + 1B + 1C + 1D)
 
 Ejecutado el 16/09/2026, por encargo directo del usuario ("FASE 1: CIERRE LEGAL + PRIVACIDAD + COOKIES + CMP"), con prioridad sobre cualquier expansión de contenido y sin tocar los 4 territorios editoriales existentes. Este documento recoge primero la auditoría de qué existía, y después las decisiones y cambios aplicados.
 
@@ -7,6 +7,8 @@ Ejecutado el 16/09/2026, por encargo directo del usuario ("FASE 1: CIERRE LEGAL 
 **Actualización — Fase 1B, mismo día (16/09/2026):** encargo específico de resolver la capa de CMP/consentimiento ("FASE 1B: CMP Y CONSENTIMIENTO"). Se verificó en vivo el registro oficial de CMPs de IAB Europe (no solo fuentes secundarias), se eligió una CMP principal y una alternativa, y se implementó todo lo que no requiere crear una cuenta de terceros. Ver secciones 5 a 7B.
 
 **Actualización — Fase 1C, mismo día (16/09/2026):** el titular creó la propiedad de NALVETH en InMobi Choice y facilitó el Universal Tag oficial (Consent Manager Tag v3.0, TCF 2.3, CMP ID 10). **El tag ya está instalado en el sitio**, sin modificar su código, en `src/lib/inmobi-universal-tag.ts` + `BaseLayout.astro`. Ver la nueva sección 7D para el detalle completo de la instalación y las pruebas realizadas. Esto no cambia ninguna de las secciones 5/6/12 en cuanto a la decisión de CMP (siguen siendo la investigación y el criterio de aceptación válidos) — solo su estado, ahora "instalado" en vez de "pendiente de cuenta".
+
+**Actualización — Fase 1D, 17/09/2026:** primera prueba real en producción — banner y "Reject All" funcionan, pero el enlace del footer "Tus opciones de privacidad" no abría el popup porque era un `<a href="#">` con contenido propio en vez de un contenedor vacío que InMobi pudiera gestionar. Corregido a `<div id="nalveth-privacy"></div>`. Ver sección 7E.
 
 ## 1. Auditoría inicial (estado antes de esta fase)
 
@@ -152,7 +154,7 @@ El sitio carga `Newsreader`, `Public Sans` e `IBM Plex Mono` vía `@import url('
 - **Archivo nuevo `src/lib/inmobi-universal-tag.ts`**: exporta `INMOBI_UNIVERSAL_TAG`, una constante de texto con el snippet completo tal como lo generó el portal de InMobi (comentario de apertura, `<script type="text/javascript" async=true>` — sí, con el `async=true` no estándar tal cual lo entregó InMobi, sin "corregirlo" —, el cuerpo completo con los stubs `__tcfapi`/`__gpp`/`__uspapi`, y el comentario de cierre que menciona "TCF 2.2" aunque la cabecera diga v3.0/TCF 2.3 — discrepancia real del snippet oficial, no tocada). El identificador de propiedad `LCjqGQVVZaVj2` y `tag_version=V3` están intactos.
 - **Por qué un archivo aparte en vez de pegarlo directamente en `BaseLayout.astro`**: el snippet de InMobi usa llaves `{}` constantemente como sintaxis normal de JavaScript (objetos, bloques de función). El compilador de Astro interpreta `{}` como expresiones de plantilla fuera de las etiquetas `<script>`/`<style>` — pegarlo directamente como HTML literal en la plantilla `.astro` sería frágil. En su lugar, el snippet completo vive como una única cadena de texto en un `.ts`, y se inyecta en el `<head>` con `<Fragment set:html={INMOBI_UNIVERSAL_TAG} />`, que escribe ese HTML tal cual, sin que el compilador de Astro lo interprete ni lo toque. Verificado en el HTML generado: cero escapado de comillas o `&amp;`/`&quot;` — el JavaScript llega intacto al navegador.
 - **Ubicación**: dentro de `<head>`, inmediatamente después de `<Seo {...seoProps} />` y de un comentario explicativo, en `BaseLayout.astro` — el único layout raíz del sitio, así que se carga en las 31 páginas sin excepción y sin duplicarse (verificado: exactamente 1 aparición de `cmp.inmobi.com` por página en el HTML generado). Es el primer script de terceros del documento; no hay ningún AdSense/analítica que pudiera ir antes.
-- **Elemento del footer `id="nalveth-privacy"`**: añadido en `src/components/Footer.astro`, dentro de la columna "Legal", como `<a href="#" id="nalveth-privacy">Tus opciones de privacidad</a>` — el texto exacto configurado en el portal de InMobi. Es InMobi quien conecta la funcionalidad a ese elemento por su ID; no se ha implementado ningún comportamiento propio de apertura de la CMP. Verificado: exactamente 1 elemento con ese ID por página, presente globalmente (footer común a todas las páginas), visible y correctamente estilado en desktop y móvil.
+- **Elemento del footer `id="nalveth-privacy"`**: añadido en `src/components/Footer.astro`, dentro de la columna "Legal". **Corregido en Fase 1D (17/09/2026, ver sección 7E) de `<a href="#">` a `<div>` vacío** — la primera versión no funcionaba en producción. Es InMobi quien inserta y gestiona el enlace ahí dentro; no se ha implementado ningún comportamiento propio de apertura de la CMP.
 - **Relación con `src/lib/consent.ts`**: sin cambios funcionales — ese archivo nunca ha asignado ni sobrescrito `window.__tcfapi`/`__gpp`/`__uspapi`, solo los consulta cuando alguien lo invoque (hoy nadie lo hace todavía). Se ha actualizado su comentario de cabecera para dejar explícito que el Universal Tag de InMobi es ahora quien crea esos tres stubs, y que `consent.ts` es una capa de lectura, nunca una segunda implementación. Verificado en el navegador (ver más abajo): un único stub de cada API, ambos provenientes del tag de InMobi.
 - **CSP / cabeceras de seguridad**: no existe ninguna Content-Security-Policy, archivo `_headers`, `vercel.json`, `netlify.toml` ni configuración de cabeceras en todo el proyecto (barrido completo de `astro.config.mjs`, `public/` y la raíz del repo) — no hay nada que pudiera bloquear `cmp.inmobi.com`, y por tanto nada que adaptar. Confirmado también en la prueba de navegador: la petición a `cmp.inmobi.com` se realiza sin ningún error de CSP en consola.
 - **Google Fonts**: sin cambios (fuera de alcance de esta fase). Verificado visualmente que la tipografía y el diseño siguen intactos tras añadir el Universal Tag — ninguna interferencia entre ambos.
@@ -169,6 +171,18 @@ El sitio carga `Newsreader`, `Public Sans` e `IBM Plex Mono` vía `@import url('
 ### Lo que esto NO prueba todavía
 
 **El banner real de consentimiento no se ha visto ni probado** — ni en desarrollo ni en ningún otro sitio. La propiedad de InMobi está configurada para el dominio `nalveth.com`; en `localhost` el script remoto no sirve contenido real (`transferSize: 0`, `cmpStatus: 'stub'`), así que es técnicamente imposible ver el banner, probar Aceptar/Rechazar/Configurar, o comprobar la reapertura de preferencias, hasta que el sitio esté publicado en `nalveth.com` (o el dominio real que corresponda). Esto no es una limitación de la integración — es cómo funciona cualquier CMP de terceros atada a un dominio concreto. **No afirmamos que el consentimiento real esté probado** — solo que la instalación técnica (script, stubs, orden de carga, elemento del footer) está verificada y funciona.
+
+## 7E. Corrección del elemento del footer (Fase 1D, 17/09/2026)
+
+**Contexto**: primera prueba real de la CMP en producción (`nalveth.com`). Resultado: banner inicial ✅, "Reject All" ✅, el consentimiento se registra ✅ — pero el enlace del footer "Tus opciones de privacidad" ❌ no abría el popup, porque era un `<a href="#">` con texto manual escrito por mí. Según la documentación de InMobi, cuando la propiedad usa "Display privacy consent as a link at the footer", el `Link Element ID` debe apuntar a un **contenedor vacío** en el que InMobi inserta y gestiona su propio enlace — no a un `<a>` ya construido con `href`/texto propios, que InMobi no llega a sustituir de la forma esperada.
+
+**Corrección aplicada**: en `src/components/Footer.astro`, el `<a href="#" id="nalveth-privacy">Tus opciones de privacidad</a>` se sustituyó por `<div id="nalveth-privacy"></div>` — sin `href`, sin `onclick`, sin texto, sin ningún comportamiento propio. Se añadieron únicamente estilos mínimos (`#nalveth-privacy { min-height: 1em; }` y reglas `:global()` para que el `<a>` que InMobi inserte dentro herede el mismo color/tamaño/hover que sus vecinos de la columna Legal) — nada de esto simula un botón propio, solo evita que el hueco vacío rompa el layout antes de que InMobi lo rellene, e integra visualmente lo que InMobi inserte.
+
+**Por qué el `id` no cambió**: el `Link Element ID` ya está configurado en el portal de InMobi como `nalveth-privacy` — cambiarlo habría exigido volver a ese portal y reconfigurarlo, y el encargo pedía explícitamente mantenerlo exacto.
+
+**Verificado en el build**: `id="nalveth-privacy"` sigue presente exactamente una vez por página (barrido recursivo de las 30 páginas de `dist/`), ahora sobre un `<div>` y no un `<a>`; ningún `href="#"` asociado a ese ID en ninguna página; el Universal Tag sigue apareciendo exactamente una vez por página, sin tocar; sin AdSense ni Analytics. `npm run build` → 31 páginas, 0 errores, mismas rutas.
+
+**Lo que sigue sin poder probarse en local**: si el enlace que InMobi inserte dentro de `#nalveth-privacy` abre correctamente el popup — eso solo se puede confirmar en `nalveth.com`, igual que el resto del banner (sección 7D). Es la prueba pendiente que el titular hará tras publicar este cambio (primera visita en incógnito → banner → Reject All → footer → "Tus opciones de privacidad" → comprobar que abre el popup).
 
 ## 8. SEO de páginas legales
 
@@ -192,10 +206,11 @@ El sitio carga `Newsreader`, `Public Sans` e `IBM Plex Mono` vía `@import url('
 1. ~~Rellenar `src/data/legal.ts` con los datos reales de identidad~~ — **hecho el 16/09/2026** (sección 2).
 2. ~~Confirmar el correo de contacto público~~ — **confirmado**: `carreterocardenasj@gmail.com`.
 3. ~~Crear la cuenta de InMobi CMP y facilitar el Universal Tag~~ — **hecho el 16/09/2026** (Fase 1C, sección 7D). El tag ya está instalado en el código.
-4. **Publicar/desplegar el sitio en `nalveth.com`** (o el dominio real de producción) y verificar visualmente que el banner de InMobi aparece en la primera visita, y que Aceptar/Rechazar/Configurar/reabrir preferencias funcionan — es la única prueba que falta, y solo se puede hacer en el dominio real (sección 7D).
-5. Revisar en el portal de InMobi que el tema del banner configurado cumple el criterio de la sección 6 (mismo peso visual para Aceptar y Rechazar) — verificable solo dentro del portal o una vez publicado.
-6. Confirmar proveedor de alojamiento/hosting de producción definitivo, para completar la sección "Destinatarios y proveedores" de `/privacidad/` (hoy marcada `[POR VERIFICAR]`).
-7. Decidir si autoalojar Google Fonts (sección 7C) — mejora opcional, no bloqueante.
+4. ~~Publicar y probar en `nalveth.com`~~ — **hecho parcialmente**: banner y "Reject All" verificados ✅ el 17/09/2026. El enlace "Tus opciones de privacidad" fallaba (abría `#` en vez del popup) — **corregido en Fase 1D** (sección 7E). Falta volver a publicar este cambio y repetir la prueba de ese enlace concreto.
+5. **Publicar el cambio de Fase 1D** (`Footer.astro`) en `nalveth.com` y, en incógnito: primera visita → banner → "Reject All" → volver al footer → "Tus opciones de privacidad" → confirmar que ahora abre el popup de InMobi.
+6. Revisar en el portal de InMobi que el tema del banner configurado cumple el criterio de la sección 6 (mismo peso visual para Aceptar y Rechazar) — verificable solo dentro del portal o una vez publicado.
+7. Confirmar proveedor de alojamiento/hosting de producción definitivo, para completar la sección "Destinatarios y proveedores" de `/privacidad/` (hoy marcada `[POR VERIFICAR]`).
+8. Decidir si autoalojar Google Fonts (sección 7C) — mejora opcional, no bloqueante.
 
 ## 11. Riesgo/decisión que requiere tu confirmación explícita (me detengo aquí, no lo ejecuto)
 
@@ -203,16 +218,15 @@ El sitio carga `Newsreader`, `Public Sans` e `IBM Plex Mono` vía `@import url('
 
 ## 12. El único paso pendiente — qué tenéis que hacer vosotros, exactamente
 
-**Actualizado tras la Fase 1C: la cuenta ya existe y el Universal Tag ya está instalado en el código.** Lo único que falta es algo que yo no puedo hacer por regla del proyecto (no despliego nada a producción sin que se me pida explícitamente, y no tengo acceso al hosting):
+**Actualizado tras la Fase 1D (17/09/2026).** Primera prueba real: banner ✅, "Reject All" ✅, consentimiento registrado ✅, enlace "Tus opciones de privacidad" ❌ (corregido en código, sección 7E). Lo único que falta:
 
-1. **Publicar/desplegar** la versión actual del sitio (con el Universal Tag ya integrado) en `nalveth.com` — o decirme cómo hacerlo si queréis que lo ejecute yo con vuestra autorización explícita.
-2. Una vez publicado, **abrir `nalveth.com` en un navegador normal** (no en local) y comprobar:
-   - Que el banner de consentimiento aparece en la primera visita.
-   - Que "Aceptar" y "Rechazar" tienen el mismo peso visual (sección 6) — si el tema configurado en el portal no lo cumple, ajustarlo ahí.
-   - Que "Rechazar" funciona (no queda ninguna tecnología activada).
-   - Que "Configurar preferencias" abre el panel granular.
-   - Que el enlace "Tus opciones de privacidad" del footer reabre las preferencias correctamente.
-   - Repetir la comprobación en un móvil real o emulado.
-3. Cuando todo lo anterior esté verificado en el dominio real, esta fase queda completamente cerrada y NALVETH está preparado para el siguiente paso natural: solicitar AdSense (fuera de alcance de este encargo).
+1. **Publicar el cambio de `Footer.astro`** (Fase 1D) en `nalveth.com` — o decirme cómo hacerlo si queréis que lo ejecute yo con vuestra autorización explícita.
+2. En incógnito, en `nalveth.com`:
+   - Primera visita → banner.
+   - "Reject All" (ya verificado, repetir solo si algo más cambió).
+   - Volver al footer → clic en "Tus opciones de privacidad" → **confirmar que ahora abre el popup de InMobi** (esta es la comprobación que motivó esta corrección).
+   - Repetir en móvil real o emulado.
+3. Revisar en el portal de InMobi que "Aceptar" y "Rechazar" tienen el mismo peso visual (sección 6) — si el tema no lo cumple, ajustarlo ahí, no en el código.
+4. Cuando todo lo anterior esté verificado, esta fase queda completamente cerrada y NALVETH está preparado para el siguiente paso natural: solicitar AdSense (fuera de alcance de este encargo).
 
 Nada de esto requiere pagar nada ni crear ninguna cuenta nueva.

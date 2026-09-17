@@ -34,12 +34,13 @@ const year = new Date().getFullYear();
         <li><a href="/privacidad/">Privacidad</a></li>
         <li><a href="/cookies/">Cookies</a></li>
         <li><a href="/aviso-legal/">Aviso legal</a></li>
-        <!-- Elemento reservado para InMobi Choice (CMP ID 10): la propiedad de InMobi
-             está configurada con HTML Id "nalveth-privacy" y texto "Tus opciones de
-             privacidad" — es InMobi quien conecta el enlace mediante ese mecanismo
-             (ver docs/LEGAL-COMPLIANCE.md), no se implementa aquí ninguna funcionalidad
-             propia para reabrir la CMP. -->
-        <li><a href="#" id="nalveth-privacy">Tus opciones de privacidad</a></li>
+        <!-- Contenedor reservado para InMobi Choice (CMP ID 10): la propiedad está
+             configurada con "Display privacy consent as a link at the footer" y
+             Link Element ID = "nalveth-privacy". Debe ser un contenedor vacío, sin
+             href/onclick/lógica propia — es InMobi quien inserta y gestiona el
+             enlace ahí dentro (ver docs/LEGAL-COMPLIANCE.md). No añadir contenido
+             ni comportamiento manual a este div. -->
+        <li><div id="nalveth-privacy"></div></li>
       </ul>
     </div>
   </div>
@@ -62,6 +63,14 @@ const year = new Date().getFullYear();
   .col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5em; }
   .col a { color: var(--ink-soft); text-decoration: none; font-size: var(--step--1); }
   .col a:hover { color: var(--accent-strong); }
+
+  /* #nalveth-privacy queda vacío hasta que InMobi Choice inyecta su propio enlace ahí
+     dentro — estas reglas solo evitan que el hueco rompa el layout mientras tanto y
+     hacen que el enlace que InMobi inserte se vea igual que sus vecinos de la columna
+     Legal. :global() es necesario porque ese <a> lo añade JS de terceros, no Astro. */
+  #nalveth-privacy { min-height: 1em; }
+  #nalveth-privacy :global(a) { color: var(--ink-soft); text-decoration: none; font-size: var(--step--1); }
+  #nalveth-privacy :global(a:hover) { color: var(--accent-strong); }
   .bottom { padding-block: var(--sp-4); border-top: 1px solid var(--line); }
   .bottom p { color: var(--ink-faint); font-size: .82rem; margin: 0; max-width: 80ch; }
 
