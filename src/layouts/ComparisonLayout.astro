@@ -46,7 +46,7 @@ const schema = {
 
     {data.winnerByContext.length > 0 && (
       <div class="winner-box">
-        <h4>Ganador según el contexto</h4>
+        <h2 class="winner-label">Ganador según el contexto</h2>
         <ul>
           {data.winnerByContext.map((w) => (
             <li><span class="context">{w.context}</span><span class="arrow">→</span><strong>{w.winner}</strong></li>
@@ -73,7 +73,14 @@ const schema = {
     background: var(--gold-soft); border: 1px solid var(--gold); border-radius: var(--radius);
     padding: var(--sp-4);
   }
-  .winner-box h4 { margin-bottom: var(--sp-2); color: var(--ink); }
+  /* h2 semántico (evita saltar de H1 a H4 en la jerarquía), con la apariencia
+     idéntica al "eyebrow" que tenía antes — no es un rediseño, solo corrige
+     la jerarquía de encabezados sin cambiar nada visible. */
+  .winner-box .winner-label {
+    font-family: var(--font-body); font-weight: 700; line-height: 1.15; text-wrap: balance;
+    font-size: var(--step-0); text-transform: uppercase; letter-spacing: .04em;
+    margin: 0 0 var(--sp-2); color: var(--ink);
+  }
   .winner-box ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5em; }
   .winner-box li { display: flex; align-items: baseline; gap: .5em; flex-wrap: wrap; font-size: var(--step--1); }
   .winner-box .context { color: var(--ink-soft); }

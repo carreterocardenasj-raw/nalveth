@@ -17,6 +17,12 @@ const { bodyClass, ...seoProps } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Adelanta la conexión a Google Fonts (usadas vía @import en global.css, sin
+         cambiar ni autoalojar las fuentes) para que el navegador no espere a parsear
+         el CSS para empezar esa conexión — mejora de rendimiento de bajo riesgo, sin
+         tocar qué fuentes se cargan. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="generator" content={Astro.generator} />
     <Seo {...seoProps} />
     <!--

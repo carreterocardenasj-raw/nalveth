@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="col">
-      <h4>Explorar</h4>
+      <p class="col-heading">Explorar</p>
       <ul>
         {categories.map((c) => <li><a href={`/${c.slug}/`}>{c.short}</a></li>)}
         {TERRITORIES.map((t) => <li><a href={t.href}>{t.short}</a></li>)}
@@ -20,7 +20,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="col">
-      <h4>NALVETH</h4>
+      <p class="col-heading">NALVETH</p>
       <ul>
         <li><a href="/sobre-nalveth/">Sobre NALVETH</a></li>
         <li><a href="/politica-editorial/">Política editorial</a></li>
@@ -29,7 +29,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="col">
-      <h4>Legal</h4>
+      <p class="col-heading">Legal</p>
       <ul>
         <li><a href="/privacidad/">Privacidad</a></li>
         <li><a href="/cookies/">Cookies</a></li>
@@ -59,7 +59,17 @@ const year = new Date().getFullYear();
   }
   .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; margin: 0 0 .4em; }
   .tagline { color: var(--ink-soft); max-width: 32ch; margin: 0; }
-  .col h4 { margin-bottom: var(--sp-2); }
+  /* Etiquetas de columna del footer: antes eran <h4>, pero al venir siempre después
+     del contenido principal de cada página (que normalmente termina en H2/H3) creaban
+     un salto de nivel en la jerarquía de encabezados (H2 → H4) en las 31 páginas del
+     sitio — el footer es navegación auxiliar, no parte del contenido, así que no
+     necesita ser un encabezado real. Cambiadas a <p class="col-heading"> con el mismo
+     aspecto visual exacto que tenían como h4 (mismo tipo, tamaño, mayúsculas, color). */
+  .col-heading {
+    font-family: var(--font-body); font-weight: 700; line-height: 1.15; text-wrap: balance;
+    font-size: var(--step-0); text-transform: uppercase; letter-spacing: .04em;
+    color: var(--ink-soft); margin: 0 0 var(--sp-2);
+  }
   .col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5em; }
   .col a { color: var(--ink-soft); text-decoration: none; font-size: var(--step--1); }
   .col a:hover { color: var(--accent-strong); }

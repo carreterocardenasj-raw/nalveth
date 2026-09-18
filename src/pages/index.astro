@@ -10,8 +10,16 @@ const categories = await getVisibleCategories();
 const reviews = all.filter((e) => e.kind === 'review').slice(0, 3);
 const guides = all.filter((e) => e.kind === 'guide').slice(0, 3);
 const comparisons = all.filter((e) => e.kind === 'comparison').slice(0, 3);
+
+// Organization/WebSite en la home: solo el dato real que existe (nombre y URL del
+// sitio) — sin logo ni sameAs porque no hay logo de marca ni perfiles sociales
+// todavía, y sin potentialAction/SearchAction porque el sitio no tiene buscador interno.
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'Organization', name: 'NALVETH', url: 'https://nalveth.com/' },
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'NALVETH', url: 'https://nalveth.com/' },
+];
 ---
-<BaseLayout title="NALVETH" description="IA, automatización, software y estrategias para hacer crecer tu negocio — probadas de primera mano, no recopiladas.">
+<BaseLayout title="NALVETH" description="IA, automatización, software y estrategias para hacer crecer tu negocio — probadas de primera mano, no recopiladas." schema={schema}>
   <section class="hero">
     <div class="container hero-inner">
       <span class="eyebrow">Herramientas e IA para negocios</span>

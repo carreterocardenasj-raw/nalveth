@@ -68,7 +68,7 @@ const schema = hub
   )}
 
   <section class="container grid">
-    {entries.map((entry) => <ArticleCard entry={entry} />)}
+    {entries.map((entry) => <ArticleCard entry={entry} headingLevel={hub ? 'h3' : 'h2'} />)}
   </section>
 </BaseLayout>
 

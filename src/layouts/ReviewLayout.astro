@@ -61,7 +61,7 @@ const schema = {
       <aside class="sidebar">
         {data.pricing.length > 0 && (
           <div class="card">
-            <h4>Precios</h4>
+            <p class="card-heading">Precios</p>
             <ul class="pricing">
               {data.pricing.map((p) => (
                 <li>
@@ -76,7 +76,7 @@ const schema = {
 
         {(data.pros.length > 0 || data.cons.length > 0) && (
           <div class="card">
-            <h4>A favor / en contra</h4>
+            <p class="card-heading">A favor / en contra</p>
             <div class="pc">
               <div>
                 <p class="pc-label good">A favor</p>
@@ -92,14 +92,14 @@ const schema = {
 
         {data.bestFor && (
           <div class="card">
-            <h4>Para quién sirve</h4>
+            <p class="card-heading">Para quién sirve</p>
             <p>{data.bestFor}</p>
           </div>
         )}
 
         {data.alternatives.length > 0 && (
           <div class="card">
-            <h4>Alternativas</h4>
+            <p class="card-heading">Alternativas</p>
             <p class="alt-list">
               {alternativeLinks.map((a, i) => (
                 <>
@@ -141,7 +141,16 @@ const schema = {
 
   .layout-grid { display: grid; grid-template-columns: 1fr 320px; gap: var(--sp-6); padding-block: var(--sp-5) var(--sp-8); align-items: start; }
   .sidebar { display: flex; flex-direction: column; gap: var(--sp-3); position: sticky; top: 90px; }
-  .sidebar h4 { margin-bottom: var(--sp-2); }
+  /* Antes h4: estos títulos de widget del sidebar (Precios, A favor/en contra...)
+     aparecen en el DOM después del cuerpo del artículo (que termina en H2/H3), así que
+     como h4 saltaban un nivel de la jerarquía de encabezados. Son etiquetas de un
+     "aside" auxiliar, no contenido narrativo, así que pasan a <p> con el mismo aspecto
+     visual exacto que tenían como h4. */
+  .card-heading {
+    font-family: var(--font-body); font-weight: 700; line-height: 1.15; text-wrap: balance;
+    font-size: var(--step-0); text-transform: uppercase; letter-spacing: .04em;
+    color: var(--ink-soft); margin: 0 0 var(--sp-2);
+  }
 
   .pricing { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6em; }
   .pricing li { display: flex; flex-direction: column; border-top: 1px solid var(--line); padding-top: .5em; }

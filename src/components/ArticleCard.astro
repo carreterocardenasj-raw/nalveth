@@ -3,10 +3,11 @@ import { Image } from 'astro:assets';
 import { entryHref, kindLabel, type AnyEntry } from '../lib/content';
 import { getCategory } from '../data/categories';
 
-export interface Props { entry: AnyEntry; showCategory?: boolean }
-const { entry, showCategory = false } = Astro.props;
+export interface Props { entry: AnyEntry; showCategory?: boolean; headingLevel?: 'h2' | 'h3' }
+const { entry, showCategory = false, headingLevel = 'h3' } = Astro.props;
 const category = getCategory(entry.data.category);
 const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+const Heading = headingLevel;
 ---
 <a class="card article-card" href={entryHref(entry)}>
   {entry.data.heroImage && (
@@ -23,7 +24,7 @@ const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short
     <span class="tag" class:list={{ 'tag--gold': entry.kind === 'review' }}>{kindLabel(entry.kind)}</span>
     {showCategory && category && <span class="cat">{category.short}</span>}
   </div>
-  <h3>{entry.data.title}</h3>
+  <Heading class="title">{entry.data.title}</Heading>
   <p class="desc">{entry.data.description}</p>
   <p class="date">Actualizado {dateFmt.format(entry.data.updatedDate ?? entry.data.publishDate)}</p>
 </a>
@@ -32,12 +33,15 @@ const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short
   .article-card { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: .5em; transition: border-color .15s ease, transform .15s ease; overflow: hidden; padding: 0; }
   .article-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; margin: 0; border-radius: 0; }
-  .article-card .meta, .article-card h3, .article-card .desc, .article-card .date { margin-inline: var(--sp-4); }
+  .article-card .meta, .article-card .title, .article-card .desc, .article-card .date { margin-inline: var(--sp-4); }
   .article-card .meta { margin-top: var(--sp-4); }
   .article-card .date { margin-bottom: var(--sp-4); }
   .meta { display: flex; align-items: center; gap: .6em; }
   .cat { font-size: .78rem; color: var(--ink-faint); }
-  .article-card h3 { font-size: var(--step-1); margin: 0; }
+  /* .title puede renderizarse como h2 o h3 (prop headingLevel) según el contexto de la
+     página, para no saltar niveles de encabezado — el tamaño visual es siempre el mismo,
+     fijado aquí por clase en vez de depender del tag. */
+  .article-card .title { font-size: var(--step-1); margin: 0; }
   .desc { color: var(--ink-soft); font-size: var(--step--1); margin: 0; flex: 1; }
   .date { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); margin: 0; }
 </style>

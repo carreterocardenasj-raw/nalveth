@@ -3,10 +3,15 @@ export interface Crumb { name: string; href?: string }
 export interface Props { items: Crumb[] }
 const { items } = Astro.props;
 
+// El schema debe reflejar exactamente el mismo rastro que se ve en pantalla —
+// el <ol> de abajo siempre antepone "Inicio", así que el JSON-LD también debe
+// incluirlo como posición 1 (antes faltaba: el schema tenía un elemento menos
+// que la migas de pan visibles, y la numeración no coincidía con la jerarquía real).
+const allCrumbs = [{ name: 'Inicio', href: '/' }, ...items];
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, i) => ({
+  itemListElement: allCrumbs.map((item, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: item.name,
