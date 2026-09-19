@@ -94,7 +94,7 @@ const comparisons = defineCollection({
 // Clúster VERI*FACTU: mini-cluster de 5 páginas con URLs planas fuera del esquema de
 // categorías (/verifactu/, /verifactu-autonomos/...), por diseño explícito (estrategia de
 // páginas pilar). No usa las rutas dinámicas [category]/... — cada página tiene su propio
-// archivo en src/pages/. Ver docs/VERIFACTU-CLUSTER.md.
+// archivo en src/pages/. Ver ../.claude/docs/clusters/verifactu.md.
 const verifactu = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/verifactu' }),
   schema: () => z.object({
@@ -111,7 +111,7 @@ const verifactu = defineCollection({
 });
 
 // Clúster de automatización práctica de WhatsApp: mismo patrón que `verifactu` (mini-cluster
-// de 5 páginas con URLs planas, fuera del esquema de categorías). Ver docs/WHATSAPP-CLUSTER.md.
+// de 5 páginas con URLs planas, fuera del esquema de categorías). Ver ../.claude/docs/clusters/whatsapp.md.
 const whatsapp = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/whatsapp' }),
   schema: () => z.object({

@@ -3,7 +3,7 @@
 // cargar. No implementa ningún banner propio ("banner casero" prohibido por
 // encargo) — se apoya en la API estándar `__tcfapi` que expone la CMP ya
 // instalada en el sitio: InMobi Choice (Universal Tag, CMP ID 10, ver
-// src/lib/inmobi-universal-tag.ts y docs/LEGAL-COMPLIANCE.md).
+// src/lib/inmobi-universal-tag.ts y ../.claude/docs/legal.md).
 //
 // IMPORTANTE: este archivo es solo una capa de LECTURA/CONSULTA de esa API.
 // El propio Universal Tag de InMobi ya crea y gestiona los stubs

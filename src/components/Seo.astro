@@ -13,7 +13,7 @@ const { title, description, type = 'website', image, noindex = false, schema } =
 const siteName = 'NALVETH';
 const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-// Sin imagen OG por defecto todavía (pendiente de diseño real, ver docs/PROJECT-CONTEXT.md) —
+// Sin imagen OG por defecto todavía (pendiente de diseño real, ver ../.claude/docs/product.md) —
 // omitimos las etiquetas og:image/twitter:image en vez de apuntar a un archivo que no existe.
 const ogImage = image ? new URL(image, Astro.site) : undefined;
 const schemaList = schema ? (Array.isArray(schema) ? schema : [schema]) : [];

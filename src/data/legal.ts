@@ -3,7 +3,7 @@
 // aquí cuando se disponga del dato real; mientras tanto se muestra el marcador
 // PENDING en vez de un dato inventado (no rellenar con datos ficticios).
 //
-// Ver docs/LEGAL-COMPLIANCE.md para el detalle de qué falta y por qué.
+// Ver ../.claude/docs/legal.md para el detalle de qué falta y por qué.
 
 export const PENDING = '[DATO DEL TITULAR PENDIENTE]';
 
@@ -19,7 +19,7 @@ export const TITULAR = {
   codigoPostal: '29130',
   pais: 'España',
   // Correo de contacto ya definido para el proyecto — mismo usado como identidad
-  // de commits de git (docs/DECISIONS.md, entrada 2026-09-14: "Identidad de
+  // de commits de git (../.claude/docs/decisions.md, entrada 2026-09-14: "Identidad de
   // commits del proyecto"). No se ha creado ni comprado un correo @nalveth.com.
   email: 'carreterocardenasj@gmail.com',
   // Sin teléfono público, por instrucción explícita del titular (2026-09-16).

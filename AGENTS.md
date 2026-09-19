@@ -1,6 +1,6 @@
-## NALVETH — memoria operativa
+## NALVETH — solo código
 
-Antes de nada, lee `docs/PROJECT-CONTEXT.md`, `docs/RESEARCH-WHATSAPP-IA.md` y `docs/DECISIONS.md` — es la memoria operativa del proyecto. No cargues la investigación histórica completa (`/research/`, proyecto `google Adsense/`) salvo que necesites un detalle que no esté en esos tres archivos. Reglas de contenido no negociables (no inventar precios/datos, fechar lo verificado) en `docs/PROJECT-CONTEXT.md` § Reglas editoriales.
+Este repo contiene únicamente el código de la web. La memoria operativa y la base de conocimiento (contexto, decisiones, investigación, skills) viven fuera, en `../.claude/`: lee `../.claude/CLAUDE.md` y `../.claude/docs/INDEX.md`. Abre el agente siempre desde la raíz `NALVETH/`, no desde `web/`. Reglas de contenido no negociables (no inventar precios/datos, fechar lo verificado) en `../.claude/docs/product.md` § Reglas editoriales.
 
 ## Development
 
