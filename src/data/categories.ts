@@ -21,7 +21,7 @@ export const CATEGORIES: Category[] = [
     name: 'IA para negocios',
     short: 'IA para negocios',
     description:
-      'Herramientas y estrategias de inteligencia artificial aplicadas a vender, atender y automatizar tu negocio — probadas de primera mano, no recopiladas.',
+      'Herramientas y estrategias de inteligencia artificial aplicadas a vender, atender y automatizar tu negocio.',
     subAreas: [
       { slug: 'agentes-ia', name: 'Agentes IA' },
       { slug: 'whatsapp-ia', name: 'WhatsApp + IA' },
@@ -35,7 +35,7 @@ export const CATEGORIES: Category[] = [
     name: 'Herramientas',
     short: 'Herramientas',
     description:
-      'El catálogo de software que probamos y comparamos: IA, marketing, SEO, ecommerce y productividad para autónomos, freelancers y pequeñas empresas.',
+      'El catálogo de software que analizamos y comparamos: IA, marketing, SEO, ecommerce y productividad para autónomos, freelancers y pequeñas empresas.',
     subAreas: [
       { slug: 'ia', name: 'IA' },
       { slug: 'marketing', name: 'Marketing' },

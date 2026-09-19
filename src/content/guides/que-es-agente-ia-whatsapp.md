@@ -41,4 +41,4 @@ Vale la pena tenerlo en cuenta antes de elegir: Meta ha introducido cambios en e
 - Comprueba si la herramienta permite derivar a una persona real cuando el caso lo requiere — todo agente de IA serio debería tenerlo.
 - No des por hecho el precio final: los mensajes de WhatsApp pueden tener coste aparte del plan de la herramienta.
 
-En nuestras [reviews de herramientas concretas](/ia-para-negocios/) explicamos, caso por caso, qué tipo de motor usa cada una y qué hemos podido comprobar de primera mano.
+En nuestras [reviews de herramientas concretas](/ia-para-negocios/) explicamos, caso por caso, qué tipo de motor usa cada una y qué información hemos consultado en fuentes oficiales.

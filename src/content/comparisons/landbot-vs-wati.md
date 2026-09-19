@@ -33,7 +33,7 @@ Esta comparativa se apoya en precios y funciones verificados directamente en las
 | Coste variable aparte de la cuota | 0,05€/chat extra, 0,10€/chat de IA extra (reglas publicadas, sin letra pequeña) | Tarifa de mensajes de plantilla según tipo (marketing/utilidad/autenticación), variable |
 | Comisión de afiliado | ✓ 20% recurrente, hasta 2 años | ✓ 15-20% sobre suscripción, primeros 12 meses |
 
-Fuente de precios: landbot.io y wati.io/pricing, navegadas directamente el 14/09/2026 — detalle completo en `docs/testing/landbot-test-results.md` y `docs/testing/wati-test-results.md`. Ninguna de las dos tablas incluye lo que cobra Meta aparte por los mensajes de WhatsApp — ese coste se explica por separado en [cuánto cuesta automatizar WhatsApp en España](/precio-whatsapp-business-api/).
+Fuente de precios: landbot.io y wati.io/pricing, navegadas directamente el 14/09/2026. Ninguna de las dos tablas incluye lo que cobra Meta aparte por los mensajes de WhatsApp — ese coste se explica por separado en [cuánto cuesta automatizar WhatsApp en España](/precio-whatsapp-business-api/).
 
 ## Por qué todavía no hay un único ganador
 

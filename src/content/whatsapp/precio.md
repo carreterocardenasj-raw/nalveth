@@ -9,7 +9,7 @@ pageType: coste
 keyword: "cuánto cuesta automatizar WhatsApp"
 ---
 
-No existe una cifra única de "cuánto cuesta automatizar WhatsApp" — depende de demasiadas variables como para reducirlo a una tabla del tipo "100 conversaciones = X €". Lo que sí podemos hacer es separar con precisión los 5 componentes de coste que existen realmente, decir qué está verificado y con qué fecha, y marcar como `[NO DISPONIBLE]` lo que no se puede calcular sin conocer tu caso concreto.
+No existe una cifra única de "cuánto cuesta automatizar WhatsApp" — depende de demasiadas variables como para reducirlo a una tabla del tipo "100 conversaciones = X €". Lo que sí podemos hacer es separar con precisión los 5 componentes de coste que existen realmente, decir qué está verificado y con qué fecha, y señalar expresamente lo que no se puede calcular sin conocer tu caso concreto.
 
 ## 1. Meta (el coste de los mensajes)
 
@@ -33,7 +33,7 @@ Este modelo de cobro por token **ya está vigente desde el 1 de agosto de 2026**
 - **1 de agosto de 2026 (ya vigente)**: Meta empieza a cobrar por token los mensajes de Meta Business Agent.
 - **1 de octubre de 2026 (todavía no vigente)**: Meta empieza a cobrar los mensajes de servicio y las plantillas de utilidad dentro de la ventana de 24 horas (ver más abajo) — esto no tiene relación con Meta Business Agent, afecta a los mensajes normales de cualquier herramienta.
 
-**Cifra exacta del cobro por token**: circula en varias fuentes de terceros la cifra de 2 USD por millón de tokens, pero no la hemos podido confirmar directamente en el texto navegable de la documentación oficial de Meta (existe un PDF vinculado, "Guía de precios de Meta Business Agent", que no hemos abierto y verificado). Hasta confirmarlo directamente: `[NO CONFIRMADO]`. No la presentamos como cifra oficial.
+**Cifra exacta del cobro por token**: circula en varias fuentes de terceros la cifra de 2 USD por millón de tokens, pero no la hemos podido confirmar directamente en el texto navegable de la documentación oficial de Meta (existe un PDF vinculado, "Guía de precios de Meta Business Agent", que no hemos abierto y verificado). Hasta confirmarlo directamente en la fuente oficial, la tratamos como no confirmada y no la presentamos como cifra oficial.
 
 **Cambio ya confirmado, vigente desde el 1 de octubre de 2026** (afecta a los mensajes normales de WhatsApp Business Platform — no a Meta Business Agent, que ya se explicó arriba; todavía no vigente en la fecha de esta redacción):
 
@@ -41,7 +41,7 @@ Este modelo de cobro por token **ya está vigente desde el 1 de agosto de 2026**
 - Las plantillas de **utilidad** enviadas dentro de la ventana de 24 horas **dejan de ser gratuitas** (termina el beneficio vigente desde julio de 2025).
 - Varias actualizaciones de tarifa por país (principalmente en Oriente Medio, Asia-Pacífico y Latinoamérica) — no hemos visto cambios específicos anunciados para España en la documentación consultada.
 
-**Cifras exactas en euros para España**: `[NO DISPONIBLE]`. Las tarifas de Meta están publicadas en hojas de tarifas (CSV/PDF) segmentadas por país, categoría de plantilla y nivel de volumen — no existe una cifra plana de "X€ por mensaje en España" que se pueda citar sin simplificar en exceso. Para tu caso concreto, consulta la hoja de tarifas en EUR desde tu propia cuenta de WhatsApp Business Manager o en la [documentación oficial de precios de Meta](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
+**Cifras exactas en euros para España**: no disponibles en esta página. Las tarifas de Meta están publicadas en hojas de tarifas (CSV/PDF) segmentadas por país, categoría de plantilla y nivel de volumen — no existe una cifra plana de "X€ por mensaje en España" que se pueda citar sin simplificar en exceso. Para tu caso concreto, consulta la hoja de tarifas en EUR desde tu propia cuenta de WhatsApp Business Manager o en la [documentación oficial de precios de Meta](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
 
 ## 2. BSP (el proveedor que te da acceso a la API)
 
@@ -50,7 +50,7 @@ Si usas la Business Platform (API), normalmente accedes a través de un BSP — 
 - **Cuota fija** (mensual o por número de teléfono).
 - **Soporte** (a veces incluido, a veces de pago aparte).
 - **Coste de alta del número** (onboarding), variable según proveedor.
-- **Márgenes sobre el coste de Meta**: algunos BSP repercuten el coste de Meta tal cual, otros añaden un margen — esto varía por proveedor y no se puede generalizar. `[NO DISPONIBLE]` como cifra única.
+- **Márgenes sobre el coste de Meta**: algunos BSP repercuten el coste de Meta tal cual, otros añaden un margen — esto varía por proveedor y no se puede generalizar, por lo que no damos una cifra única.
 
 ## 3. Plataforma (la herramienta que usas)
 
@@ -69,7 +69,7 @@ Si la automatización incluye IA generativa, hay un coste adicional que casi nun
 
 - **Créditos o cuota de IA** dentro del plan de la herramienta (por ejemplo, Tidio factura su IA "Lyro" por conversación resuelta, y n8n incluye créditos de IA limitados por plan — ambos verificados el 15/09/2026 en sus propias webs).
 - **Tokens o coste por resultado**, si la herramienta usa un modelo de terceros (OpenAI, Anthropic, etc.) y traslada ese coste.
-- El coste real depende del volumen de conversaciones que gestione la IA y de cuánto contexto necesite cada una — no hay una cifra universal. `[NO DISPONIBLE]` sin conocer tu volumen.
+- El coste real depende del volumen de conversaciones que gestione la IA y de cuánto contexto necesite cada una — no hay una cifra universal, y no se puede estimar sin conocer tu volumen.
 
 ## 5. Implementación
 
@@ -85,12 +85,12 @@ Esto puede hacerlo el propio negocio en herramientas pensadas para no programar 
 |---|---|
 | Mecánica de precios de Meta (cuándo se cobra, qué categorías, cambios de octubre de 2026) | ✅ Verificado en fuente oficial, 15/09/2026 |
 | Existencia y mecánica de cobro por token de Meta Business Agent (vigente desde 1/08/2026) | ✅ Verificado en fuente oficial, 15/09/2026 |
-| Cifra exacta del cobro por token de Meta Business Agent (2 USD/millón de tokens citado por terceros) | `[NO CONFIRMADO]` — no localizado en el texto navegable de la documentación oficial |
-| Cifras exactas en EUR por categoría y país | `[NO DISPONIBLE]` — requiere consultar tu propia hoja de tarifas |
+| Cifra exacta del cobro por token de Meta Business Agent (2 USD/millón de tokens citado por terceros) | No confirmado — no localizado en el texto navegable de la documentación oficial |
+| Cifras exactas en EUR por categoría y país | No disponible aquí — requiere consultar tu propia hoja de tarifas |
 | Precio de las 7 herramientas comparadas | ✅ Verificado directamente en cada web oficial, 15/09/2026 (ver [comparativa](/mejor-herramienta-whatsapp-automatizacion/)) |
-| Coste de BSP independiente del coste de la herramienta | `[NO DISPONIBLE]` — varía por proveedor |
-| Coste de IA por conversación (fuera de lo incluido en cada plan) | `[NO DISPONIBLE]` — depende del volumen |
-| Coste de implementación a medida | `[NO DISPONIBLE]` — depende del proyecto |
+| Coste de BSP independiente del coste de la herramienta | No disponible — varía por proveedor |
+| Coste de IA por conversación (fuera de lo incluido en cada plan) | No disponible — depende del volumen |
+| Coste de implementación a medida | No disponible — depende del proyecto |
 
 ## Siguiente paso
 

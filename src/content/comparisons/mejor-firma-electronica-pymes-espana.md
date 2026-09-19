@@ -29,7 +29,7 @@ Esta comparativa se apoya en precios verificados directamente en las webs oficia
 | Entrada de pago | Business: 35€/mes (420€/año) | One: 9€/mes (108€/año) | Personal: 9€/mes (108€/año) | Standard equipos: 16,80€/mes/licencia (sin IVA) |
 | Plan intermedio | Business+: 57€/mes (684€/año) | Plus: 23€/mes (276€/año), firmas ilimitadas | Standard: 23€/mes/usuario (276€/año) | Pro equipos: 23,99€/mes/licencia (sin IVA) |
 | Plan superior | Enterprise: a medida | Pro: 38€/mes (456€/año) | Business Pro: 38€/mes/usuario (456€/año) | Studio equipos: 30,24€/mes/licencia (sin IVA) |
-| Comisión de afiliado | [POR VERIFICAR] — no hemos encontrado un programa de afiliados público | [POR VERIFICAR] — no hemos encontrado un programa de afiliados público | ✓ 15%, cookie de 45 días (confirmado en fuente oficial) | ✓ Hasta 85% el primer mes, 8,33% recurrente (confirmado en fuente oficial) |
+| Comisión de afiliado | No hemos encontrado un programa de afiliados público | No hemos encontrado un programa de afiliados público | ✓ 15%, cookie de 45 días (confirmado en fuente oficial) | ✓ Hasta 85% el primer mes, 8,33% recurrente (confirmado en fuente oficial) |
 
 *Los precios de Adobe corresponden a los planes "para equipos" (mínimo 2 licencias, facturación anual con cobro mensual) navegados directamente en adobe.com/es — no existe ya una página de precios independiente para "Acrobat Sign" como producto suelto: la firma electrónica viene integrada dentro de los planes de Acrobat.
 
@@ -39,7 +39,7 @@ Un detalle que llama la atención: **DocuSign y Youtrust tienen exactamente los 
 
 ## Una advertencia sobre los datos de Youtrust
 
-Al navegar la página de precios de Youtrust encontramos una contradicción en su propia web: la tarjeta del plan Free indica "3 invitaciones a firmar al mes", pero su propia sección de preguntas frecuentes, en la misma página, dice "2 invitaciones para firmar por mes". No hemos podido resolver cuál es la cifra correcta desde fuera — lo señalamos en vez de elegir una al azar, y lo marcamos como **[POR VERIFICAR]** hasta que Youtrust lo corrija o lo confirmemos de otra forma.
+Al navegar la página de precios de Youtrust encontramos una contradicción en su propia web: la tarjeta del plan Free indica "3 invitaciones a firmar al mes", pero su propia sección de preguntas frecuentes, en la misma página, dice "2 invitaciones para firmar por mes". No hemos podido resolver cuál es la cifra correcta desde fuera — lo señalamos en vez de elegir una al azar, y no damos ninguna de las dos como definitiva hasta que Youtrust lo corrija o lo confirmemos de otra forma.
 
 ## Firma electrónica avanzada vs. cualificada: la pregunta que casi todas las pymes se hacen mal
 
@@ -49,7 +49,7 @@ Antes de comparar herramientas conviene aclarar un punto que genera confusión c
 - **Avanzada**: identifica de forma unívoca al firmante y detecta si el documento se modificó después de firmarlo. Es el nivel que ofrecen por defecto la mayoría de planes de pago de las cuatro herramientas de esta comparativa.
 - **Cualificada**: como la avanzada, pero además requiere un certificado emitido por un prestador cualificado y, normalmente, un dispositivo de creación de firma verificado. Tiene el mismo valor legal que una firma manuscrita ante notario y es obligatoria en casos concretos (algunos trámites con la administración pública, determinados contratos de alto valor).
 
-Para la mayoría de pymes y autónomos que firman presupuestos, contratos de servicios o acuerdos comerciales, **la firma avanzada es suficiente** — es el nivel que cubren los planes intermedios de las cuatro herramientas comparadas aquí. Si tu caso concreto exige firma cualificada (algunos trámites notariales o con la administración), confírmalo con un asesor legal antes de elegir proveedor: no todas las herramientas de esta lista la ofrecen en todos sus planes, y ese dato no estaba confirmado en las páginas públicas de precios que hemos navegado — **[POR VERIFICAR]** caso por caso.
+Para la mayoría de pymes y autónomos que firman presupuestos, contratos de servicios o acuerdos comerciales, **la firma avanzada es suficiente** — es el nivel que cubren los planes intermedios de las cuatro herramientas comparadas aquí. Si tu caso concreto exige firma cualificada (algunos trámites notariales o con la administración), confírmalo con un asesor legal antes de elegir proveedor: no todas las herramientas de esta lista la ofrecen en todos sus planes, y ese dato no estaba confirmado en las páginas públicas de precios que hemos navegado — compruébalo caso por caso con cada proveedor.
 
 Si quieres el contexto completo antes de esta comparativa — diferencia entre firma electrónica y gestión documental, qué tipo de herramienta encaja con tu negocio, y cuándo hace falta certificado — lo tienes en esta guía: [Firma electrónica y gestión documental: mejores herramientas para empresas y autónomos](/herramientas/guias/firma-electronica-gestion-documental/).
 

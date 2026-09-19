@@ -95,7 +95,7 @@ Ninguna herramienta de esta lista ha sido probada de primera mano por NALVETH to
 
 **Para quién:** ecommerce y tiendas online que ya usan o quieren un chat web con IA, y suman WhatsApp como canal adicional — no negocios que solo necesitan WhatsApp.
 
-**Afiliación:** ✅ confirmada — hasta 30% de comisión, programa abierto a cualquier creador de contenido (tidio.com/partners/affiliate). Cookie exacta y umbral mínimo de pago: `[NO CONFIRMADO]` en la página oficial consultada.
+**Afiliación:** ✅ confirmada — hasta 30% de comisión, programa abierto a cualquier creador de contenido (tidio.com/partners/affiliate). Cookie exacta y umbral mínimo de pago: no confirmados en la página oficial consultada.
 
 ## Tabla resumen
 

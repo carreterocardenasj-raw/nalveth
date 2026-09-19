@@ -10,7 +10,7 @@ toolName: "Landbot"
 toolUrl: "https://landbot.io"
 verifiedDate: 2026-09-14
 testedFirsthand: false
-sourceNote: "Ficha basada en información oficial verificada directamente en landbot.io (no en resúmenes de terceros) a fecha del 14/09/2026 — la estructura de precios cambió respecto a la comprobación del 13/09/2026 (el plan 'WhatsApp Pro' ya no existe con ese nombre/precio). Detalle completo en docs/testing/landbot-test-results.md. La prueba práctica de uso sigue pendiente de ejecutar — no se ha creado cuenta."
+sourceNote: "Ficha basada en información oficial verificada directamente en landbot.io (no en resúmenes de terceros) a fecha del 14/09/2026 — la estructura de precios cambió respecto a la comprobación del 13/09/2026 (el plan 'WhatsApp Pro' ya no existe con ese nombre/precio). La prueba práctica de uso sigue pendiente de ejecutar — no se ha creado cuenta."
 pricing:
   - plan: "Free"
     price: "Gratis, para siempre"

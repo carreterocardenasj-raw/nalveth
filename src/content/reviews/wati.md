@@ -10,7 +10,7 @@ toolName: "Wati"
 toolUrl: "https://wati.io"
 verifiedDate: 2026-09-14
 testedFirsthand: false
-sourceNote: "Precios verificados navegando directamente wati.io/pricing (incluido el selector anual/mensual) el 14/09/2026 — la investigación previa del 13/09/2026 no había podido confirmarlos. Detalle completo en docs/testing/wati-test-results.md. La prueba práctica de uso sigue pendiente de ejecutar — no se ha creado cuenta."
+sourceNote: "Precios verificados navegando directamente wati.io/pricing (incluido el selector anual/mensual) el 14/09/2026 — la investigación previa del 13/09/2026 no había podido confirmarlos. La prueba práctica de uso sigue pendiente de ejecutar — no se ha creado cuenta."
 pricing:
   - plan: "Growth"
     price: "59€/mes (anual) · 69€/mes (mensual)"
@@ -52,4 +52,4 @@ Comparado con Landbot: Wati incluye WhatsApp real desde el plan más barato (59-
 
 El programa de afiliados de Wati está verificado en fuente oficial: paga entre un 15% y un 20% sobre los ingresos de suscripción durante los primeros 12 meses de cada cliente referido, con una cookie de seguimiento de 90 días y pago trimestral. Una condición a tener en cuenta si en algún momento se combina con publicidad: el propio programa prohíbe usar anuncios de Google o Facebook para captar referidos.
 
-*Esta ficha se completará con la experiencia de uso real, capturas y puntuación en cuanto se ejecute la prueba práctica — ver `docs/testing/wati-test-results.md`.*
+*Esta ficha se completará con la experiencia de uso real, capturas y puntuación en cuanto se ejecute la prueba práctica.*

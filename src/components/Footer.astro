@@ -34,12 +34,13 @@ const year = new Date().getFullYear();
         <li><a href="/privacidad/">Privacidad</a></li>
         <li><a href="/cookies/">Cookies</a></li>
         <li><a href="/aviso-legal/">Aviso legal</a></li>
-        <!-- Contenedor reservado para InMobi Choice (CMP ID 10): la propiedad está
+        {/* Contenedor reservado para InMobi Choice (CMP ID 10): la propiedad está
              configurada con "Display privacy consent as a link at the footer" y
              Link Element ID = "nalveth-privacy". Debe ser un contenedor vacío, sin
              href/onclick/lógica propia — es InMobi quien inserta y gestiona el
              enlace ahí dentro (ver ../.claude/docs/legal.md). No añadir contenido
-             ni comportamiento manual a este div. -->
+             ni comportamiento manual a este div. Comentario de plantilla: no se
+             publica en el HTML. */}
         <li><div id="nalveth-privacy"></div></li>
       </ul>
     </div>

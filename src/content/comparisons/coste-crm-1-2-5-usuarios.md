@@ -19,7 +19,7 @@ winnerByContext:
     winner: "Entre las seis herramientas analizadas, Clientify es la que ofrece en el mismo plan CRM, firma electrónica y WhatsApp profesional, aunque su precio no escala tan claramente en la web pública"
 ---
 
-No existe un "precio del CRM" único — depende del número de usuarios, y cada fabricante empaqueta los usuarios de forma distinta (algunos cobran por asiento desde el primero, otros incluyen varios usuarios gratis en el plan base). Esta tabla separa el coste real para 1, 2 y 5 usuarios, con el precio base y el promocional señalados por separado, y marca `[NO DISPONIBLE]` donde no hemos podido verificar una cifra exacta sin inventarla. **No convertimos divisas**: cuando el fabricante publica el precio en dólares (HubSpot, Bigin) lo mostramos en dólares; cuando lo publica en euros (el resto), lo mostramos en euros — comparar directamente una cifra en € con una en $ como si fueran el mismo importe sería engañoso.
+No existe un "precio del CRM" único — depende del número de usuarios, y cada fabricante empaqueta los usuarios de forma distinta (algunos cobran por asiento desde el primero, otros incluyen varios usuarios gratis en el plan base). Esta tabla separa el coste real para 1, 2 y 5 usuarios, con el precio base y el promocional señalados por separado, y señala expresamente dónde no hemos podido verificar una cifra exacta, en vez de inventarla. **No convertimos divisas**: cuando el fabricante publica el precio en dólares (HubSpot, Bigin) lo mostramos en dólares; cuando lo publica en euros (el resto), lo mostramos en euros — comparar directamente una cifra en € con una en $ como si fueran el mismo importe sería engañoso.
 
 ## Coste por número de usuarios
 
@@ -28,7 +28,7 @@ No existe un "precio del CRM" único — depende del número de usuarios, y cada
 | **HubSpot** (Sales Hub) — USD | Gratis ($0) | Gratis ($0 — el plan gratuito cubre hasta 2 usuarios) | Starter: 5 × 7 $/mes (precio promocional) = 35 $/mes · precio estándar 5 × 20 $/mes = 100 $/mes |
 | **Pipedrive** (Lite) — EUR | 14 €/mes | 28 €/mes | 70 €/mes |
 | **Holded** — EUR | Plus: 15 €/mes (1 usuario) | Básico: 29 €/mes (2 usuarios incluidos) | Estándar (4 usuarios incluidos, 59 €/mes) + 1 usuario extra (10 €/mes) = 69 €/mes |
-| **Clientify** — EUR | 39 €/mes (1 usuario incluido) | `[NO DISPONIBLE]` — el precio para 2+ usuarios se calcula con una herramienta interactiva en su web, no publicado como tabla fija | `[NO DISPONIBLE]` — mismo motivo |
+| **Clientify** — EUR | 39 €/mes (1 usuario incluido) | Sin cifra publicada — el precio para 2+ usuarios se calcula con una herramienta interactiva en su web, no publicado como tabla fija | Sin cifra publicada — mismo motivo |
 | **Zoho CRM** — EUR | Gratis (0 €) | Gratis (0 € — el plan gratuito cubre hasta 3 usuarios) | Standard: 5 × 14 €/mes = 70 €/mes |
 | **Bigin** (Express) — USD | Gratis ($0, 1 usuario) | 2 × 7 $/mes = 14 $/mes | 5 × 7 $/mes = 35 $/mes |
 
@@ -41,9 +41,9 @@ Misma cifra, condiciones distintas: esta tabla separa moneda, tipo de facturaci�
 | HubSpot | USD ($) | Starter: el precio promocional (7 $/mes) exige facturación anual; en factura mensual se aplica el precio estándar (20 $/mes), ambos mostrados por separado arriba | Promocional y estándar, ambos indicados | No incluidos — impuestos locales según el país de facturación | 15/09/2026 — hubspot.com/pricing |
 | Pipedrive | EUR (€) | Anual (el pago mensual tiene un precio por asiento más alto que el mostrado) | Estándar — no se ha encontrado un precio promocional distinto en la web pública | Sin IVA — se añade según el país | 15/09/2026 — pipedrive.com/en/pricing |
 | Holded | EUR (€) | Anual (el pago mensual tiene un precio por asiento más alto que el mostrado). Holded muestra además un descuento de bienvenida temporal en su web que no se refleja aquí, por no ser el precio recurrente real | Estándar (precio recurrente, no el descuento de bienvenida) | Sin IVA — se añade según el país | 15/09/2026 — holded.com/es/precios |
-| Clientify | EUR (€) | Mensual (existe también tarifa anual, 468 €/año para 1 usuario, equivalente a 39 €/mes) | Estándar — plan único publicado, sin promoción distinta encontrada | No especificado como incluido o no en la web pública — `[POR VERIFICAR]` | 15/09/2026 — clientify.com/precios |
-| Zoho CRM | EUR (€) | `[POR VERIFICAR]` si el precio mostrado corresponde a facturación mensual o anual — no confirmado explícitamente en esta comparativa | Estándar — no se ha encontrado un precio promocional distinto en la web pública | Impuestos locales no incluidos, según indica la propia web | 15/09/2026 — zoho.com/crm/zohocrm-pricing.html |
-| Bigin | USD ($) | `[POR VERIFICAR]` si el precio mostrado corresponde a facturación mensual o anual — no confirmado explícitamente en esta comparativa | Estándar — no se ha encontrado un precio promocional distinto en la web pública | Impuestos locales no incluidos, según indica la propia web | 15/09/2026 — bigin.com/pricing.html |
+| Clientify | EUR (€) | Mensual (existe también tarifa anual, 468 €/año para 1 usuario, equivalente a 39 €/mes) | Estándar — plan único publicado, sin promoción distinta encontrada | No especificado como incluido o no en la web pública | 15/09/2026 — clientify.com/precios |
+| Zoho CRM | EUR (€) | Sin confirmar si el precio mostrado corresponde a facturación mensual o anual | Estándar — no se ha encontrado un precio promocional distinto en la web pública | Impuestos locales no incluidos, según indica la propia web | 15/09/2026 — zoho.com/crm/zohocrm-pricing.html |
+| Bigin | USD ($) | Anual (precio por usuario con facturación anual) | Estándar — no se ha encontrado un precio promocional distinto en la web pública | Impuestos locales no incluidos, según indica la propia web | 15/09/2026 — bigin.com/pricing.html |
 
 ## Lo que la tabla no cuenta (y por qué importa)
 

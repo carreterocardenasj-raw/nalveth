@@ -51,14 +51,14 @@ Los precios de entrada no son directamente comparables sin mirar qué incluyen. 
 
 Antes de añadir cualquier enlace comercial, verificamos directamente si el programa de afiliados existe, sigue activo, y es apto para un medio de contenidos como NALVETH — no reutilizamos comisiones encontradas en artículos antiguos.
 
-- **Billin / TS Facturas**: programa de afiliados **activo y apto**, verificado el 14/09/2026 en su propia web ("hasta 82,80€ por negocio referido"). El desglose exacto de comisión por plan no estaba detallado en la página que vimos, así que ese dato concreto queda `[POR VERIFICAR]`.
+- **Billin / TS Facturas**: programa de afiliados **activo y apto**, verificado el 14/09/2026 en su propia web ("hasta 82,80€ por negocio referido"). El desglose exacto de comisión por plan no estaba detallado en la página que vimos, así que ese dato concreto no está confirmado.
 - **Quipu**: programa de afiliados **activo y apto**, verificado el 14/09/2026 en su propia web: 30% de comisión sobre el importe pagado, recurrente hasta 12 meses en planes mensuales, pago único en anuales.
 - **Holded**: solo existe un programa de "Solution Partners" para agencias y consultoras que implementan el software para sus clientes — no es un programa de afiliación de contenidos con enlace y comisión por referido. No apto para NALVETH tal cual está planteado.
 - **FacturaDirecta**: su "Partner Program" es un descuento por volumen para gestorías que gestionan cuentas de clientes, no una comisión en efectivo por afiliación. No apto para NALVETH tal cual está planteado.
-- **Declarando**: no hemos encontrado un programa de afiliados público. `AFILIACIÓN PENDIENTE DE VERIFICAR`.
+- **Declarando**: no hemos encontrado un programa de afiliados público.
 - **Aplicación gratuita AEAT**: no aplica — es la Administración Pública.
 
-**Por qué no hay todavía enlaces marcados como afiliados en esta página:** confirmar que un programa existe no es lo mismo que estar inscritos en él. Registrarse como afiliado exige crear una cuenta — y NALVETH tiene la misma regla que ya aplicamos a las pruebas reales de herramientas (documentada en `docs/DECISIONS.md`): no creamos cuentas de terceros de forma autónoma. Los enlaces de abajo son enlaces normales a la web oficial de cada fabricante, sin comisión. En cuanto una persona autorizada complete el alta en los programas de Billin/TS Facturas y Quipu, sustituiremos esos enlaces por versiones marcadas como "Enlace de afiliado" con `rel="sponsored"`, tal y como exige la política editorial de NALVETH.
+**Por qué no hay todavía enlaces marcados como afiliados en esta página:** confirmar que un programa existe no es lo mismo que estar inscritos en él. Registrarse como afiliado exige crear una cuenta — y NALVETH tiene la misma regla que ya aplicamos a las pruebas reales de herramientas: no creamos cuentas de terceros de forma autónoma. Los enlaces de abajo son enlaces normales a la web oficial de cada fabricante, sin comisión. En cuanto una persona autorizada complete el alta en los programas de Billin/TS Facturas y Quipu, sustituiremos esos enlaces por versiones marcadas como "Enlace de afiliado" con `rel="sponsored"`, tal y como exige la política editorial de NALVETH.
 
 ## Los fabricantes
 
