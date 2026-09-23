@@ -13,7 +13,7 @@ Es uno de los cruces de términos más habituales, y tiene sentido: ambas normat
 
 ## Qué regula VERI\*FACTU (resumen)
 
-VERI\*FACTU es el nombre coloquial del Reglamento RRSIF (Real Decreto 1007/2023), que regula **cómo deben funcionar por dentro los sistemas informáticos que emiten facturas** — integridad, trazabilidad, y en la modalidad VERI\*FACTU, envío inmediato de los registros a la AEAT. No cambia a quién tienes que facturar ni en qué formato entregas la factura a tu cliente: regula el sistema, no la relación comercial. Fechas: 1 de enero de 2027 (Impuesto sobre Sociedades) y 1 de julio de 2027 (resto de obligados). Ver el detalle completo en el **[pilar del clúster](/verifactu/)**.
+VERI\*FACTU es el nombre coloquial del Reglamento RRSIF (Real Decreto 1007/2023), que regula **cómo deben funcionar por dentro los sistemas informáticos que emiten facturas** — integridad, trazabilidad, y en la modalidad VERI\*FACTU, envío inmediato de los registros a la AEAT. No cambia a quién tienes que facturar ni en qué formato entregas la factura a tu cliente: regula el sistema, no la relación comercial — en la práctica, el paso previo suele ser comprobar que tu programa de facturación ya está adaptado, algo que repasamos con precios reales en **[mejores programas compatibles con VERI\*FACTU](/software-verifactu/)**. Fechas: 1 de enero de 2027 (Impuesto sobre Sociedades) y 1 de julio de 2027 (resto de obligados). Ver el detalle completo en el **[pilar del clúster](/verifactu/)**.
 
 ## Qué regula la factura electrónica B2B obligatoria
 
