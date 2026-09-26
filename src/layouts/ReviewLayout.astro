@@ -171,6 +171,12 @@ const schema = {
 
   @media (max-width: 900px) {
     .layout-grid { grid-template-columns: 1fr; }
-    .sidebar { position: static; }
+    /* En escritorio el sidebar (precio, pros/contras, para quién, CTA) acompaña todo el
+       scroll gracias a position: sticky. En móvil eso no aplica, así que sin este order
+       quedaría relegado al final del artículo largo, muy por debajo del precio y del
+       CTA. order: -1 lo sube visualmente antes de la prosa SIN moverlo en el DOM (mismo
+       nodo, mismo <ReviewLayout>, mismo tracking) — solo cambia el orden de pintado en
+       este grid. La lectura por lector de pantalla sigue el DOM, no este orden visual. */
+    .sidebar { position: static; order: -1; }
   }
 </style>
