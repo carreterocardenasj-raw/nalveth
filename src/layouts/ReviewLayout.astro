@@ -114,13 +114,13 @@ const schema = {
         <div class="card cta-card">
           {data.affiliateVerified && data.affiliateUrl ? (
             <>
-              <a class="btn btn--primary" href={data.affiliateUrl} rel="sponsored noopener" target="_blank">
+              <a class="btn btn--primary" href={data.affiliateUrl} rel="sponsored noopener" target="_blank" data-track="tool_cta_click" data-track-tool={data.toolName} data-track-affiliate="true">
                 Visitar {data.toolName}
               </a>
               <p class="disclosure">Enlace de afiliado.</p>
             </>
           ) : (
-            <a class="btn btn--primary" href={data.toolUrl} rel="noopener" target="_blank">
+            <a class="btn btn--primary" href={data.toolUrl} rel="noopener" target="_blank" data-track="tool_cta_click" data-track-tool={data.toolName} data-track-affiliate="false">
               Ver {data.toolName}
             </a>
           )}

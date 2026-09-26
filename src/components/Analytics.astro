@@ -1,0 +1,8 @@
+---
+// Medición (Fase 3A, D-027). Inerte mientras src/data/analytics.ts no tenga identificadores
+// válidos: no renderiza nada. Va DESPUÉS del Universal Tag de InMobi en BaseLayout.astro.
+import { GA4_ID, GSC_TOKEN } from '../data/analytics';
+import { analyticsSnippet } from '../lib/analytics-snippet';
+---
+{GSC_TOKEN && <meta name="google-site-verification" content={GSC_TOKEN} />}
+{GA4_ID && <script is:inline set:html={analyticsSnippet(GA4_ID)} />}

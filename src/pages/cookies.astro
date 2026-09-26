@@ -7,30 +7,29 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
   <article class="container prose page">
     <h1>Política de cookies</h1>
 
-    <p class="notice">Esta política describe el estado <strong>real y actual</strong> del sitio, verificado directamente en su código fuente el 16 de septiembre de 2026 — no se declara ninguna cookie o herramienta como activa si todavía no lo está.</p>
+    <p class="notice">Esta política describe el estado <strong>real y actual</strong> del sitio, verificado directamente en su código fuente el 26 de septiembre de 2026 — no se declara ninguna cookie o herramienta como activa si todavía no lo está.</p>
 
     <h2>1. Qué son las cookies</h2>
     <p>Las cookies son pequeños archivos que un sitio web puede guardar en tu navegador para recordar información entre visitas — por ejemplo, tus preferencias o si has aceptado un aviso. No todo lo que guarda información en tu navegador es una cookie de terceros ni requiere consentimiento: las cookies estrictamente necesarias para el funcionamiento básico de una web están exentas.</p>
 
-    <h2>2. Estado actual: NALVETH no instala cookies de analítica, publicidad ni preferencias</h2>
-    <p>Hoy, NALVETH es un sitio estático que no instala ninguna cookie de analítica, publicidad, redes sociales o preferencias. No usamos Google Analytics, Google AdSense, Google Tag Manager, píxeles de redes sociales ni ningún otro servicio de este tipo todavía. Tampoco usamos <code>localStorage</code> ni <code>sessionStorage</code> para nada distinto del funcionamiento básico del sitio.</p>
+    <h2>2. Estado actual: analítica activa con tu consentimiento; sin publicidad ni preferencias todavía</h2>
+    <p>Hoy, NALVETH usa <strong>Google Analytics (GA4)</strong> para medir tráfico y uso del sitio, pero solo se activa si aceptas la categoría de analítica en el panel de consentimiento — sin tu aceptación, no se carga ni se envía ningún dato a Google. Al margen de eso, NALVETH no instala ninguna cookie de publicidad, redes sociales o preferencias. No usamos Google AdSense, Google Tag Manager, píxeles de redes sociales ni ningún otro servicio de este tipo todavía. Tampoco usamos <code>localStorage</code> ni <code>sessionStorage</code> para nada distinto del funcionamiento básico del sitio y de la propia analítica.</p>
 
     <table>
       <thead><tr><th>Tipo</th><th>¿Activa hoy?</th><th>Proveedor</th><th>Finalidad</th></tr></thead>
       <tbody>
         <tr><td>Necesarias/técnicas</td><td>No se usa ninguna cookie propia — solo lo que tu navegador gestiona por defecto al cargar cualquier página (sin cookie explícita instalada por NALVETH)</td><td>—</td><td>—</td></tr>
         <tr><td>Preferencias</td><td>No activa</td><td>—</td><td>—</td></tr>
-        <tr><td>Analítica</td><td>No activa</td><td>—</td><td>—</td></tr>
+        <tr><td>Analítica</td><td>Activa solo si aceptas esta categoría en el banner de consentimiento</td><td>Google Analytics (GA4)</td><td>Medir tráfico y uso del sitio. Si aceptas, instala las cookies <code>_ga</code> y <code>_ga_BWYYRK13HS</code>, con una duración de referencia de 2 años según la documentación oficial de Google</td></tr>
         <tr><td>Publicidad</td><td>No activa (Google AdSense todavía no está integrado — ver <a href="/sobre-nalveth/">sobre NALVETH</a>)</td><td>—</td><td>—</td></tr>
         <tr><td>Terceros — tipografías</td><td>Sí, un recurso técnico (no una cookie)</td><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Cargar las tipografías del sitio. No instala cookies, pero implica una solicitud técnica a servidores de Google — ver detalle en la <a href="/privacidad/">política de privacidad</a></td></tr>
       </tbody>
     </table>
 
-    <h2>3. Qué cambiará cuando se activen AdSense y/o analítica</h2>
-    <p>Cuando NALVETH active Google AdSense o una herramienta de analítica, estas categorías empezarán a aplicar de verdad, y esta tabla se actualizará con el proveedor exacto, su duración y su finalidad, <strong>antes</strong> de que ese servicio empiece a cargar para cualquier visitante desde España, la UE, el EEE, el Reino Unido o Suiza:</p>
+    <h2>3. Qué ha cambiado con la analítica, y qué cambiará si se activa AdSense</h2>
+    <p>La analítica (Google Analytics) ya funciona tal y como se describe en el punto 2 de arriba, siempre sujeta a tu consentimiento. Cuando NALVETH active además Google AdSense, esa categoría empezará a aplicar de verdad, y esta tabla se actualizará con el proveedor exacto, su duración y su finalidad, <strong>antes</strong> de que ese servicio empiece a cargar para cualquier visitante desde España, la UE, el EEE, el Reino Unido o Suiza:</p>
     <ul>
       <li><strong>Publicidad</strong>: Google AdSense, para mostrar y medir anuncios.</li>
-      <li><strong>Analítica</strong>: herramienta todavía por confirmar, para medir tráfico y uso del sitio.</li>
       <li><strong>Afiliación</strong>: los programas de afiliados de las herramientas que reseñamos pueden usar parámetros en la URL o cookies propias del sitio de destino al hacer clic en un enlace de afiliado — no cookies instaladas por NALVETH en tu navegador.</li>
     </ul>
     <p>Esa activación requiere primero una plataforma de consentimiento (CMP) certificada por Google e integrada con IAB TCF 2.3. NALVETH ha elegido <strong>InMobi CMP</strong> para esa función — certificada por Google, con ID de CMP registrado en IAB Europe — y ya está instalada en el sitio. Ninguna de estas tecnologías se activará antes de que ese consentimiento esté correctamente implementado y puedas aceptar, rechazar o configurar tus preferencias con el mismo nivel de visibilidad.</p>
@@ -39,7 +38,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     <p>En cuanto el banner de consentimiento esté activo, podrás aceptar, rechazar o configurar tus preferencias por categoría desde el propio banner al visitar el sitio, y modificarlas después desde un enlace de "Configurar cookies" visible en esta página y en el pie de página. Hasta entonces, no hay preferencias que configurar porque no hay cookies no necesarias activas.</p>
     <p>Independientemente de la configuración de NALVETH, siempre puedes bloquear o eliminar cookies desde los ajustes de tu propio navegador.</p>
 
-    <p class="updated">Última actualización: 16 de septiembre de 2026.</p>
+    <p class="updated">Última actualización: 26 de septiembre de 2026.</p>
   </article>
 </BaseLayout>
 

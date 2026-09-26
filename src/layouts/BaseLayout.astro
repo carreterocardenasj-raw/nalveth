@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Seo, { type Props as SeoProps } from '../components/Seo.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import { INMOBI_UNIVERSAL_TAG } from '../lib/inmobi-universal-tag';
 
 export interface Props extends SeoProps {
@@ -35,6 +36,9 @@ const { bodyClass, ...seoProps } = Astro.props;
       no crea una segunda implementación ni los sobrescribe.
     */}
     <Fragment set:html={INMOBI_UNIVERSAL_TAG} />
+    {/* Medición (Fase 3A): inerte hasta que src/data/analytics.ts tenga IDs. Siempre DESPUÉS
+         del tag de InMobi. GA4 solo se carga tras consentimiento (ver lib/analytics-snippet.ts). */}
+    <Analytics />
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main">Saltar al contenido</a>
