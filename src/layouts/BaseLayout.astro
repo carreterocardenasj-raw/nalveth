@@ -50,6 +50,25 @@ const { bodyClass, ...seoProps } = Astro.props;
   </body>
 </html>
 
+<script>
+  // Fase 3C-1: aviso automático de "Enlace de afiliado" para cualquier enlace marcado con
+  // data-track-affiliate="true" — el mismo atributo que ya usa el tracking de GA4 (Fase 3A/3B),
+  // una sola fuente de verdad, sin sistema paralelo. Hoy todos los enlaces comerciales llevan
+  // data-track-affiliate="false", así que esto no cambia nada visible todavía. El día que un
+  // enlace concreto pase a "true" (herramientas.md, software.md), el aviso aparece solo, sin
+  // tocar código. Se excluye el CTA de las reviews (.cta-card): ese ya muestra su propio aviso
+  // en un párrafo dedicado (ver ReviewLayout.astro) — esto evita duplicarlo.
+  document.querySelectorAll('a[data-track-affiliate="true"]').forEach((a) => {
+    if (a.closest('.cta-card')) return;
+    if (a.nextElementSibling?.classList.contains('tag')) return;
+    const tag = document.createElement('span');
+    tag.className = 'tag';
+    tag.textContent = 'Enlace de afiliado';
+    tag.style.marginLeft = '.4em';
+    a.insertAdjacentElement('afterend', tag);
+  });
+</script>
+
 <style is:global>
   .skip-link {
     position: absolute; left: -9999px; top: 0; z-index: 100;
