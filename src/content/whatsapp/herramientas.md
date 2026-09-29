@@ -120,7 +120,7 @@ Ninguna herramienta de esta lista ha sido probada de primera mano por NALVETH to
 
 ## Estado de afiliación: resumen
 
-Todas las herramientas de esta lista tienen un programa de afiliados confirmado y apto para un medio de contenidos como NALVETH, verificado directamente en su propia web el 15/09/2026 — pero **todavía no hay ningún enlace de afiliado activo en esta página**. Confirmar que un programa existe no es lo mismo que estar inscritos en él: registrarse exige crear una cuenta, y NALVETH no lo hace de forma autónoma (misma regla ya aplicada en los clústeres de firma electrónica y VERI\*FACTU). Cuando una persona autorizada complete el alta en los programas que correspondan, los enlaces de esta página se sustituirán por versiones marcadas como "Enlace de afiliado" con `rel="sponsored"`.
+Todas las herramientas de esta lista tienen un programa de afiliados confirmado y apto para un medio de contenidos como NALVETH, verificado directamente en su propia web el 15/09/2026. **Respond.io ya tiene activo su enlace de afiliado real en esta página**, marcado como "Enlace de afiliado" con `rel="sponsored"`; el resto de enlaces (Manychat, Wati, Landbot, HubSpot, n8n y Tidio) siguen siendo enlaces editoriales, sin afiliación activada todavía en esta web. Confirmar que un programa existe no es lo mismo que estar inscritos en él: registrarse exige crear una cuenta, y NALVETH no lo hace de forma autónoma (misma regla ya aplicada en los clústeres de firma electrónica y VERI\*FACTU). Cuando una persona autorizada complete el alta en los programas que correspondan, esos enlaces se sustituirán por versiones marcadas como "Enlace de afiliado" con `rel="sponsored"`.
 
 ## Los fabricantes
 
